@@ -1,0 +1,194 @@
+def run_sede_consolidation_SIMPLIFIED(self, flow_df: pd.DataFrame, gdf: gpd.GeoDataFrame, map_gen) -> int:
+    """
+    Executes Simplified Sede Consolidation Pipeline (Single Pass).
+    
+    Logic:
+    1. Identify sedes with main flow to another sede (travel time <= 2h)
+    2. Validate RM rules (same RM or both without RM)
+    3. Validate UTP adjacency
+    4. Validate infrastructure scores
+    5. Move entire UTP (sede + all municipalities) to destination UTP
+    """
+    self.logger.info("Starting Step 6: Sede Consolidation (Simplified)...")
+    
+    # Initialize
+    self.consolidation_manager = ConsolidationManager()
+    self.changes_current_run = []
+    self.rejected_candidates = []
+    
+    # Build Adjacency Graph
+    self._build_adjacency_graph(gdf)
+    
+    # Sync analyzer with current graph state
+    self._sync_analyzer_with_graph()
+    
+    # Calculate metrics for all sedes
+    df_metrics = self.analyzer.calculate_socioeconomic_metrics()
+    
+    total_sedes = len(df_metrics)
+    sedes_com_alerta = df_metrics['tem_alerta_dependencia'].sum() if 'tem_alerta_dependencia' in df_metrics.columns else 0
+    
+    self.logger.info(f"📊 Sede Analysis Stats:")
+    self.logger.info(f"   Total sedes: {total_sedes}")
+    self.logger.info(f"   Sedes with dependency alerts: {sedes_com_alerta}")
+    
+    if total_sedes == 0:
+        self.logger.warning("⚠️  NO SEDES FOUND!")
+        self._save_results_and_csv()
+        return 0
+    
+    # Filter candidates using simplified rules
+    candidates = self._filter_candidates(df_metrics)
+    
+    if not candidates:
+        self.logger.info("✅ No consolidation candidates found.")
+        self._save_results_and_csv()
+        return 0
+    
+    self.logger.info(f"✅ Found {len(candidates)} consolidation candidates")
+    
+    # Execute consolidations
+    total_changes = 0
+    
+    for cand in candidates:
+        sede_origem = cand['sede_origem']
+        utp_origem = cand['utp_origem']
+        utp_destino = cand['utp_destino']
+        
+        self.logger.info(f"\n🔄 Consolidating: {cand['nm_origem']} (UTP {utp_origem}) -> {cand['nm_destino']} (UTP {utp_destino})")
+        
+        # Get all municipalities in origin UTP
+        muns_to_move = []
+        for node, data in self.graph.hierarchy.nodes(data=True):
+            if data.get('type') == 'municipality':
+                if self.graph.get_municipality_utp(node) == utp_origem:
+                    muns_to_move.append(node)
+        
+        if not muns_to_move:
+            self.logger.warning(f"  ⚠️  No municipalities found in UTP {utp_origem}")
+            continue
+        
+        self.logger.info(f"  Moving {len(muns_to_move)} municipalities from UTP {utp_origem} to {utp_destino}")
+        
+        # Move all municipalities
+        for mun in muns_to_move:
+            self.graph.move_municipality(mun, utp_destino)
+            
+            # Update GDF
+            if gdf is not None and 'CD_MUN' in gdf.columns:
+                try:
+                    mask = gdf['CD_MUN'].astype(str).str.split('.').str[0] == str(mun)
+                    gdf.loc[mask, 'UTP_ID'] = str(utp_destino)
+                except Exception as e:
+                    self.logger.error(f"    Failed to update GDF for {mun}: {e}")
+            
+            # Log consolidation
+            cons_entry = self.consolidation_manager.add_consolidation(
+                source_utp=utp_origem,
+                target_utp=utp_destino,
+                reason=f"Sede consolidation: Score {cand['score_origem']}->{cand['score_destino']}, Travel {cand['tempo_viagem_h']:.2f}h",
+                details={
+                    "mun_id": mun,
+                    "is_sede": (mun == sede_origem),
+                    "score_origem": cand['score_origem'],
+                    "score_destino": cand['score_destino'],
+                    "tempo_viagem_h": cand['tempo_viagem_h'],
+                    "rm_origem": cand.get('rm_origem', ''),
+                    "rm_destino": cand.get('rm_destino', '')
+                }
+            )
+            self.changes_current_run.append(cons_entry)
+        
+        # Revoke sede status from origin
+        if self.graph.hierarchy.has_node(sede_origem):
+            self.graph.hierarchy.nodes[sede_origem]['sede_utp'] = False
+        
+        # Remove UTP from seeds
+        if utp_origem in self.graph.utp_seeds:
+            del self.graph.utp_seeds[utp_origem]
+        
+        total_changes += 1
+        self.logger.info(f"  ✅ Consolidation complete")
+    
+    # Save results
+    self._save_results_and_csv()
+    
+    # Recolor graph
+    self.logger.info("\n🎨 Recalculating graph coloring...")
+    try:
+        coloring = self.graph.compute_graph_coloring(gdf)
+        self.logger.info(f"✅ Coloring updated: {max(coloring.values(), default=0) + 1} colors needed")
+        
+        if gdf is not None:
+            gdf['COLOR_ID'] = gdf['CD_MUN'].astype(int).map(coloring)
+        
+        # Save coloring
+        from pathlib import Path
+        import json
+        
+        coloring_file = self.data_dir / "post_sede_coloring.json"
+        coloring_str_keys = {str(k): v for k, v in coloring.items()}
+        
+        with open(coloring_file, 'w') as f:
+            json.dump(coloring_str_keys, f, indent=2)
+        
+        self.logger.info(f"💾 Coloring saved to: {coloring_file}")
+    except Exception as e:
+        self.logger.warning(f"⚠️  Error recalculating coloring: {e}")
+    
+    self.logger.info(f"\n✅ Sede Consolidation complete: {total_changes} consolidations executed")
+    return total_changes
+
+def _save_results_and_csv(self):
+    """Save consolidation results to JSON and CSV files."""
+    import pandas as pd
+    from pathlib import Path
+    
+    # Save JSON (existing functionality)
+    self.logger.info(f"💾 Saving consolidation results ({len(self.changes_current_run)} changes)...")
+    self.consolidation_manager.save_sede_batch(self.changes_current_run if self.changes_current_run else [])
+    
+    # Generate CSV with all candidates (approved + rejected)
+    csv_records = []
+    
+    # Add approved consolidations
+    for change in self.changes_current_run:
+        if change.get('details', {}).get('is_sede', False):  # Only record sede movements, not individual municipalities
+            csv_records.append({
+                'sede_origem': change['details']['mun_id'],
+                'utp_origem': change['source_utp'],
+                'sede_destino': '',  # We don't track this in current structure
+                'utp_destino': change['target_utp'],
+                'tempo_viagem_h': change['details'].get('tempo_viagem_h', ''),
+                'score_origem': change['details'].get('score_origem', ''),
+                'score_destino': change['details'].get('score_destino', ''),
+                'rm_origem': change['details'].get('rm_origem', ''),
+                'rm_destino': change['details'].get('rm_destino', ''),
+                'status': 'APROVADO',
+                'motivo_rejeicao': ''
+            })
+    
+    # Add rejected candidates
+    for rejected in self.rejected_candidates:
+        csv_records.append({
+            'sede_origem': rejected.get('sede_origem', ''),
+            'utp_origem': rejected.get('utp_origem', ''),
+            'sede_destino': rejected.get('sede_destino', ''),
+            'utp_destino': rejected.get('utp_destino', ''),
+            'tempo_viagem_h': rejected.get('tempo_viagem_h', ''),
+            'score_origem': rejected.get('score_origem', ''),
+            'score_destino': rejected.get('score_destino', ''),
+            'rm_origem': rejected.get('rm_origem', ''),
+            'rm_destino': rejected.get('rm_destino', ''),
+            'status': 'REJEITADO',
+            'motivo_rejeicao': rejected.get('motivo_rejeicao', '')
+        })
+    
+    # Save CSV
+    if csv_records:
+        df_csv = pd.DataFrame(csv_records)
+        csv_path = Path(self.data_dir) / 'sede_consolidation_result.csv'
+        df_csv.to_csv(csv_path, index=False, encoding='utf-8-sig')
+        self.logger.info(f"💾 CSV saved to: {csv_path} ({len(csv_records)} records)")
+    else:
+        self.logger.info("No consolidation records to save to CSV")

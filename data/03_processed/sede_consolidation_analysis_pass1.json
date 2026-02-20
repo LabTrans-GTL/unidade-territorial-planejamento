@@ -1,0 +1,1922 @@
+{
+  "pass_number": 1,
+  "timestamp": "2026-01-27T16:26:17.063594",
+  "total_sedes_analyzed": 757,
+  "total_candidates_found": 58,
+  "candidates": [
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 1100189,
+        "nm_mun": "Pimenta Bueno",
+        "utp_id": "638",
+        "uf": "RO",
+        "populacao": 76952,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 1100304,
+        "nm_mun": "Vilhena",
+        "utp_id": "759",
+        "uf": "RO",
+        "populacao": 132216,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBVH",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 1
+      },
+      "fluxo": {
+        "principal_destino": "Vilhena",
+        "tempo_h": 1.3442532409796402,
+        "proporcao": 0.20589916721877383
+      },
+      "reason": "0/1: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 1502707,
+        "nm_mun": "Conceição do Araguaia",
+        "utp_id": "478",
+        "uf": "PA",
+        "populacao": 52191,
+        "regic": "Centro de Zona A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 1506138,
+        "nm_mun": "Redenção",
+        "utp_id": "662",
+        "uf": "PA",
+        "populacao": 124462,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "Redenção",
+        "tempo_h": 1.5314848723550427,
+        "proporcao": 0.11876315989244347
+      },
+      "reason": "0/0: REGIC Priority (Centro Sub-Regional A > Centro de Zona A)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 1600709,
+        "nm_mun": "Tartarugalzinho",
+        "utp_id": "732",
+        "uf": "AP",
+        "populacao": 93995,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 1600303,
+        "nm_mun": "Macapá",
+        "utp_id": "202",
+        "uf": "AP",
+        "populacao": 572475,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBMQ",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Macapá",
+        "tempo_h": 1.7599351238240943,
+        "proporcao": 0.3010165776133717
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 1720903,
+        "nm_mun": "Taguatinga",
+        "utp_id": "727",
+        "uf": "TO",
+        "populacao": 29801,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2919553,
+        "nm_mun": "Luís Eduardo Magalhães",
+        "utp_id": "38",
+        "uf": "BA",
+        "populacao": 446206,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 1
+      },
+      "fluxo": {
+        "principal_destino": "Luís Eduardo Magalhães",
+        "tempo_h": 1.259518688041681,
+        "proporcao": 0.1518215626526071
+      },
+      "reason": "0/1: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2100055,
+        "nm_mun": "Açailândia",
+        "utp_id": "2",
+        "uf": "MA",
+        "populacao": 175692,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2105302,
+        "nm_mun": "Imperatriz",
+        "utp_id": "128",
+        "uf": "MA",
+        "populacao": 374778,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBIZ",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Imperatriz",
+        "tempo_h": 1.3455747447815358,
+        "proporcao": 0.16472751750946038
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2100204,
+        "nm_mun": "Alcântara",
+        "utp_id": "371",
+        "uf": "MA",
+        "populacao": 18467,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2111300,
+        "nm_mun": "São Luís",
+        "utp_id": "314",
+        "uf": "MA",
+        "populacao": 1458836,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBSL",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "São Luís",
+        "tempo_h": 0.8107354355426996,
+        "proporcao": 0.6089970335607383
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2107100,
+        "nm_mun": "Morros",
+        "utp_id": "219",
+        "uf": "MA",
+        "populacao": 55138,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2111300,
+        "nm_mun": "São Luís",
+        "utp_id": "314",
+        "uf": "MA",
+        "populacao": 1458836,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBSL",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "São Luís",
+        "tempo_h": 1.48283340870798,
+        "proporcao": 0.5148450168473117
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2108603,
+        "nm_mun": "Pinheiro",
+        "utp_id": "295",
+        "uf": "MA",
+        "populacao": 474918,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2111300,
+        "nm_mun": "São Luís",
+        "utp_id": "314",
+        "uf": "MA",
+        "populacao": 1458836,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBSL",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "São Luís",
+        "tempo_h": 1.9060237236659818,
+        "proporcao": 0.4771340107390799
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2110203,
+        "nm_mun": "Santa Rita",
+        "utp_id": "273",
+        "uf": "MA",
+        "populacao": 113564,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2111300,
+        "nm_mun": "São Luís",
+        "utp_id": "314",
+        "uf": "MA",
+        "populacao": 1458836,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBSL",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "São Luís",
+        "tempo_h": 1.184431215984246,
+        "proporcao": 0.22900300318158842
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2112506,
+        "nm_mun": "Tutóia",
+        "utp_id": "239",
+        "uf": "MA",
+        "populacao": 195928,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2101707,
+        "nm_mun": "Barreirinhas",
+        "utp_id": "407",
+        "uf": "MA",
+        "populacao": 135888,
+        "regic": "Centro de Zona A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SSRS",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 1
+      },
+      "fluxo": {
+        "principal_destino": "Barreirinhas",
+        "tempo_h": 1.170338348052671,
+        "proporcao": 0.13559694790794852
+      },
+      "reason": "0/1: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2200251,
+        "nm_mun": "Alagoinha do Piauí",
+        "utp_id": "444",
+        "uf": "PI",
+        "populacao": 94816,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2208007,
+        "nm_mun": "Picos",
+        "utp_id": "255",
+        "uf": "PI",
+        "populacao": 244648,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "Picos",
+        "tempo_h": 1.3635702154682172,
+        "proporcao": 0.39554016729281477
+      },
+      "reason": "0/0: REGIC Priority (Centro Sub-Regional A > Centro Local)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2202208,
+        "nm_mun": "Campo Maior",
+        "utp_id": "439",
+        "uf": "PI",
+        "populacao": 110904,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2211001,
+        "nm_mun": "Teresina",
+        "utp_id": "336",
+        "uf": "PI",
+        "populacao": 1246608,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBTE",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Teresina",
+        "tempo_h": 1.415755932904646,
+        "proporcao": 0.14373659296354854
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2206209,
+        "nm_mun": "Miguel Alves",
+        "utp_id": "473",
+        "uf": "PI",
+        "populacao": 119860,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2211001,
+        "nm_mun": "Teresina",
+        "utp_id": "336",
+        "uf": "PI",
+        "populacao": 1246608,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBTE",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Teresina",
+        "tempo_h": 1.9448323042590863,
+        "proporcao": 0.6131014720814881
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2210508,
+        "nm_mun": "São Pedro do Piauí",
+        "utp_id": "15",
+        "uf": "PI",
+        "populacao": 104516,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2211001,
+        "nm_mun": "Teresina",
+        "utp_id": "336",
+        "uf": "PI",
+        "populacao": 1246608,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBTE",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Teresina",
+        "tempo_h": 1.6160932370368597,
+        "proporcao": 0.8563166177374698
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2303501,
+        "nm_mun": "Cascavel",
+        "utp_id": "279",
+        "uf": "CE",
+        "populacao": 92883,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2304400,
+        "nm_mun": "Fortaleza",
+        "utp_id": "111",
+        "uf": "CE",
+        "populacao": 3672575,
+        "regic": "Metrópole",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBFZ",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Fortaleza",
+        "tempo_h": 1.1592979537692132,
+        "proporcao": 0.6611166480419319
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2311603,
+        "nm_mun": "Redenção",
+        "utp_id": "NOVA25",
+        "uf": "CE",
+        "populacao": 653784,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2304400,
+        "nm_mun": "Fortaleza",
+        "utp_id": "111",
+        "uf": "CE",
+        "populacao": 3672575,
+        "regic": "Metrópole",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBFZ",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Fortaleza",
+        "tempo_h": 1.174865611080147,
+        "proporcao": 0.17712383573019555
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2312205,
+        "nm_mun": "Santa Quitéria",
+        "utp_id": "685",
+        "uf": "CE",
+        "populacao": 81953,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2312908,
+        "nm_mun": "Sobral",
+        "utp_id": "325",
+        "uf": "CE",
+        "populacao": 483674,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SN6L",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Sobral",
+        "tempo_h": 1.2745853766856705,
+        "proporcao": 0.23943419765444135
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2516508,
+        "nm_mun": "Taperoá",
+        "utp_id": "560",
+        "uf": "PB",
+        "populacao": 96623,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2504009,
+        "nm_mun": "Campina Grande",
+        "utp_id": "65",
+        "uf": "PB",
+        "populacao": 677681,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBKG",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Campina Grande",
+        "tempo_h": 1.9132702275962565,
+        "proporcao": 0.11111232798698917
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2600203,
+        "nm_mun": "Afrânio",
+        "utp_id": "368",
+        "uf": "PE",
+        "populacao": 56706,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2611101,
+        "nm_mun": "Petrolina",
+        "utp_id": "253",
+        "uf": "PE",
+        "populacao": 780441,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBPL",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Petrolina",
+        "tempo_h": 1.3176504938696754,
+        "proporcao": 0.5682288202716725
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2603009,
+        "nm_mun": "Cabrobó",
+        "utp_id": "366",
+        "uf": "PE",
+        "populacao": 47933,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2612208,
+        "nm_mun": "Salgueiro",
+        "utp_id": "675",
+        "uf": "PE",
+        "populacao": 363001,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "Salgueiro",
+        "tempo_h": 0.7899535112537001,
+        "proporcao": 0.42100397687119806
+      },
+      "reason": "0/0: REGIC Priority (Centro Sub-Regional B > Centro Local)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2612604,
+        "nm_mun": "Santa Maria da Boa Vista",
+        "utp_id": "683",
+        "uf": "PE",
+        "populacao": 54191,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2611101,
+        "nm_mun": "Petrolina",
+        "utp_id": "253",
+        "uf": "PE",
+        "populacao": 780441,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBPL",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Petrolina",
+        "tempo_h": 1.697803810723001,
+        "proporcao": 0.23516222493189998
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2702306,
+        "nm_mun": "Coruripe",
+        "utp_id": "252",
+        "uf": "AL",
+        "populacao": 188507,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2704302,
+        "nm_mun": "Maceió",
+        "utp_id": "203",
+        "uf": "AL",
+        "populacao": 1300609,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBMO",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Maceió",
+        "tempo_h": 1.7270910873844145,
+        "proporcao": 0.410941016668034
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2709301,
+        "nm_mun": "União dos Palmares",
+        "utp_id": "NOVA2",
+        "uf": "AL",
+        "populacao": 110637,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2704302,
+        "nm_mun": "Maceió",
+        "utp_id": "203",
+        "uf": "AL",
+        "populacao": 1300609,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBMO",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Maceió",
+        "tempo_h": 1.1465687232061568,
+        "proporcao": 0.23148771805921575
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2709400,
+        "nm_mun": "Viçosa",
+        "utp_id": "NOVA20",
+        "uf": "AL",
+        "populacao": 133432,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2704302,
+        "nm_mun": "Maceió",
+        "utp_id": "203",
+        "uf": "AL",
+        "populacao": 1300609,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBMO",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Maceió",
+        "tempo_h": 1.275022815111135,
+        "proporcao": 0.3120722964324746
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2901304,
+        "nm_mun": "Andaraí",
+        "utp_id": "602",
+        "uf": "BA",
+        "populacao": 38689,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2919306,
+        "nm_mun": "Lençóis",
+        "utp_id": "623",
+        "uf": "BA",
+        "populacao": 93072,
+        "regic": "Centro Local",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBLE",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "Lençóis",
+        "tempo_h": 0.7479876815765252,
+        "proporcao": 0.2224606135570486
+      },
+      "reason": "0/0: REGIC Priority (Centro de Zona A > Centro de Zona B)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2905008,
+        "nm_mun": "Caculé",
+        "utp_id": "431",
+        "uf": "BA",
+        "populacao": 146542,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2911709,
+        "nm_mun": "Guanambi",
+        "utp_id": "520",
+        "uf": "BA",
+        "populacao": 207127,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SNGI",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 1
+      },
+      "fluxo": {
+        "principal_destino": "Guanambi",
+        "tempo_h": 1.314567656406088,
+        "proporcao": 0.1662330123119656
+      },
+      "reason": "0/1: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2905206,
+        "nm_mun": "Caetité",
+        "utp_id": "432",
+        "uf": "BA",
+        "populacao": 140537,
+        "regic": "Centro de Zona A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2911709,
+        "nm_mun": "Guanambi",
+        "utp_id": "520",
+        "uf": "BA",
+        "populacao": 207127,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SNGI",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 1
+      },
+      "fluxo": {
+        "principal_destino": "Guanambi",
+        "tempo_h": 0.9395820505409879,
+        "proporcao": 0.43843397506397613
+      },
+      "reason": "0/1: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2908101,
+        "nm_mun": "Cocos",
+        "utp_id": "471",
+        "uf": "BA",
+        "populacao": 32731,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 3142700,
+        "nm_mun": "Montalvânia",
+        "utp_id": "591",
+        "uf": "MG",
+        "populacao": 38735,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "Montalvânia",
+        "tempo_h": 1.5502139879154986,
+        "proporcao": 0.5924707918649935
+      },
+      "reason": "0/0: REGIC Priority (Centro de Zona B > Centro Local)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2910404,
+        "nm_mun": "Encruzilhada",
+        "utp_id": "501",
+        "uf": "BA",
+        "populacao": 48172,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2933307,
+        "nm_mun": "Vitória da Conquista",
+        "utp_id": "362",
+        "uf": "BA",
+        "populacao": 699760,
+        "regic": "Capital Regional B",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBVC",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Vitória da Conquista",
+        "tempo_h": 1.3111929014037123,
+        "proporcao": 0.7696890835218371
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2914802,
+        "nm_mun": "Itabuna",
+        "utp_id": "159",
+        "uf": "BA",
+        "populacao": 402050,
+        "regic": "Capital Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2913606,
+        "nm_mun": "Ilhéus",
+        "utp_id": "126",
+        "uf": "BA",
+        "populacao": 278587,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBIL",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Ilhéus",
+        "tempo_h": 0.3445694897902449,
+        "proporcao": 0.16798074672534186
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2920452,
+        "nm_mun": "Mansidão",
+        "utp_id": "424",
+        "uf": "BA",
+        "populacao": 49762,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2928406,
+        "nm_mun": "Santa Rita de Cássia",
+        "utp_id": "38",
+        "uf": "BA",
+        "populacao": 446206,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 1
+      },
+      "fluxo": {
+        "principal_destino": "Santa Rita de Cássia",
+        "tempo_h": 1.0142386874858569,
+        "proporcao": 0.7237640784533876
+      },
+      "reason": "0/1: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2929255,
+        "nm_mun": "São Gabriel",
+        "utp_id": "699",
+        "uf": "BA",
+        "populacao": 34954,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2914604,
+        "nm_mun": "Irecê",
+        "utp_id": "538",
+        "uf": "BA",
+        "populacao": 255074,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "Irecê",
+        "tempo_h": 0.629511507843367,
+        "proporcao": 0.5234591673971462
+      },
+      "reason": "0/0: REGIC Priority (Centro Sub-Regional A > Centro Local)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2932002,
+        "nm_mun": "Uauá",
+        "utp_id": "449",
+        "uf": "BA",
+        "populacao": 40770,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2909901,
+        "nm_mun": "Curaçá",
+        "utp_id": "253",
+        "uf": "BA",
+        "populacao": 780441,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Curaçá",
+        "tempo_h": 1.6140793670436318,
+        "proporcao": 0.2590265397308179
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 2933208,
+        "nm_mun": "Vera Cruz",
+        "utp_id": "360",
+        "uf": "BA",
+        "populacao": 62318,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 2927408,
+        "nm_mun": "Salvador",
+        "utp_id": "291",
+        "uf": "BA",
+        "populacao": 3352704,
+        "regic": "Metrópole",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBSV",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Salvador",
+        "tempo_h": 0.49988644216882355,
+        "proporcao": 0.44384778763088445
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 3108552,
+        "nm_mun": "Brasilândia de Minas",
+        "utp_id": "413",
+        "uf": "MG",
+        "populacao": 41432,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 3136306,
+        "nm_mun": "João Pinheiro",
+        "utp_id": "558",
+        "uf": "MG",
+        "populacao": 55770,
+        "regic": "Centro de Zona A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "João Pinheiro",
+        "tempo_h": 1.448850578244111,
+        "proporcao": 0.6154635977123496
+      },
+      "reason": "0/0: REGIC Priority (Centro de Zona A > Centro Local)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 3146305,
+        "nm_mun": "Padre Paraíso",
+        "utp_id": "76",
+        "uf": "MG",
+        "populacao": 96614,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 3168606,
+        "nm_mun": "Teófilo Otoni",
+        "utp_id": "335",
+        "uf": "MG",
+        "populacao": 258087,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SNTO",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Teófilo Otoni",
+        "tempo_h": 1.5719127153007224,
+        "proporcao": 0.41085344420314174
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4301305,
+        "nm_mun": "Arroio Grande",
+        "utp_id": "16",
+        "uf": "RS",
+        "populacao": 52413,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4314407,
+        "nm_mun": "Pelotas",
+        "utp_id": "251",
+        "uf": "RS",
+        "populacao": 354771,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBPK",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Pelotas",
+        "tempo_h": 1.7359476248906076,
+        "proporcao": 0.20436555116297658
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 3150570,
+        "nm_mun": "Pintópolis",
+        "utp_id": "97",
+        "uf": "MG",
+        "populacao": 24563,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 3161106,
+        "nm_mun": "São Francisco",
+        "utp_id": "197",
+        "uf": "MG",
+        "populacao": 86109,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "São Francisco",
+        "tempo_h": 0.8943511215943993,
+        "proporcao": 0.5121425132996779
+      },
+      "reason": "0/0: REGIC Priority (Centro de Zona B > Centro Local)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 3302106,
+        "nm_mun": "Itaocara",
+        "utp_id": "163",
+        "uf": "RJ",
+        "populacao": 48569,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 3304706,
+        "nm_mun": "Santo Antônio de Pádua",
+        "utp_id": "300",
+        "uf": "RJ",
+        "populacao": 84990,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "Santo Antônio de Pádua",
+        "tempo_h": 0.4492413393175331,
+        "proporcao": 0.28863723295721777
+      },
+      "reason": "0/0: REGIC Priority (Centro Sub-Regional B > Centro de Zona B)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 3503802,
+        "nm_mun": "Artur Nogueira",
+        "utp_id": "31",
+        "uf": "SP",
+        "populacao": 86116,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 3509502,
+        "nm_mun": "Campinas",
+        "utp_id": "NOVA15",
+        "uf": "SP",
+        "populacao": 2474569,
+        "regic": "Metrópole",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBKP",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Campinas",
+        "tempo_h": 0.7414431983827302,
+        "proporcao": 0.2124405149184172
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 3534302,
+        "nm_mun": "Orlândia",
+        "utp_id": "707",
+        "uf": "SP",
+        "populacao": 77663,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 3543402,
+        "nm_mun": "Ribeirão Preto",
+        "utp_id": "281",
+        "uf": "SP",
+        "populacao": 1404388,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBRP",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Ribeirão Preto",
+        "tempo_h": 1.1550668169670961,
+        "proporcao": 0.3150376438787433
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 3539202,
+        "nm_mun": "Pirapozinho",
+        "utp_id": "258",
+        "uf": "SP",
+        "populacao": 53326,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 3541406,
+        "nm_mun": "Presidente Prudente",
+        "utp_id": "274",
+        "uf": "SP",
+        "populacao": 352666,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBDN",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Presidente Prudente",
+        "tempo_h": 1.2190070997090932,
+        "proporcao": 0.6099982307771756
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4212908,
+        "nm_mun": "Pinhalzinho",
+        "utp_id": "304",
+        "uf": "SC",
+        "populacao": 66149,
+        "regic": "Centro de Zona A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4204202,
+        "nm_mun": "Chapecó",
+        "utp_id": "88",
+        "uf": "SC",
+        "populacao": 298917,
+        "regic": "Capital Regional B",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBCH",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Chapecó",
+        "tempo_h": 0.9215726939756217,
+        "proporcao": 0.11634833664315353
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4302709,
+        "nm_mun": "Butiá",
+        "utp_id": "502",
+        "uf": "RS",
+        "populacao": 73671,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4314902,
+        "nm_mun": "Porto Alegre",
+        "utp_id": "267",
+        "uf": "RS",
+        "populacao": 2885271,
+        "regic": "Metrópole",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBPA",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Porto Alegre",
+        "tempo_h": 1.6313431762250823,
+        "proporcao": 0.3409073460821499
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4304705,
+        "nm_mun": "Carazinho",
+        "utp_id": "454",
+        "uf": "RS",
+        "populacao": 103798,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4314100,
+        "nm_mun": "Passo Fundo",
+        "utp_id": "240",
+        "uf": "RS",
+        "populacao": 280528,
+        "regic": "Capital Regional B",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBPF",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Passo Fundo",
+        "tempo_h": 0.8069520591995307,
+        "proporcao": 0.09020366516396953
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4305454,
+        "nm_mun": "Cidreira",
+        "utp_id": "90",
+        "uf": "RS",
+        "populacao": 48861,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "3 - Município de Apoio ao Turismo",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4314902,
+        "nm_mun": "Porto Alegre",
+        "utp_id": "267",
+        "uf": "RS",
+        "populacao": 2885271,
+        "regic": "Metrópole",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBPA",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Porto Alegre",
+        "tempo_h": 1.720718336444501,
+        "proporcao": 0.31782487306209817
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4310009,
+        "nm_mun": "Ibirubá",
+        "utp_id": "532",
+        "uf": "RS",
+        "populacao": 38335,
+        "regic": "Centro de Zona A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4314100,
+        "nm_mun": "Passo Fundo",
+        "utp_id": "240",
+        "uf": "RS",
+        "populacao": 280528,
+        "regic": "Capital Regional B",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBPF",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Passo Fundo",
+        "tempo_h": 1.5848591591473813,
+        "proporcao": 0.15024776513359397
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4310603,
+        "nm_mun": "Itaqui",
+        "utp_id": "144",
+        "uf": "RS",
+        "populacao": 40193,
+        "regic": "Centro de Zona A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4322400,
+        "nm_mun": "Uruguaiana",
+        "utp_id": "156",
+        "uf": "RS",
+        "populacao": 121451,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBUG",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Uruguaiana",
+        "tempo_h": 1.7567582139283744,
+        "proporcao": 0.16441265699353755
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4312401,
+        "nm_mun": "Montenegro",
+        "utp_id": "596",
+        "uf": "RS",
+        "populacao": 99909,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4314902,
+        "nm_mun": "Porto Alegre",
+        "utp_id": "267",
+        "uf": "RS",
+        "populacao": 2885271,
+        "regic": "Metrópole",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBPA",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Porto Alegre",
+        "tempo_h": 1.076550054133685,
+        "proporcao": 0.1937701645237947
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4312708,
+        "nm_mun": "Nonoai",
+        "utp_id": "607",
+        "uf": "RS",
+        "populacao": 68275,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4204202,
+        "nm_mun": "Chapecó",
+        "utp_id": "88",
+        "uf": "SC",
+        "populacao": 298917,
+        "regic": "Capital Regional B",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBCH",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Chapecó",
+        "tempo_h": 0.6791149523274277,
+        "proporcao": 0.18806698191893023
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4317202,
+        "nm_mun": "Santa Rosa",
+        "utp_id": "687",
+        "uf": "RS",
+        "populacao": 170722,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4317509,
+        "nm_mun": "Santo Ângelo",
+        "utp_id": "299",
+        "uf": "RS",
+        "populacao": 88708,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBNM",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Santo Ângelo",
+        "tempo_h": 0.9411846861712615,
+        "proporcao": 0.16162157321011056
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 4319604,
+        "nm_mun": "São Sepé",
+        "utp_id": "717",
+        "uf": "RS",
+        "populacao": 42571,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 4316907,
+        "nm_mun": "Santa Maria",
+        "utp_id": "497",
+        "uf": "RS",
+        "populacao": 303132,
+        "regic": "Capital Regional C",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBSM",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Santa Maria",
+        "tempo_h": 0.9527005792249332,
+        "proporcao": 0.2648023226485062
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 5005400,
+        "nm_mun": "Maracaju",
+        "utp_id": "580",
+        "uf": "MS",
+        "populacao": 92165,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 5006606,
+        "nm_mun": "Ponta Porã",
+        "utp_id": "148",
+        "uf": "MS",
+        "populacao": 122933,
+        "regic": "Centro Sub-Regional B",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBPP",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Ponta Porã",
+        "tempo_h": 1.5098793346709596,
+        "proporcao": 0.2638679234364641
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 5103007,
+        "nm_mun": "Chapada dos Guimarães",
+        "utp_id": "464",
+        "uf": "MT",
+        "populacao": 57033,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 5103403,
+        "nm_mun": "Cuiabá",
+        "utp_id": "98",
+        "uf": "MT",
+        "populacao": 1074636,
+        "regic": "Capital Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SBCY",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Cuiabá",
+        "tempo_h": 1.19054455463892,
+        "proporcao": 0.535248016712233
+      },
+      "reason": "0/2: Target has Airport"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 5205471,
+        "nm_mun": "Chapadão do Céu",
+        "utp_id": "555",
+        "uf": "GO",
+        "populacao": 149010,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 5002951,
+        "nm_mun": "Chapadão do Sul",
+        "utp_id": "466",
+        "uf": "MS",
+        "populacao": 62540,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "Chapadão do Sul",
+        "tempo_h": 1.1800346309298833,
+        "proporcao": 0.2466572031459812
+      },
+      "reason": "0/0: REGIC Priority (Centro de Zona B > Centro Local)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 5210109,
+        "nm_mun": "Ipameri",
+        "utp_id": "536",
+        "uf": "GO",
+        "populacao": 32970,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 5217401,
+        "nm_mun": "Pires do Rio",
+        "utp_id": "642",
+        "uf": "GO",
+        "populacao": 505857,
+        "regic": "Centro de Zona A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "Pires do Rio",
+        "tempo_h": 0.8811099477069626,
+        "proporcao": 0.3676038629209334
+      },
+      "reason": "0/0: REGIC Priority (Centro de Zona A > Centro Local)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 5213087,
+        "nm_mun": "Minaçu",
+        "utp_id": "588",
+        "uf": "GO",
+        "populacao": 34813,
+        "regic": "Centro de Zona B",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 5218003,
+        "nm_mun": "Porangatu",
+        "utp_id": "648",
+        "uf": "GO",
+        "populacao": 79906,
+        "regic": "Centro de Zona A",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "fluxo": {
+        "principal_destino": "Porangatu",
+        "tempo_h": 1.9653175901016753,
+        "proporcao": 0.19411002629414498
+      },
+      "reason": "0/0: REGIC Priority (Centro de Zona A > Centro de Zona B)"
+    },
+    {
+      "approved": true,
+      "origem": {
+        "cd_mun": 5219308,
+        "nm_mun": "Santa Helena de Goiás",
+        "utp_id": "680",
+        "uf": "GO",
+        "populacao": 86671,
+        "regic": "Centro Local",
+        "tem_aeroporto": false,
+        "aeroporto_icao": "",
+        "turismo": "2 - Município com Oferta Turística Complementar",
+        "score": 0
+      },
+      "destino": {
+        "cd_mun": 5218805,
+        "nm_mun": "Rio Verde",
+        "utp_id": "287",
+        "uf": "GO",
+        "populacao": 238217,
+        "regic": "Centro Sub-Regional A",
+        "tem_aeroporto": true,
+        "aeroporto_icao": "SWLC",
+        "turismo": "1 - Município Turístico",
+        "score": 2
+      },
+      "fluxo": {
+        "principal_destino": "Rio Verde",
+        "tempo_h": 0.98414123860248,
+        "proporcao": 0.3210972991133379
+      },
+      "reason": "0/2: Target has Airport"
+    }
+  ]
+}

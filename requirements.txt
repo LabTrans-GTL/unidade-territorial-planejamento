@@ -1,0 +1,11 @@
+pandas
+geopandas
+networkx
+matplotlib
+shapely
+streamlit>=1.40.0
+leafmap
+openpyxl
+folium
+streamlit-folium
+reflex

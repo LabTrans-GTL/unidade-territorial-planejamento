@@ -1,0 +1,43 @@
+    
+    def get_main_flow_destination(self, cd_mun_origem: int) -> Tuple[Optional[int], float, int, int]:
+        """
+        Identifica o principal destino de fluxo para um município origem.
+        
+        Args:
+            cd_mun_origem: Código IBGE do município de origem
+            
+        Returns:
+            Tupla com (cd_mun_destino, proporcao_fluxo, total_viagens, viagens_para_destino)
+        """
+        if self.df_municipios is None:
+            return None, 0.0, 0, 0
+        
+        # Buscar município
+        mun = self.df_municipios[self.df_municipios['cd_mun'] == cd_mun_origem]
+        if mun.empty:
+            return None, 0.0, 0
+        
+        # Obter modal_matriz (fluxos por destino)
+        modal_matriz = mun.iloc[0].get('modal_matriz', {})
+        
+        # Agregar todos os modais
+        flows_by_dest = {}
+        total_viagens = 0
+        
+        for modal, destinos in modal_matriz.items():
+            if isinstance(destinos, dict):
+                for dest, viagens in destinos.items():
+                    dest_int = int(dest)
+                    flows_by_dest[dest_int] = flows_by_dest.get(dest_int, 0) + viagens
+                    total_viagens += viagens
+        
+        if not flows_by_dest or total_viagens == 0:
+            return None, 0.0, 0, 0
+        
+        # Encontrar destino com maior fluxo
+        max_dest = max(flows_by_dest.items(), key=lambda x: x[1])
+        cd_mun_destino = max_dest[0]
+        viagens_para_destino = max_dest[1]  # Número de viagens para este destino específico
+        proporcao = viagens_para_destino / total_viagens
+        
+        return cd_mun_destino, proporcao, total_viagens, viagens_para_destino
