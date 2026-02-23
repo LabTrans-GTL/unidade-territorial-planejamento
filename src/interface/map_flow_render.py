@@ -1,15 +1,17 @@
 """
 Helper function to render map with flow information popups for border validation tab.
 """
+import streamlit as st
 import folium
 import logging
 import pandas as pd
+import geopandas as gpd
 from src.interface.flow_utils import get_top_destinations_for_municipality, format_flow_popup_html, load_idh_pib_data, get_idh_for_municipality
 
 logger = logging.getLogger(__name__)
 
 
-
+@st.cache_data(show_spinner=False, hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id})
 def render_map_with_flow_popups(gdf_filtered, df_municipios, title="Mapa", 
                                   global_colors=None, gdf_rm=None, show_rm_borders=False, 
                                   show_state_borders=False, gdf_states=None,
@@ -414,4 +416,4 @@ def render_map_with_flow_popups(gdf_filtered, df_municipios, title="Mapa",
         except Exception as e:
             logger.error(f"Erro ao renderizar contornos estaduais: {e}")
             
-    return m
+    return m._repr_html_()

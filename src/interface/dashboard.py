@@ -760,17 +760,24 @@ def render_dashboard(manager):
     # ATENÇÃO: Carregamos aqui a INITIAL por padrão, mas cada tab pode pedir a sua
     global_colors_initial = load_or_compute_coloring(gdf, "initial_coloring.json") if gdf is not None else {}
     
-    # === TABS ===
-    # === TABS ===
-    tab1, tab2, tab3, tab4 = st.tabs([
+    # === SELETOR DE VERSÃO (Substitui Tabs para maior performance) ===
+    # O uso de abas causava problemas de WebSocket pois carregava todos os mapas de uma vez.
+    # O seletor garante que apenas uma versão seja renderizada e transmitida.
+    list_versions = [
         "Versão 8.0 - Distribuição Inicial",
         "Versão 8.1 - UTPs unitárias",
         "Versão 8.2 - Dependência entre Sedes",
         "Versão 8.3 - Centralização das Sedes"
-    ])
+    ]
     
-    # ==== TAB 1: DISTRIBUIÇÃO INICIAL ====
-    with tab1:
+    selected_version = st.radio(
+        "Selecione a Versão do Território para Visualizar",
+        list_versions,
+        horizontal=True,
+        index=3 # Inicia na versão mais recente por padrão
+    )
+    
+    if selected_version == list_versions[0]:
         st.markdown("### <span class='step-badge step-initial'>Versão 8.0</span> Distribuição Inicial", unsafe_allow_html=True)
         st.markdown("""
         **Antes da v8, o maior desafio era a integridade referencial. Com base no estudo da versão 7, foi possível efetuar as seguintes melhorias**
@@ -800,28 +807,26 @@ def render_dashboard(manager):
         col_ctrl1, col_ctrl2 = st.columns(2)
         with col_ctrl1:
             show_rm_borders = st.checkbox(
-                "Mostrar contornos de Regiões Metropolitanas",
+                "Mostrar contornos de RMs",
                 value=False,
-                key='show_rm_tab1',
-                help="Ativa/desativa a visualização dos contornos das Regiões Metropolitanas"
+                key='show_rm_tab1'
             )
         with col_ctrl2:
             show_state_borders = st.checkbox(
                 "Mostrar limites Estaduais",
                 value=False,
-                key='show_state_tab1',
-                help="Ativa/desativa a visualização dos limites dos Estados"
+                key='show_state_tab1'
             )
-        
+
         # Tentar carregar snapshot do estado inicial (Step 1)
         # Se não existir, usa o gdf base (que já é o inicial carregado dos inputs)
         gdf_initial = snapshot_loader.get_geodataframe_for_step('step1', gdf)
         gdf_display = gdf_initial if gdf_initial is not None else gdf
 
         if gdf_display is not None:
-            gdf_filtered = gdf_display[gdf_display['uf'].isin(selected_ufs)].copy()
+            gdf_filtered_map = gdf_display[gdf_display['uf'].isin(selected_ufs)].copy()
             if selected_utps:
-                gdf_filtered = gdf_filtered[gdf_filtered['utp_id'].isin(selected_utps)]
+                gdf_filtered_map = gdf_filtered_map[gdf_filtered_map['utp_id'].isin(selected_utps)]
             
             # Preparar contornos de estado (filtrado pelos estados selecionados)
             gdf_states_filtered = None
@@ -843,8 +848,8 @@ def render_dashboard(manager):
                         gdf_states_filtered = gdf_all_states
 
             # Renderizar mapa usando render_map_with_flow_popups
-            m = render_map_with_flow_popups(
-                gdf_filtered, 
+            map_html = render_map_with_flow_popups(
+                gdf_filtered_map, 
                 df_municipios, 
                 title="Distribuição por UTP (Inicial)", 
                 global_colors=global_colors_initial, 
@@ -855,8 +860,7 @@ def render_dashboard(manager):
                 PASTEL_PALETTE=PASTEL_PALETTE,
                 step_key='step1'
             )
-            if m:
-                map_html = m._repr_html_()
+            if map_html:
                 st.components.v1.html(map_html, height=600, scrolling=False)
         
         st.markdown("---")
@@ -917,8 +921,7 @@ def render_dashboard(manager):
 
 
     
-    # ==== TAB 2: PÓS-CONSOLIDAÇÃO ====
-    with tab2:
+    elif selected_version == list_versions[1]:
         st.markdown("### <span class='step-badge step-final'>Versão 8.1</span> UTPs unitárias", unsafe_allow_html=True)
         st.markdown("""
         **O objetivo central é garantir que nenhum município permaneça isolado em uma UTP própria, a menos que não haja candidatos adjacentes válidos. O processo segue uma hierarquia de critérios:**
@@ -986,17 +989,15 @@ def render_dashboard(manager):
             col_ctrl1, col_ctrl2 = st.columns(2)
             with col_ctrl1:
                 show_rm_borders_tab2 = st.checkbox(
-                    "Mostrar contornos de Regiões Metropolitanas",
+                    "Mostrar contornos de RMs",
                     value=False,
-                    key='show_rm_tab2',
-                    help="Ativa/desativa a visualização dos contornos das RMs"
+                    key='show_rm_tab2'
                 )
             with col_ctrl2:
                 show_state_borders_tab2 = st.checkbox(
                     "Mostrar limites Estaduais",
                     value=False,
-                    key='show_state_tab2',
-                    help="Ativa/desativa a visualização dos limites dos Estados"
+                    key='show_state_tab2'
                 )
 
             if gdf is not None:
@@ -1057,7 +1058,7 @@ def render_dashboard(manager):
 
                 # Renderizar mapa com opção de mostrar contornos de RM
                 # Renderizar mapa (TAB 2: Pós Consolidação)
-                m = render_map_with_flow_popups(
+                map_html = render_map_with_flow_popups(
                     gdf_consolidated,
                     df_municipios, 
                     title="Distribuição Consolidada (Snapshot)", 
@@ -1069,8 +1070,7 @@ def render_dashboard(manager):
                     PASTEL_PALETTE=PASTEL_PALETTE,
                     step_key='step5'
                 )
-                if m:
-                    map_html = m._repr_html_()
+                if map_html:
                     st.components.v1.html(map_html, height=600, scrolling=False)
             
             st.markdown("---")
@@ -1132,8 +1132,7 @@ def render_dashboard(manager):
 
 
 
-    # ==== TAB 3: CONSOLIDAÇÃO SEDES ====
-    with tab3:
+    elif selected_version == list_versions[2]:
         st.markdown("### <span class='step-badge step-final'>Versão 8.2</span> Dependência entre Sedes", unsafe_allow_html=True)
         st.markdown("""
         **O objetivo desta etapa é fundir territórios quando a sede de uma UTP demonstra uma dependência funcional em relação a outra sede vizinha. Para que um UTP seja absorvida por outra, aplicamos quatro filtros sequenciais:**
@@ -1188,7 +1187,7 @@ def render_dashboard(manager):
                  col_ctrl1, col_ctrl2 = st.columns(2)
                  with col_ctrl1:
                      show_rm_borders_tab3 = st.checkbox(
-                         "Mostrar contornos de Regiões Metropolitanas",
+                         "Mostrar contornos de RMs",
                          value=False,
                          key='show_rm_tab3'
                      )
@@ -1225,7 +1224,7 @@ def render_dashboard(manager):
                         gdf_states_filtered = gdf_all_states
 
                  # Renderizar mapa usando render_map_with_flow_popups
-                 m = render_map_with_flow_popups(
+                 map_html = render_map_with_flow_popups(
                      gdf_final, 
                      df_municipios,
                      title="Final (Snapshot)", 
@@ -1237,8 +1236,7 @@ def render_dashboard(manager):
                      PASTEL_PALETTE=PASTEL_PALETTE,
                      step_key='step6'
                  )
-                 if m:
-                      map_html = m._repr_html_()
+                 if map_html:
                       st.components.v1.html(map_html, height=600, scrolling=False)
              else:
                  st.warning("Mapa indisponível")
@@ -1279,8 +1277,7 @@ def render_dashboard(manager):
              st.info("Nenhuma consolidação de sedes encontrada.")
              st.caption("Execute a Etapa 6 do pipeline e certifique-se que houve consolidações.")
     
-    # ==== TAB 4: DUPLA ADERÊNCIA / CENTRALIZAÇÃO ====
-    with tab4:
+    elif selected_version == list_versions[3]:
         st.markdown("### <span class='step-badge step-final'>Versão 8.3</span> Centralização das Sedes", unsafe_allow_html=True)
         st.markdown("""
         **Última etapa que garante que todos os municípios de uma mesma UTP tenham a sua própria sede como referencial. Desta forma, o algoritmo pretende:**
@@ -1390,7 +1387,7 @@ def render_dashboard(manager):
                  col_ctrl1, col_ctrl2 = st.columns(2)
                  with col_ctrl1:
                      show_rm_borders_tab4 = st.checkbox(
-                         "Mostrar contornos de Regiões Metropolitanas",
+                         "Mostrar contornos de RMs",
                          value=False,
                          key='show_rm_tab4'
                      )
@@ -1420,7 +1417,7 @@ def render_dashboard(manager):
                  # IMPORTANTE: Usar df_step8_with_flows para que os popups mostrem
                  # os fluxos baseados nas UTPs atualizadas do Step 8
                  try:
-                     map_with_flows = render_map_with_flow_popups(
+                     map_html = render_map_with_flow_popups(
                          gdf_borders,
                          df_step8_with_flows,  # Dados com UTP atualizada + fluxos
                          title="Validação Fronteiras (Snapshot)",
@@ -1433,12 +1430,10 @@ def render_dashboard(manager):
                          step_key='step8'
                      )
                      
-                     if map_with_flows:
-                         map_html = map_with_flows._repr_html_()
+                     if map_html:
                          st.components.v1.html(map_html, height=600, scrolling=False)
                  except Exception as e:
                      logging.error(f"Erro ao renderizar mapa com fluxos: {e}")
-                     st.error(f"Erro ao renderizar mapa: {e}")
                      st.error(f"Erro ao renderizar mapa: {e}")
                  
                  st.markdown("---")
