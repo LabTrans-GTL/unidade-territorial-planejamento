@@ -110,17 +110,23 @@ class IsolatedMunicipalityResolver:
             
             # Build subgraph of only municipalities in this UTP
             utp_subgraph = nx.Graph()
-            for mun in muns_in_utp:
-                mun_int = int(mun)
+            
+            # Step 1: Add ALL municipalities from this UTP as nodes FIRST
+            # This is critical so that municipalities with ZERO connections to 
+            # their UTP are still represented as components (islands).
+            muns_in_utp_ints = [int(m) for m in muns_in_utp]
+            utp_subgraph.add_nodes_from(muns_in_utp_ints)
+            
+            # Step 2: Add edges between municipalities within the SAME UTP
+            for mun_int in muns_in_utp_ints:
                 if mun_int in self.adjacency_graph:
-                    # Add edges only to other municipalities in the same UTP
                     for neighbor in self.adjacency_graph[mun_int]:
-                        if neighbor in [int(m) for m in muns_in_utp]:
+                        if neighbor in muns_in_utp_ints:
                             utp_subgraph.add_edge(mun_int, neighbor)
             
             # Find connected components
             if utp_subgraph.number_of_nodes() == 0:
-                # No adjacency data
+                # No municipalities at all (shouldn't happen due to earlier check)
                 continue
             
             components = list(nx.connected_components(utp_subgraph))

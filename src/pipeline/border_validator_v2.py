@@ -108,18 +108,6 @@ class BorderValidatorV2:
         gdf_buff = gdf_metric.copy()
         gdf_buff['geometry'] = gdf_buff.geometry.buffer(buffer_val)
         
-        # Ensure all municipalities appear as nodes (including isolated ones)
-        try:
-            node_ids = []
-            if 'CD_MUN' in gdf_valid.columns:
-                # Some CD_MUN values may be strings
-                node_ids = [int(x) for x in gdf_valid['CD_MUN'].tolist() if x is not None and str(x) != 'nan']
-            if node_ids:
-                self.adjacency_graph.add_nodes_from(node_ids)
-        except Exception:
-            # If any conversion fails, continue — nodes will be created from edges later
-            pass
-
         # Self-join
         sjoin = gpd.sjoin(gdf_buff, gdf_buff, how='inner', predicate='intersects')
         
@@ -130,9 +118,7 @@ class BorderValidatorV2:
             if left != right:
                 edges.append((left, right))
         
-        # Add edges (this will also add missing nodes for any connected pairs)
-        if edges:
-            self.adjacency_graph.add_edges_from(edges)
+        self.adjacency_graph.add_edges_from(edges)
         self.logger.info(f"Adjacency graph built: {self.adjacency_graph.number_of_nodes()} nodes, {self.adjacency_graph.number_of_edges()} edges")
     
     def _get_mun_rm(self, mun_id: int) -> Optional[str]:
@@ -280,41 +266,6 @@ class BorderValidatorV2:
                 return True
         
         return False
-
-    def _is_connected_to_sede_within_utp(self, mun_id: int, sede_id: int, utp_muns: List[int]) -> bool:
-        """
-        Checks whether `mun_id` can reach `sede_id` using only municipalities
-        that belong to the same UTP (provided in `utp_muns`). Uses the spatial
-        adjacency graph to verify a path exists inside the induced subgraph.
-        """
-        if self.adjacency_graph is None:
-            return False
-
-        # Ensure node types are ints
-        try:
-            mun_int = int(mun_id)
-            sede_int = int(sede_id)
-        except Exception:
-            return False
-
-        # Build set of UTP municipality nodes (ints)
-        utp_node_set = set()
-        for m in utp_muns:
-            try:
-                utp_node_set.add(int(m))
-            except Exception:
-                continue
-
-        # Both nodes must be part of the induced set and present in adjacency
-        if mun_int not in utp_node_set or sede_int not in utp_node_set:
-            return False
-
-        # Induce subgraph and check connectivity
-        try:
-            sub = self.adjacency_graph.subgraph(utp_node_set)
-            return nx.has_path(sub, mun_int, sede_int)
-        except Exception:
-            return False
     
     def _identify_poorly_connected_municipalities(
         self,
@@ -367,33 +318,10 @@ class BorderValidatorV2:
                         if neighbor_utp != utp_id:
                             is_border = True
                             break
-
-                # Add all border municipalities (adjacency-based)
+                
+                # Add all border municipalities
                 if is_border:
                     border_in_utp.add(mun_int)
-                    continue
-
-                # Additional check: ensure municipality can reach the sede
-                # using only municipalities inside the same UTP. If not,
-                # consider it poorly connected and include for evaluation.
-                try:
-                    # muns_in_utp may be strings; pass list of their ints
-                    utp_muns_int = [int(x) for x in muns_in_utp]
-                except Exception:
-                    utp_muns_int = []
-
-                if sede:
-                    try:
-                        seat_int = int(sede)
-                    except Exception:
-                        seat_int = None
-                else:
-                    seat_int = None
-
-                if seat_int is None or not self._is_connected_to_sede_within_utp(mun_int, seat_int, utp_muns_int):
-                    # Not reachable through internal UTP connectivity
-                    border_in_utp.add(mun_int)
-                    self.logger.debug(f"  [DEBUG] Mun {mun_int}: Not connected to sede {sede} within UTP {utp_id}")
             
             if border_in_utp:
                 border_municipalities[utp_id] = border_in_utp

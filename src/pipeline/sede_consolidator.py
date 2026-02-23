@@ -407,36 +407,34 @@ class SedeConsolidator:
     def _has_flow_or_time(self, origin: int, dest: int, flow_df: pd.DataFrame, max_time: float = 2.0) -> bool:
         """
         Checks whether there is any recorded flow or travel time between origin and dest.
-        Returns True if a flow record exists (viagens>0) or a travel time <= max_time is recorded.
+        Uses self.analyzer to get official travel times if flow exists.
         """
         if flow_df is None:
             return False
 
+        # 1. Check if flow exists in the OD matrix
         try:
-            rows = flow_df[(flow_df['mun_origem'].astype(int) == int(origin)) & (flow_df['mun_destino'].astype(int) == int(dest))]
+            # Try standard column names
+            if 'mun_origem' in flow_df.columns and 'mun_destino' in flow_df.columns:
+                has_flow = not flow_df[(flow_df['mun_origem'].astype(int) == int(origin)) & 
+                                    (flow_df['mun_destino'].astype(int) == int(dest))].empty
+            elif 'origem' in flow_df.columns and 'destino' in flow_df.columns:
+                has_flow = not flow_df[(flow_df['origem'].astype(int) == int(origin)) & 
+                                    (flow_df['destino'].astype(int) == int(dest))].empty
+            else:
+                has_flow = False
         except Exception:
-            # If columns are missing or types unexpected
-            try:
-                rows = flow_df[(flow_df['origem'].astype(int) == int(origin)) & (flow_df['destino'].astype(int) == int(dest))]
-            except Exception:
-                return False
+            has_flow = False
 
-        if rows is None or rows.empty:
+        if not has_flow:
             return False
 
-        # Check explicit travel time columns if present
-        for col in ['tempo_viagem', 'tempo_ate_destino_h', 'tempo_h', 'tempo']:
-            if col in rows.columns:
-                try:
-                    vals = rows[col].astype(str).str.replace(',', '.').astype(float)
-                    if (vals <= max_time).any():
-                        return True
-                except Exception:
-                    # ignore parse errors
-                    pass
-
-        # Require explicit travel time <= max_time. Do NOT accept mere presence of flow records
-        # as proof of acceptable travel time — that would allow transitive moves without time constraint.
+        # 2. Check travel time using the Analyzer (which has the robust matrix + fallback)
+        tempo_viagem = self.analyzer.get_travel_time(origin, dest)
+        
+        if tempo_viagem is not None:
+            return tempo_viagem <= max_time
+            
         return False
 
 
@@ -625,7 +623,7 @@ class SedeConsolidator:
                     'utp_destino': utp_final,
                     'score_origem': score_a,
                     'score_destino': score_final,
-                    'tempo_viagem_h': rejected.get('tempo_viagem_h', 0.0),
+                    'tempo_viagem_h': self.analyzer.get_travel_time(int(sede_a), int(sede_final)) or 0.0,
                     'rm_origem': rejected.get('rm_origem', ''),
                     'rm_destino': rejected.get('rm_destino', ''),
                     'motivo_rejeicao': '',
@@ -636,7 +634,7 @@ class SedeConsolidator:
                 new_approved_candidates.append(new_candidate)
                 rejected_to_remove.append(rejected)
                 
-                self.logger.info(f"      ✅ Transitive APPROVAL: {sede_a} ({row_a['nm_sede']}) -> {sede_b} ({row_b['nm_sede']}) [chain: {chain_str}, reason: {approval_reason}]")
+                self.logger.info(f"      ✅ Transitive APPROVAL: {sede_a} ({row_a['nm_sede']}) -> {sede_final} ({row_final['nm_sede']}) [via {sede_b}, reason: {approval_reason}]")
         
         # Remove approved rejections from rejected_candidates
         for rej in rejected_to_remove:

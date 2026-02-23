@@ -647,6 +647,10 @@ def render_dashboard(manager):
         if 'utp_id' in df_municipios.columns:
             df_municipios['utp_id'] = df_municipios['utp_id'].astype(str)
         
+        # Mapeamento UTP -> Nome da Sede (Para Display)
+        df_sedes_map = df_municipios[df_municipios['sede_utp'] == True][['utp_id', 'nm_mun']].set_index('utp_id')
+        utp_sede_map = df_sedes_map['nm_mun'].to_dict()
+        
         # Filtro por UF
         ufs = sorted(df_municipios['uf'].unique().tolist())
         all_ufs = st.checkbox("Brasil Completo", value=True)
@@ -695,11 +699,22 @@ def render_dashboard(manager):
         
         if all_utps:
             selected_utps = utps_list
-            st.multiselect("UTPs", utps_list, default=utps_list, disabled=True)
+            st.multiselect(
+                "UTPs", 
+                utps_list, 
+                default=utps_list, 
+                disabled=True,
+                format_func=lambda x: f"{x} - {utp_sede_map.get(x, 'N/A')}"
+            )
         else:
             # Se houver busca por muni, podemos pré-selecionar ou apenas ignorar este campo na lógica final
             default_utps = []
-            selected_utps = st.multiselect("UTPs", utps_list, default=default_utps)
+            selected_utps = st.multiselect(
+                "UTPs", 
+                utps_list, 
+                default=default_utps,
+                format_func=lambda x: f"{x} - {utp_sede_map.get(x, 'N/A')}"
+            )
         
         st.markdown("---")
         st.caption(f"Dados de: {metadata.get('timestamp', 'N/A')[:10]}")
@@ -905,35 +920,34 @@ def render_dashboard(manager):
     # ==== TAB 2: PÓS-CONSOLIDAÇÃO ====
     with tab2:
         st.markdown("### <span class='step-badge step-final'>Versão 8.1</span> UTPs unitárias", unsafe_allow_html=True)
-        col_title, col_btn = st.columns([3, 1])
-        with col_title:
-            st.markdown("""
-            **O objetivo central é garantir que nenhum município permaneça isolado em uma UTP própria, a menos que não haja candidatos adjacentes válidos. O processo segue uma hierarquia de critérios:**
-            
-            1.  **Consolidação Funcional Orientada a Fluxos:** esta etapa utiliza a matriz OD para mover a UTP unitária para uma UTP vizinha com a qual possua maior iteração.
-            2.  **Consolidação Territorial de Último Recurso:** após as tentativas baseadas em fluxos, as UTPs unitárias remanescentes são resolvidas via REGIC com a UTP vizinha de maior importância.
-            """)
-        with col_btn:
-            if st.button("Rodar Pipeline", width='stretch', key="btn_tab_run"):
-                with st.spinner("Executando..."):
-                    if run_consolidation():
-                        st.success("Feito!")
-                        st.rerun()
-                    else:
-                        st.error("Erro!")
+        st.markdown("""
+        **O objetivo central é garantir que nenhum município permaneça isolado em uma UTP própria, a menos que não haja candidatos adjacentes válidos. O processo segue uma hierarquia de critérios:**
+        
+        1.  **Consolidação Funcional Orientada a Fluxos:** esta etapa utiliza a matriz OD para mover a UTP unitária para uma UTP vizinha com a qual possua maior iteração.
+        2.  **Consolidação Territorial de Último Recurso:** após as tentativas baseadas em fluxos, as UTPs unitárias remanescentes são resolvidas via REGIC com a UTP vizinha de maior importância.
+        """)
         # === MÉTRICAS PADRONIZADAS (sempre visíveis) ===
         # Verifica diretamente o snapshot step5 — independente do consolidation_result.json
         _df_metrics_tab2 = snapshot_loader.get_snapshot_dataframe('step5')
-        if not _df_metrics_tab2.empty and selected_ufs:
+        
+        # Filtro de segurança: garantir que cd_mun em df_filtered são strings para comparação
+        _allowed_cd_mun_str = df_filtered['cd_mun'].astype(str).unique() if not df_filtered.empty else []
+
+        if not _df_metrics_tab2.empty and len(_allowed_cd_mun_str) > 0:
             _df_metrics_tab2 = _df_metrics_tab2[
-                _df_metrics_tab2['cd_mun'].isin(df_filtered['cd_mun'])
+                _df_metrics_tab2['cd_mun'].astype(str).isin(_allowed_cd_mun_str)
             ].copy()
 
         if not _df_metrics_tab2.empty:
             _src_label = "v8.1 – pós consolidação de unitárias"
-            _df_m = _df_metrics_tab2
+            # Garantir que cd_mun seja string em ambos para o merge
+            _df_metrics_tab2['cd_mun'] = _df_metrics_tab2['cd_mun'].astype(str)
+            _df_mun_uf = df_municipios[['cd_mun', 'uf']].copy()
+            _df_mun_uf['cd_mun'] = _df_mun_uf['cd_mun'].astype(str)
+            
+            _df_m = _df_metrics_tab2.merge(_df_mun_uf, on='cd_mun', how='left')
         else:
-            _src_label = "v8.0 – distribuição inicial (snapshot v8.1 não encontrado)"
+            _src_label = "v8.0 – distribuição inicial (snapshot v8.1 não encontrado ou vazio)"
             _df_m = df_filtered
 
         col1, col2, col3 = st.columns(3)
@@ -943,7 +957,6 @@ def render_dashboard(manager):
             st.metric("UTPs", _df_m['utp_id'].nunique(), f"{len(utps_list)} total")
         with col3:
             st.metric("Estados", _df_m['uf'].nunique(), f"{len(ufs)} total")
-        st.caption(f"📊 Dados: {_src_label}")
 
         st.markdown("---")
 
