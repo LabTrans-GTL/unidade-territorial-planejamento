@@ -1,5 +1,6 @@
 # app.py (Raiz)
 import sys
+import time
 from pathlib import Path
 
 # Adicionar o diretório raiz do projeto ao sys.path
@@ -18,18 +19,27 @@ import logging
 logging.basicConfig(level=logging.WARNING)
 
 # Inicializar manager apenas uma vez
-@st.cache_resource
+@st.cache_resource(ttl=3600)
 def get_manager():
     """Cria e inicializa o manager uma única vez"""
+    start_time = time.time()
+    logging.warning("🚀 Iniciando GeoValidaManager...")
     manager = GeoValidaManager()
     manager.step_0_initialize_data()
+    end_time = time.time()
+    logging.warning(f"✅ GeoValidaManager inicializado em {end_time - start_time:.2f} segundos")
     return manager
 
 # Carregar dados do JSON para uso no dashboard
-@st.cache_resource
+@st.cache_data(ttl=3600)
 def load_json_data():
     """Cache do DataLoader"""
-    return DataLoader()
+    start_time = time.time()
+    logging.warning("🚀 Carregando dados do JSON...")
+    loader = DataLoader()
+    end_time = time.time()
+    logging.warning(f"✅ Dados JSON carregados em {end_time - start_time:.2f} segundos")
+    return loader
 
 # Obter instâncias únicas
 manager = get_manager()

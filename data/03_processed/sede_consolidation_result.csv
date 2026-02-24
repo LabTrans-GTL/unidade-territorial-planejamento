@@ -1,49 +1,79 @@
 ﻿sede_origem,utp_origem,sede_destino,utp_destino,tempo_viagem_h,score_origem,score_destino,rm_origem,rm_destino,status,transitive,transitive_reason,motivo_rejeicao
 1502707,478,1506138.0,662,1.286131352,0,0,,,APROVADO,NAO,,
 1505106,616,1505304.0,618,1.32,0,1,,,APROVADO,NAO,,
-2100055,2,2105302.0,128,1.041388434,0,2,Recorte Metropolitano do Sudoeste Maranhense,Recorte Metropolitano do Sudoeste Maranhense,APROVADO,NAO,,
-2110203,273,2111300.0,314,1.176281122,0,2,Recorte Metropolitano da Grande São Luís,Recorte Metropolitano da Grande São Luís,APROVADO,NAO,,
+2100055,2,2105302.0,128,1.041388434,0,1,Recorte Metropolitano do Sudoeste Maranhense,Recorte Metropolitano do Sudoeste Maranhense,APROVADO,NAO,,
+2110203,273,2111300.0,314,1.176281122,0,1,Recorte Metropolitano da Grande São Luís,Recorte Metropolitano da Grande São Luís,APROVADO,NAO,,
 2200251,444,2208007.0,255,1.554054762,0,0,,,APROVADO,NAO,,
-2302602,435,2307254.0,557,1.948405084,0,1,,,APROVADO,NAO,,
-2303501,279,2304400.0,111,1.087769063,0,2,Recorte Metropolitano de Fortaleza,Recorte Metropolitano de Fortaleza,APROVADO,NAO,,
-2407401,755,2409407.0,631,1.060161768,0,1,,,APROVADO,NAO,,
+2303501,279,2304400.0,111,1.087769063,0,1,Recorte Metropolitano de Fortaleza,Recorte Metropolitano de Fortaleza,APROVADO,NAO,,
+2407401,755,2409407.0,631,1.060161768,0,0,,,APROVADO,NAO,,
 2603009,366,2612208.0,675,1.061924221,0,0,,,APROVADO,NAO,,
-2612604,683,2611101.0,253,1.468983896,0,2,Recorte Metropolitano do Polo Petrolina/PE e Juazeiro/BA,Recorte Metropolitano do Polo Petrolina/PE e Juazeiro/BA,APROVADO,NAO,,
-2707305,NOVA3,2704500.0,209,0.426229179,0,1,,,APROVADO,NAO,,
+2612604,683,2611101.0,253,1.468983896,0,1,Recorte Metropolitano do Polo Petrolina/PE e Juazeiro/BA,Recorte Metropolitano do Polo Petrolina/PE e Juazeiro/BA,APROVADO,NAO,,
 2905008,431,2911709.0,520,1.75701804,0,1,,,APROVADO,NAO,,
 2905206,432,2911709.0,520,0.639161351,0,1,,,APROVADO,NAO,,
-2910404,501,2933307.0,362,1.49290488,0,2,,,APROVADO,NAO,,
-2914802,159,2913606.0,126,0.587222335,0,2,,,APROVADO,NAO,,
+2910404,501,2933307.0,362,1.49290488,0,1,,,APROVADO,NAO,,
+2914802,159,2913606.0,126,0.587222335,0,1,,,APROVADO,NAO,,
 2929255,699,2914604.0,538,0.204835869,0,0,,,APROVADO,NAO,,
+3103504,21,3170206.0,352,0.676671096,0,1,,,APROVADO,NAO,,
+3105608,35,3136702.0,189,1.457403264,0,0,,,APROVADO,NAO,,
 3108552,413,3136306.0,558,1.440615476,0,0,,,APROVADO,NAO,,
-3136306,558,3147006.0,625,1.396492904,0,2,,,APROVADO,NAO,,
-3138609,322,3136702.0,189,0.945237885,0,1,,,APROVADO,NAO,,
-3146305,76,3168606.0,335,1.499471662,0,2,,,APROVADO,NAO,,
-4301305,16,4314407.0,251,1.441707534,0,2,,,APROVADO,NAO,,
+3115508,83,3163706.0,313,0.473118338,0,0,,,APROVADO,NAO,,
+3136306,558,3147006.0,625,1.396492904,0,1,,,APROVADO,NAO,,
+3138401,8,3143906.0,221,0.961996683,0,0,,,APROVADO,NAO,,
+3138609,322,3136702.0,189,0.945237885,0,0,,,APROVADO,NAO,,
+3141108,213,3167202.0,323,0.514444543,0,0,Recorte Metropolitano de Belo Horizonte,Recorte Metropolitano de Belo Horizonte,APROVADO,NAO,,
+3146305,76,3168606.0,335,1.499471662,0,1,,,APROVADO,NAO,,
+4301305,16,4314407.0,251,1.441707534,0,1,,,APROVADO,NAO,,
 3150570,97,3161106.0,197,1.747965012,0,0,,,APROVADO,NAO,,
-3306107,356,3306305.0,364,1.051526777,0,1,,,APROVADO,NAO,,
-3503802,31,3509502.0,NOVA15,0.661627173,0,2,Recorte Metropolitano de Campinas,Recorte Metropolitano de Campinas,APROVADO,NAO,,
-3534302,707,3543402.0,281,0.739717976,0,2,Recorte Metropolitano de Ribeirão Preto,Recorte Metropolitano de Ribeirão Preto,APROVADO,NAO,,
-3539202,258,3541406.0,274,0.468090913,0,2,,,APROVADO,NAO,,
-3550100,712,3507506.0,50,0.390549527,0,1,,,APROVADO,NAO,,
-4102406,402,4106407.0,481,0.552988975,0,1,,,APROVADO,NAO,,
-4211751,229,4209300.0,191,0.801578554,0,1,Recorte Metropolitano de Lages,Recorte Metropolitano de Lages,APROVADO,NAO,,
-4212908,304,4204202.0,88,0.863338415,0,2,Recorte Metropolitano de Chapecó,Recorte Metropolitano de Chapecó,APROVADO,NAO,,
-4304705,454,4314100.0,240,0.747803115,0,2,,,APROVADO,NAO,,
-4310603,144,4322400.0,156,1.602106608,0,2,,,APROVADO,NAO,,
-4312401,596,4314902.0,267,0.81536076,0,2,Recorte Metropolitano de Porto Alegre,Recorte Metropolitano de Porto Alegre,APROVADO,NAO,,
-4317202,687,4317509.0,299,0.799256809,0,2,,,APROVADO,NAO,,
-4319604,717,4316907.0,497,0.871069002,0,2,,,APROVADO,NAO,,
-5000609,380,5006606.0,148,1.6642702,0,2,,,APROVADO,NAO,,
-5001003,386,3546603.0,294,0.505880392,0,1,,,APROVADO,NAO,,
-5005400,580,5006606.0,148,1.970344533,0,2,,,APROVADO,NAO,,
-5100201,612,5102702.0,784,1.256631694,0,1,,,APROVADO,NAO,,
-5103007,464,5103403.0,98,1.693232382,0,2,Recorte Metropolitano do Vale do Rio Cuiabá,Recorte Metropolitano do Vale do Rio Cuiabá,APROVADO,NAO,,
+3300100,767,3306305.0,364,1.605476722,0,0,,,APROVADO,NAO,,
+3306107,356,3306305.0,364,1.051526777,0,0,,,APROVADO,NAO,,
+3306206,215,3306305.0,364,0.815192294,0,0,,,APROVADO,NAO,,
+3503802,31,3509502.0,NOVA15,0.661627173,0,1,Recorte Metropolitano de Campinas,Recorte Metropolitano de Campinas,APROVADO,NAO,,
+3505302,36,3525300.0,180,0.510074814,0,0,,,APROVADO,NAO,,
+3506508,45,3502804.0,301,0.314960574,0,1,,,APROVADO,NAO,,
+3509254,125,3542602.0,663,0.521284599,0,0,,,APROVADO,NAO,,
+3509700,333,3549904.0,312,1.1433244,0,1,Recorte Metropolitano do Vale do Paraíba e Litoral Norte,Recorte Metropolitano do Vale do Paraíba e Litoral Norte,APROVADO,NAO,,
+3523404,168,3509502.0,NOVA15,0.478522504,0,1,Recorte Metropolitano de Campinas,Recorte Metropolitano de Campinas,APROVADO,NAO,,
+3534302,707,3543402.0,281,0.739717976,0,1,Recorte Metropolitano de Ribeirão Preto,Recorte Metropolitano de Ribeirão Preto,APROVADO,NAO,,
+3539202,258,3541406.0,274,0.468090913,0,1,,,APROVADO,NAO,,
+3550100,712,3507506.0,50,0.390549527,0,0,,,APROVADO,NAO,,
+4102406,402,4106407.0,481,0.552988975,0,0,,,APROVADO,NAO,,
+4104600,661,4104808.0,79,1.129288409,0,1,Recorte Metropolitano de Cascavel,Recorte Metropolitano de Cascavel,APROVADO,NAO,,
+4104907,460,4119905.0,264,0.530350672,0,1,,,APROVADO,NAO,,
+4111803,384,3534708.0,230,0.442282416,0,0,,,APROVADO,NAO,,
+4114203,177,4115200.0,211,0.392902838,0,1,Recorte Metropolitano de Maringá,Recorte Metropolitano de Maringá,APROVADO,NAO,,
+4114609,582,4127700.0,340,0.759537951,0,0,Recorte Metropolitano de Toledo,Recorte Metropolitano de Toledo,APROVADO,NAO,,
+4117909,624,4127700.0,340,1.018414962,0,0,Recorte Metropolitano de Toledo,Recorte Metropolitano de Toledo,APROVADO,NAO,,
+4119954,212,4118204.0,234,0.578942563,0,0,,,APROVADO,NAO,,
+4211751,229,4209300.0,191,0.801578554,0,0,Recorte Metropolitano de Lages,Recorte Metropolitano de Lages,APROVADO,NAO,,
+4212908,304,4204202.0,88,0.863338415,0,1,Recorte Metropolitano de Chapecó,Recorte Metropolitano de Chapecó,APROVADO,NAO,,
+4216503,706,4209300.0,191,1.230994403,0,0,Recorte Metropolitano de Lages,Recorte Metropolitano de Lages,APROVADO,NAO,,
+4302105,43,4305108.0,84,0.520760946,0,1,Recorte Metropolitano da Serra Gaúcha,Recorte Metropolitano da Serra Gaúcha,APROVADO,NAO,,
+4304705,454,4314100.0,240,0.747803115,0,1,,,APROVADO,NAO,,
+4310207,535,4317509.0,299,0.873129349,0,1,,,APROVADO,NAO,,
+4310603,144,4322400.0,156,1.602106608,0,1,,,APROVADO,NAO,,
+4312401,596,4314902.0,267,0.81536076,0,1,Recorte Metropolitano de Porto Alegre,Recorte Metropolitano de Porto Alegre,APROVADO,NAO,,
+4313409,228,4314902.0,267,0.59632848,0,1,Recorte Metropolitano de Porto Alegre,Recorte Metropolitano de Porto Alegre,APROVADO,NAO,,
+4315602,286,4314407.0,251,1.074340866,0,1,,,APROVADO,NAO,,
+4317202,687,4317509.0,299,0.799256809,0,1,,,APROVADO,NAO,,
+4319604,717,4316907.0,497,0.871069002,0,1,,,APROVADO,NAO,,
+4321451,338,4311403.0,193,0.43248044,0,0,,,APROVADO,NAO,,
+4322608,359,4316808.0,293,0.439162167,0,0,,,APROVADO,NAO,,
+5000609,380,5006606.0,148,1.6642702,0,1,,,APROVADO,NAO,,
+5001003,386,3546603.0,294,0.505880392,0,0,,,APROVADO,NAO,,
+5003702,103,5006606.0,148,1.688325838,0,1,,,APROVADO,NAO,,
+5005400,580,5006606.0,148,1.970344533,0,1,,,APROVADO,NAO,,
+5103007,464,5103403.0,98,1.693232382,0,1,Recorte Metropolitano do Vale do Rio Cuiabá,Recorte Metropolitano do Vale do Rio Cuiabá,APROVADO,NAO,,
+5107925,725,5107909.0,324,1.111681223,0,1,,,APROVADO,NAO,,
 5210109,536,5217401.0,642,0.833984095,0,0,,,APROVADO,NAO,,
-5219308,680,5218805.0,287,0.555721325,0,2,,,APROVADO,NAO,,
+5219308,680,5218805.0,287,0.555721325,0,1,,,APROVADO,NAO,,
 2601607,409,2612208.0,675,1.248131528,0,0,,,APROVADO,SIM,Chain 2603009 -> 2612208: Final destination 2612208 has better REGIC (rank 8 < 11),
 4300406,372,4316402.0,672,1.550659128,0,0,,,APROVADO,NAO,,
-4302808,427,4316907.0,497,1.482892546,0,2,,,APROVADO,SIM,Chain 4319604 -> 4316907: Final destination 4316907 has score 2,
+4302808,427,4316907.0,497,1.482892546,0,1,,,APROVADO,SIM,Chain 4319604 -> 4316907: Final destination 4316907 has score 1,
+4306106,491,4317509.0,299,1.308317906,0,1,,,APROVADO,SIM,Chain 4310207 -> 4317509: Final destination 4317509 has score 1,
+4322004,89,4314902.0,267,1.014905894,0,1,Recorte Metropolitano de Porto Alegre,Recorte Metropolitano de Porto Alegre,APROVADO,SIM,Chain 4312401 -> 4314902: Final destination 4314902 has score 1,
+5105259,572,5107909.0,324,1.974299455,0,1,,,APROVADO,SIM,Chain 5107925 -> 5107909: Final destination 5107909 has score 1,
+5213103,590,5211909.0,555,1.485204507,0,0,,,APROVADO,NAO,,
+5218508,277,5218805.0,287,1.589474868,0,1,,,APROVADO,SIM,Chain 5219308 -> 5218805: Final destination 5218805 has score 1,
 1100049,430,1100189.0,638,0.654877573,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 1400100,47,1400209.0,451,,,,Recorte Metropolitano de Boa Vista,Recorte Metropolitano de Central,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano de Boa Vista' != 'Recorte Metropolitano de Central'
 1501808,420,1505809.0,649,1.0,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
@@ -58,6 +88,7 @@
 2206209,473,2211001.0,336,,,,,Recorte Metropolitano da Grande Teresina,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano da Grande Teresina'
 2210508,15,2211001.0,336,,,,,Recorte Metropolitano da Grande Teresina,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano da Grande Teresina'
 2307601,319,2311801.0,674,0.729788416,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 8 >= 8)"
+2302602,435,2307254.0,557,1.948405084,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 8)"
 2305803,693,2309300.0,728,0.932937101,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 10)"
 2311603,NOVA25,2304400.0,111,,,,,Recorte Metropolitano de Fortaleza,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Fortaleza'
 2311801,674,2307601.0,319,0.729788416,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 8 >= 8)"
@@ -69,95 +100,63 @@
 2516508,560,2504009.0,65,,,,,Recorte Metropolitano de Campina Grande,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Campina Grande'
 2600203,368,2611101.0,253,,,,,Recorte Metropolitano do Polo Petrolina/PE e Juazeiro/BA,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano do Polo Petrolina/PE e Juazeiro/BA'
 2702306,252,2704302.0,203,,,,,Recorte Metropolitano de Maceió,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Maceió'
+2707305,NOVA3,2704500.0,209,0.426229179,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 10)"
 2709301,NOVA2,2704302.0,203,,,,,Recorte Metropolitano de Maceió,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Maceió'
 2709400,NOVA20,2704302.0,203,,,,,Recorte Metropolitano de Maceió,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Maceió'
 2904605,667,2919504.0,627,1.024329965,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 10 >= 8)"
 2910800,107,2927408.0,291,,,,Recorte Metropolitano de Feira de Santana,Recorte Metropolitano de Salvador,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano de Feira de Santana' != 'Recorte Metropolitano de Salvador'
-2913606,126,2914802.0,159,0.587222335,2,0,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
-2918001,181,2920502.0,581,1.323711616,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+2913606,126,2914802.0,159,0.587222335,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+2918001,181,2920502.0,581,1.323711616,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 10 >= 7)"
 2928604,57,2910800.0,107,,,,,Recorte Metropolitano de Feira de Santana,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Feira de Santana'
 2929909,623,2914406.0,726,0.715251803,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 9)"
 3101706,373,3135803.0,556,0.76054312,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 10 >= 8)"
-3103504,21,3170206.0,352,0.676671096,1,2,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3104007,29,3170107.0,351,1.770832333,2,2,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
-3105608,35,3136702.0,189,1.457403264,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3104007,29,3170107.0,351,1.770832333,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 3108602,417,3161106.0,197,0.840957738,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 10 >= 10)"
-3115508,83,3163706.0,313,0.473118338,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3120904,101,3147402.0,236,0.99770614,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3120904,101,3147402.0,236,0.99770614,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 8)"
 3127701,118,3131307.0,157,,,,,Recorte Metropolitano do Vale do Aço,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano do Vale do Aço'
-3134202,546,3159803.0,688,1.16309968,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3138401,8,3143906.0,221,0.961996683,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3141108,213,3167202.0,323,0.514444543,1,1,Recorte Metropolitano de Belo Horizonte,Recorte Metropolitano de Belo Horizonte,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3134202,546,3159803.0,688,1.16309968,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 8)"
 3147402,236,3167202.0,323,,,,,Recorte Metropolitano de Belo Horizonte,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Belo Horizonte'
 3161106,197,3150570.0,97,1.747965012,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 10)"
-3170107,351,3170206.0,352,1.263832489,2,2,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
-3170206,352,3103504.0,21,0.676671096,2,1,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
-3201506,92,3203205.0,198,1.407808543,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3300100,767,3306305.0,364,1.605476722,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3170107,351,3170206.0,352,1.263832489,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3170206,352,3103504.0,21,0.676671096,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3201506,92,3203205.0,198,1.407808543,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 7 >= 7)"
 3300209,28,3304557.0,284,,,,,Recorte Metropolitano do Rio de Janeiro,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano do Rio de Janeiro'
-3301009,68,3302403.0,201,1.610723029,2,1,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
+3301009,68,3302403.0,201,1.610723029,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 3305802,337,3304557.0,284,,,,,Recorte Metropolitano do Rio de Janeiro,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano do Rio de Janeiro'
-3306206,215,3306305.0,364,0.815192294,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3502804,301,3506508.0,45,0.432480287,2,1,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
-3505302,36,3525300.0,180,0.510074814,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3506508,45,3502804.0,301,0.314960574,1,2,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3507506,50,3550100.0,712,0.380549527,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3508603,200,3513405.0,12,0.306265517,1,1,Recorte Metropolitano do Vale do Paraíba e Litoral Norte,Recorte Metropolitano do Vale do Paraíba e Litoral Norte,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3509254,125,3542602.0,663,0.521284599,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3509700,333,3549904.0,312,1.1433244,1,2,Recorte Metropolitano do Vale do Paraíba e Litoral Norte,Recorte Metropolitano do Vale do Paraíba e Litoral Norte,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3502804,301,3506508.0,45,0.432480287,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3507506,50,3550100.0,712,0.380549527,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 9 >= 7)"
+3508603,200,3513405.0,12,0.306265517,0,0,Recorte Metropolitano do Vale do Paraíba e Litoral Norte,Recorte Metropolitano do Vale do Paraíba e Litoral Norte,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 11)"
 3511102,82,3549805.0,311,,,,,Recorte Metropolitano de São José do Rio Preto,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de São José do Rio Preto'
-3515509,108,3557105.0,365,0.491637603,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3515509,108,3557105.0,365,0.491637603,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 8 >= 7)"
 3516903,114,3549805.0,311,,,,,Recorte Metropolitano de São José do Rio Preto,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de São José do Rio Preto'
-3522307,165,3554003.0,332,0.634198243,1,1,Recorte Metropolitano de Sorocaba,Recorte Metropolitano de Sorocaba,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3523404,168,3509502.0,NOVA15,0.478522504,1,2,Recorte Metropolitano de Campinas,Recorte Metropolitano de Campinas,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3522307,165,3554003.0,332,0.634198243,0,0,Recorte Metropolitano de Sorocaba,Recorte Metropolitano de Sorocaba,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 8 >= 7)"
 3524105,124,3543402.0,281,,,,,Recorte Metropolitano de Ribeirão Preto,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Ribeirão Preto'
-3524808,175,3546603.0,294,0.582918837,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-3538709,256,3550407.0,317,0.61247748,1,1,Recorte Metropolitano de Piracicaba,Recorte Metropolitano de Piracicaba,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3524808,175,3546603.0,294,0.582918837,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 9 >= 8)"
+3538709,256,3550407.0,317,0.61247748,0,0,Recorte Metropolitano de Piracicaba,Recorte Metropolitano de Piracicaba,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 6)"
 3544251,226,3554300.0,462,1.450785791,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 11)"
-3554003,332,3507001.0,48,0.377178349,1,1,Recorte Metropolitano de Sorocaba,Recorte Metropolitano de Sorocaba,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+3554003,332,3507001.0,48,0.377178349,0,0,Recorte Metropolitano de Sorocaba,Recorte Metropolitano de Sorocaba,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 9 >= 8)"
 4101408,17,4101507.0,23,,,,Recorte Metropolitano de Apucarana,Recorte Metropolitano de Londrina,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano de Apucarana' != 'Recorte Metropolitano de Londrina'
 4101507,23,4101408.0,17,,,,Recorte Metropolitano de Londrina,Recorte Metropolitano de Apucarana,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano de Londrina' != 'Recorte Metropolitano de Apucarana'
 4104303,440,4115200.0,211,,,,Recorte Metropolitano de Campo Mourão,Recorte Metropolitano de Maringá,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano de Campo Mourão' != 'Recorte Metropolitano de Maringá'
-4104600,661,4104808.0,79,1.129288409,1,2,Recorte Metropolitano de Cascavel,Recorte Metropolitano de Cascavel,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 4104808,79,4108304.0,140,,,,Recorte Metropolitano de Cascavel,,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano de Cascavel' != ''
-4104907,460,4119905.0,264,0.530350672,1,2,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4108304,140,4115804.0,587,0.790445051,2,1,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
+4108304,140,4115804.0,587,0.790445051,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 4108601,517,4128104.0,353,,,,Recorte Metropolitano de Campo Mourão,Recorte Metropolitano de Umuarama,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano de Campo Mourão' != 'Recorte Metropolitano de Umuarama'
-4111803,384,3534708.0,230,0.442282416,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4114203,177,4115200.0,211,0.392902838,1,2,Recorte Metropolitano de Maringá,Recorte Metropolitano de Maringá,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4114609,582,4127700.0,340,0.759537951,1,1,Recorte Metropolitano de Toledo,Recorte Metropolitano de Toledo,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4117909,624,4127700.0,340,1.018414962,1,1,Recorte Metropolitano de Toledo,Recorte Metropolitano de Toledo,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4119954,212,4118204.0,234,0.578942563,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 4127700,340,4104808.0,79,,,,Recorte Metropolitano de Toledo,Recorte Metropolitano de Cascavel,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano de Toledo' != 'Recorte Metropolitano de Cascavel'
-4204202,88,4219507.0,762,0.706272891,2,1,Recorte Metropolitano de Chapecó,Recorte Metropolitano de Chapecó,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
-4208807,551,4218707.0,346,0.368701129,2,1,Recorte Metropolitano de Tubarão,Recorte Metropolitano de Tubarão,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
+4204202,88,4219507.0,762,0.706272891,1,0,Recorte Metropolitano de Chapecó,Recorte Metropolitano de Chapecó,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+4208807,551,4218707.0,346,0.368701129,1,0,Recorte Metropolitano de Tubarão,Recorte Metropolitano de Tubarão,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 4211652,NOVA14,4108403.0,512,,,,Recorte Metropolitano do Extremo Oeste,,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano do Extremo Oeste' != ''
 4216404,272,4321501.0,342,,,,Recorte Metropolitano de Carbonífera,,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano de Carbonífera' != ''
-4216503,706,4209300.0,191,1.230994403,1,1,Recorte Metropolitano de Lages,Recorte Metropolitano de Lages,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4302105,43,4305108.0,84,0.520760946,1,2,Recorte Metropolitano da Serra Gaúcha,Recorte Metropolitano da Serra Gaúcha,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 4302709,502,4314902.0,267,,,,,Recorte Metropolitano de Porto Alegre,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Porto Alegre'
 4304630,72,4314902.0,267,,,,,Recorte Metropolitano de Porto Alegre,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Porto Alegre'
 4305454,90,4314902.0,267,,,,,Recorte Metropolitano de Porto Alegre,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Porto Alegre'
-4306106,491,4310207.0,535,0.811832703,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 4310009,532,4314100.0,240,,,,,,REJEITADO,NAO,,UTPs não são adjacentes
-4310207,535,4317509.0,299,0.873129349,1,2,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 4312476,NOVA13,4313409.0,228,,,,,Recorte Metropolitano de Porto Alegre,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Porto Alegre'
 4312708,607,4204202.0,88,,,,,Recorte Metropolitano de Chapecó,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano de Chapecó'
-4313409,228,4314902.0,267,0.59632848,1,2,Recorte Metropolitano de Porto Alegre,Recorte Metropolitano de Porto Alegre,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4315602,286,4314407.0,251,1.074340866,1,2,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4316808,293,4322608.0,359,0.484162167,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4316907,497,4319604.0,717,0.876069002,2,0,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
-4321451,338,4311403.0,193,0.43248044,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4322004,89,4312401.0,596,0.986176406,1,0,Recorte Metropolitano de Porto Alegre,Recorte Metropolitano de Porto Alegre,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-4322608,359,4316808.0,293,0.439162167,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+4316808,293,4322608.0,359,0.484162167,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 8 >= 6)"
+4316907,497,4319604.0,717,0.876069002,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 4322806,754,4302105.0,43,,,,,Recorte Metropolitano da Serra Gaúcha,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano da Serra Gaúcha'
-5003702,103,5006606.0,148,1.688325838,1,2,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-5006606,148,5003702.0,103,1.688325838,2,1,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
-5105259,572,5107925.0,725,0.932618232,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-5107909,324,5107925.0,725,1.111681223,2,1,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
-5107925,725,5107909.0,324,1.111681223,1,2,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+5006606,148,5003702.0,103,1.688325838,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+5100201,612,5102702.0,784,1.256631694,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 10 >= 8)"
+5107909,324,5107925.0,725,1.111681223,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 5200803,11,5218300.0,654,,,,Recorte Metropolitano do Distrito Federal e Entorno,,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano do Distrito Federal e Entorno' != ''
-5204508,62,5213806.0,422,0.848786862,2,0,,,REJEITADO,NAO,,"Origem tem score 2, mas só score=0 pode consolidar"
-5211909,555,5218805.0,287,1.266105458,1,2,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-5213103,590,5211909.0,555,1.485204507,1,1,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
-5218508,277,5219308.0,680,1.234688187,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
+5204508,62,5213806.0,422,0.848786862,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
