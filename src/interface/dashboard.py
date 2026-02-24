@@ -5,6 +5,7 @@ import geopandas as gpd
 import folium
 import json
 import logging
+import gc
 from pathlib import Path
 from datetime import datetime
 from src.utils import DataLoader
@@ -100,8 +101,8 @@ from src.interface.palette import get_palette
 # Carregar Paleta Ativa
 PASTEL_PALETTE = get_palette()
 
-
-@st.cache_data(show_spinner="Carregando mapa...", hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id})
+# ===== DATA LOADING HELPER =====
+@st.cache_data(show_spinner="Carregando mapa...", hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id}, ttl=3600)
 def get_geodataframe(optimized_geojson_path, df_municipios):
     """
     Carrega o GeoDataFrame pré-processado de municípios.
@@ -150,7 +151,7 @@ def get_geodataframe(optimized_geojson_path, df_municipios):
         return None
 
 
-@st.cache_data(show_spinner="Carregando RMs...", hash_funcs={gpd.GeoDataFrame: id})
+@st.cache_data(show_spinner="Carregando RMs...", hash_funcs={gpd.GeoDataFrame: id}, ttl=3600)
 def get_derived_rm_geodataframe(optimized_rm_geojson_path):
     """
     Carrega o GeoDataFrame pré-processado de Regiões Metropolitanas.
@@ -172,7 +173,7 @@ def get_derived_rm_geodataframe(optimized_rm_geojson_path):
         return None
 
 
-@st.cache_data(show_spinner="Carregando Estados...", hash_funcs={gpd.GeoDataFrame: id})
+@st.cache_data(show_spinner="Carregando Estados...", hash_funcs={gpd.GeoDataFrame: id}, ttl=3600)
 def get_derived_state_geodataframe(optimized_state_geojson_path):
     """
     Carrega o GeoDataFrame pré-processado de Estados.
@@ -188,7 +189,7 @@ def get_derived_state_geodataframe(optimized_state_geojson_path):
         return None
 
 
-@st.cache_resource(show_spinner="Construindo Grafo Territorial...")
+@st.cache_resource(show_spinner="Construindo Grafo Territorial...", ttl=3600)
 def get_territorial_graph(df_municipios):
     """
     Cria e cacheia o grafo territorial completo.
@@ -230,7 +231,7 @@ def get_territorial_graph(df_municipios):
         return None
 
 
-@st.cache_data(show_spinner="Carregando coloração pré-calculada...", hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id})
+@st.cache_data(show_spinner="Carregando coloração pré-calculada...", hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id}, ttl=3600)
 def load_or_compute_coloring(gdf, cache_filename="initial_coloring.json"):
     """
     Carrega a coloração pré-calculada do cache.
@@ -284,7 +285,7 @@ def load_or_compute_coloring(gdf, cache_filename="initial_coloring.json"):
     return {}
 
 
-@st.cache_data(show_spinner="Calculando contornos estaduais...", hash_funcs={gpd.GeoDataFrame: id})
+@st.cache_data(show_spinner="Calculando contornos estaduais...", hash_funcs={gpd.GeoDataFrame: id}, ttl=3600)
 def get_state_boundaries(gdf):
     """
     Calcula os contornos dos estados dissolvendo os municípios.
@@ -869,7 +870,10 @@ def render_dashboard(manager):
         _allowed_muns_tab1 = set(df_filtered['cd_mun'].astype(str).tolist()) if not df_filtered.empty else None
         df_config_tab1 = render_territorial_config_table('step1', snapshot_loader, _allowed_muns_tab1)
         if not df_config_tab1.empty:
-            st.dataframe(df_config_tab1, hide_index=True, use_container_width=True, height=400)
+            st.dataframe(df_config_tab1, hide_index=True, width='stretch', height=400)
+            # Limpeza de memória
+            del df_config_tab1
+            gc.collect()
         else:
             st.info("Snapshot da versão inicial não encontrado. Execute o pipeline completo.")
         
@@ -1079,7 +1083,9 @@ def render_dashboard(manager):
             _allowed_muns_tab2 = set(df_filtered['cd_mun'].astype(str).tolist()) if not df_filtered.empty else None
             df_config_tab2 = render_territorial_config_table('step5', snapshot_loader, _allowed_muns_tab2)
             if not df_config_tab2.empty:
-                st.dataframe(df_config_tab2, hide_index=True, use_container_width=True, height=400)
+                st.dataframe(df_config_tab2, hide_index=True, width='stretch', height=400)
+                del df_config_tab2
+                gc.collect()
             else:
                 st.info("Snapshot da versão 8.1 não encontrado. Execute o pipeline.")
             
@@ -1247,7 +1253,9 @@ def render_dashboard(manager):
              _allowed_muns_tab3 = set(df_filtered['cd_mun'].astype(str).tolist()) if not df_filtered.empty else None
              df_config_tab3 = render_territorial_config_table('step6', snapshot_loader, _allowed_muns_tab3)
              if not df_config_tab3.empty:
-                 st.dataframe(df_config_tab3, hide_index=True, use_container_width=True, height=400)
+                 st.dataframe(df_config_tab3, hide_index=True, width='stretch', height=400)
+                 del df_config_tab3
+                 gc.collect()
              else:
                  st.info("Snapshot da versão 8.2 não encontrado. Execute o pipeline.")
              
@@ -1272,6 +1280,7 @@ def render_dashboard(manager):
                  })
              
              st.dataframe(pd.DataFrame(changes_data), hide_index=True, width='stretch')
+             gc.collect()
 
         else:
              st.info("Nenhuma consolidação de sedes encontrada.")
@@ -1342,6 +1351,8 @@ def render_dashboard(manager):
                             hide_index=True,
                             width='stretch'
                         )
+                        del df_display
+                        gc.collect()
                     else:
                         st.info("Nenhum dado de fluxo disponível para esta UTP.")
             else:
@@ -1442,7 +1453,9 @@ def render_dashboard(manager):
                  _allowed_muns_tab4 = set(df_filtered['cd_mun'].astype(str).tolist()) if not df_filtered.empty else None
                  df_config_tab4 = render_territorial_config_table('step8', snapshot_loader, _allowed_muns_tab4)
                  if not df_config_tab4.empty:
-                     st.dataframe(df_config_tab4, hide_index=True, use_container_width=True, height=400)
+                     st.dataframe(df_config_tab4, hide_index=True, width='stretch', height=400)
+                     del df_config_tab4
+                     gc.collect()
                  else:
                      st.info("Snapshot da versão 8.3 não encontrado. Execute o pipeline.")
                  
@@ -1549,6 +1562,8 @@ def render_dashboard(manager):
                     st.markdown("---")
                     st.markdown("**Detalhes:**")
                     st.dataframe(relocations_df, hide_index=True, width='stretch', height=400)
+                    del relocations_df
+                    gc.collect()
                     
                     # Visualização no mapa
                     if gdf is not None:
@@ -1629,6 +1644,8 @@ def render_dashboard(manager):
                         st.markdown("---")
                         st.markdown("**Detalhes:**")
                         st.dataframe(rejections_df, hide_index=True, width='stretch', height=400)
+                        del rejections_df
+                        gc.collect()
                     else:
                         st.success("✅ Nenhuma rejeição! Todas as propostas foram aceitas.")
                 

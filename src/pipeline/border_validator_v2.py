@@ -588,7 +588,8 @@ class BorderValidatorV2:
         self,
         flow_df: pd.DataFrame,
         gdf: gpd.GeoDataFrame,
-        max_iterations: int = 50
+        max_iterations: int = 50,
+        map_gen: Any = None
     ) -> int:
         """
         Main border validation loop.
@@ -646,18 +647,36 @@ class BorderValidatorV2:
                 self.graph.move_municipality(mun_id, target_utp)
                 total_changes += 1
             
-            self.logger.info(f"\n📊 Iteration {iteration} complete: {len(relocations)} changes")
+        self.logger.info(f"\n📊 Iteration {iteration} complete: {len(relocations)} changes")
         
-        # NOVA ETAPA: Realocação por fluxo principal
-        # Trata municípios de fronteira que não têm fluxo para sedes
+        # ETAPA: Realocação por fluxo principal (Trata fronteiras sem fluxo para sedes)
         changes_main_flow = self._reallocate_by_main_flow(flow_df, gdf)
         total_changes += changes_main_flow
+        
+        # NOVO: Consolidação de UTPs Unitárias (Reciclado do Consolidator)
+        # Sendo a última etapa, resolve fragmentos territoriais remanescentes
+        self.logger.info("\n" + "-"*40)
+        self.logger.info("RESOLVENDO UTPS UNITÁRIAS (Passo 5 + 7 Fallback)")
+        self.logger.info("-"*40)
+        
+        from src.pipeline.consolidator import UTPConsolidator
+        consolidator = UTPConsolidator(self.graph, self.validator)
+        
+        # Etapa 5: Consolidação Funcional (sem limpar o log!)
+        changes_func = consolidator.run_functional_merging(flow_df, gdf, map_gen, clear_log=False)
+        
+        # Etapa 7: Limpeza Territorial
+        changes_territorial = consolidator.run_territorial_regic(gdf, map_gen)
+        
+        changes_unitarias = changes_func + changes_territorial
+        total_changes += changes_unitarias
         
         self.logger.info(f"\n{'='*80}")
         self.logger.info(f"BORDER VALIDATION COMPLETE")
         self.logger.info(f"  Total iterations: {iteration}")
-        self.logger.info(f"  Sede-based relocations: {total_changes - changes_main_flow}")
+        self.logger.info(f"  Sede-based relocations: {total_changes - changes_main_flow - changes_unitarias}")
         self.logger.info(f"  Main flow relocations: {changes_main_flow}")
+        self.logger.info(f"  Unitary relocations: {changes_unitarias}")
         self.logger.info(f"  Total changes: {total_changes}")
         self.logger.info(f"{'='*80}\n")
         

@@ -422,5 +422,5 @@ def render_comprehensive_table(df: pd.DataFrame, show_alerts_only: bool = False)
     )
     
     with st.expander("Ver todas as colunas disponíveis (Tabela Bruta)"):
-        st.dataframe(df_display, use_container_width=True)
+        st.dataframe(df_display, width='stretch')
 

@@ -14,7 +14,7 @@ class UTPConsolidator:
         self.logger = logging.getLogger("GeoValida.Consolidator")
         self.consolidation_manager = ConsolidationManager()
 
-    def run_functional_merging(self, flow_df: pd.DataFrame, gdf: gpd.GeoDataFrame, map_gen: Any) -> int:
+    def run_functional_merging(self, flow_df: pd.DataFrame, gdf: gpd.GeoDataFrame, map_gen: Any, clear_log: bool = True) -> int:
         """
         Passo 5: Consolidação recursiva de UTPs unitárias com fluxo e adjacência geográfica.
         Prioriza UTPs "Sem RM" com lógica de busca em largura por fluxo total de UTP.
@@ -23,8 +23,11 @@ class UTPConsolidator:
         
         # Reload manager (Step 5 is the first consolidation step, so we clear LOG here)
         self.consolidation_manager = ConsolidationManager()
-        self.consolidation_manager.clear_log()
-        self.logger.info("Log de consolidação limpo para nova execução.")
+        if clear_log:
+            self.consolidation_manager.clear_log()
+            self.logger.info("Log de consolidação limpo para nova execução.")
+        else:
+            self.logger.info("Reciclando log de consolidação existente.")
         
         if flow_df is None or flow_df.empty:
             self.logger.info("Sem dados de fluxo para consolidação funcional.")

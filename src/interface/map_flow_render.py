@@ -11,7 +11,7 @@ from src.interface.flow_utils import get_top_destinations_for_municipality, form
 logger = logging.getLogger(__name__)
 
 
-@st.cache_data(show_spinner=False, hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id})
+@st.cache_data(show_spinner=False, hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id}, ttl=3600)
 def render_map_with_flow_popups(gdf_filtered, df_municipios, title="Mapa", 
                                   global_colors=None, gdf_rm=None, show_rm_borders=False, 
                                   show_state_borders=False, gdf_states=None,

@@ -1,4 +1,5 @@
 import logging
+import time
 import json
 import pandas as pd
 from pathlib import Path
@@ -189,13 +190,15 @@ class GeoValidaManager:
     def step_0_initialize_data(self):
         """Carrega as bases de dados e sincroniza o Grafo."""
         self.logger.info("Etapa 0: Carregando Bases de Dados...")
+        start_global = time.time()
         
         # Carrega dados do JSON (que já população o grafo)
-        if not self.load_from_initialization_json():
-            self.logger.warning("Falha ao carregar de initialization.json, tentando fallback...")
-            # Fallback: carregamento tradicional
-            try:
-                # Define operational areas to filter (lakes, not real municipalities)
+        try:
+            start_json = time.time()
+            if not self.load_from_initialization_json():
+                self.logger.warning("Falha ao carregar de initialization.json, tentando fallback...")
+                # Fallback: carregamento tradicional
+                # ... (rest of fallback logic) ...
                 OPERATIONAL_AREAS = {4300001, 4300002}
                 
                 self.logger.info(f"Carregando UTP base de {FILES['utp_base']}...")
@@ -204,73 +207,56 @@ class GeoValidaManager:
                 else:
                     df_utp = pd.read_csv(FILES['utp_base'], sep=',', encoding='latin1', on_bad_lines='skip', engine='python', dtype=str)
                 
-                # Filter operational areas from UTP base
                 if 'CD_MUN' in df_utp.columns:
-                    original_count = len(df_utp)
                     df_utp['CD_MUN_INT'] = df_utp['CD_MUN'].astype(str).str.split('.').str[0].astype(int)
                     df_utp = df_utp[~df_utp['CD_MUN_INT'].isin(OPERATIONAL_AREAS)]
                     df_utp = df_utp.drop(columns=['CD_MUN_INT'])
-                    filtered_count = original_count - len(df_utp)
-                    if filtered_count > 0:
-                        self.logger.info(f"  Filtered out {filtered_count} operational areas (lakes)")
-                
-                self.logger.info(f"  ✓ UTP: {len(df_utp)} linhas carregadas")
                 
                 self.logger.info(f"Carregando SEDE+REGIC de {FILES['sede_regic']}...")
                 if str(FILES['sede_regic']).endswith('.xlsx'):
                     df_regic = pd.read_excel(FILES['sede_regic'], dtype=str)
                 else:
                     df_regic = pd.read_csv(FILES['sede_regic'], sep=',', encoding='latin1', on_bad_lines='skip', engine='python', dtype=str)
-                self.logger.info(f"  ✓ REGIC: {len(df_regic)} linhas carregadas")
                 
-                # Popula o Grafo
                 self.graph.load_from_dataframe(df_utp, df_regic)
-
-            except Exception as e:
-                self.logger.error(f"Arquivo não encontrado: {e}")
-                self.logger.error(f"Verifique se os arquivos estão em data/01_raw/")
-                return False
-        
-        # --- CARREGAR COMPOSIÇÃO DE RMs (NOVO - MOVIDO PARA FORA DO BLOCO CONDICIONAL) ---
-        self.logger.info(f"Carregando Composição de RMs de {FILES['rm_composition']}...")
-        try:
-            df_rm = pd.read_excel(FILES['rm_composition'], dtype={'COD_MUN': str})
-            # Filtrar colunas relevantes
-            if 'COD_MUN' in df_rm.columns and 'NOME_RECMETROPOL' in df_rm.columns:
-                rm_mapping = df_rm.set_index('COD_MUN')['NOME_RECMETROPOL'].to_dict()
-                
-                count_updates = 0
-                # Atualizar info de RM no grafo (se o nó do município existir)
-                for mun_node in self.graph.hierarchy.nodes():
-                    if self.graph.hierarchy.nodes[mun_node].get('type') == 'municipality':
-                        # tenta obter RM do mapping
-                        rm_name = rm_mapping.get(str(mun_node))
-                        if rm_name:
-                            # Atualiza atributo no nó
-                            self.graph.hierarchy.nodes[mun_node]['regiao_metropolitana'] = rm_name
-                            count_updates += 1
-                
-                self.logger.info(f"  ✓ RM Composição: {len(df_rm)} linhas. {count_updates} municípios atualizados no grafo.")
-                
-            else:
-                self.logger.warning("  ⚠️ Arquivo de RM não possui colunas 'COD_MUN' e 'NOME_RECMETROPOL'.")
-
+            self.logger.info(f"  ⏱️ Carregamento de dados base levou {time.time() - start_json:.2f}s")
         except Exception as e:
-            self.logger.error(f"  ❌ Erro ao carregar Composição de RM: {e}")
-            # Não pára o processo, apenas loga o erro
-
-        # Sempre carregar shapefiles (independente da fonte de dados)
-        self.logger.info(f"Carregando shapefiles...")
-        try:
-            self.map_generator.load_shapefiles()
-            self.logger.info(f"  ✓ Shapefiles carregados: {len(self.map_generator.gdf_complete)} geometrias")
-        except Exception as e:
-            self.logger.error(f"  ❌ Erro ao carregar shapefiles: {e}")
+            self.logger.error(f"❌ Erro crítico no carregamento de dados base: {e}")
             import traceback
             self.logger.error(traceback.format_exc())
-            raise
+            return False
         
-        self.logger.info(f"Dados carregados. Grafo: {len(self.graph.hierarchy.nodes)} nós.")
+        # --- CARREGAR COMPOSIÇÃO DE RMs ---
+        try:
+            start_rm = time.time()
+            self.logger.info(f"Carregando Composição de RMs de {FILES['rm_composition']}...")
+            df_rm = pd.read_excel(FILES['rm_composition'], dtype={'COD_MUN': str})
+            if 'COD_MUN' in df_rm.columns and 'NOME_RECMETROPOL' in df_rm.columns:
+                rm_mapping = df_rm.set_index('COD_MUN')['NOME_RECMETROPOL'].to_dict()
+                count_updates = 0
+                for mun_node in self.graph.hierarchy.nodes():
+                    if self.graph.hierarchy.nodes[mun_node].get('type') == 'municipality':
+                        rm_name = rm_mapping.get(str(mun_node))
+                        if rm_name:
+                            self.graph.hierarchy.nodes[mun_node]['regiao_metropolitana'] = rm_name
+                            count_updates += 1
+                self.logger.info(f"  ✓ RM Composição: {count_updates} municípios atualizados. (⏱️ {time.time() - start_rm:.2f}s)")
+        except Exception as e:
+            self.logger.error(f"  ❌ Erro ao carregar Composição de RM: {e}")
+
+        # Sempre carregar shapefiles
+        try:
+            start_shp = time.time()
+            self.logger.info(f"Carregando shapefiles...")
+            self.map_generator.load_shapefiles()
+            self.logger.info(f"  ✓ Shapefiles carregados: {len(self.map_generator.gdf_complete)} geometrias (⏱️ {time.time() - start_shp:.2f}s)")
+        except Exception as e:
+            self.logger.error(f"  ❌ Erro crítico ao carregar shapefiles: {e}")
+            import traceback
+            self.logger.error(traceback.format_exc())
+            return False
+        
+        self.logger.info(f"✅ Etapa 0 concluída em {time.time() - start_global:.2f}s. Grafo: {len(self.graph.hierarchy.nodes)} nós.")
         return True
 
     def step_1_generate_initial_map(self):
@@ -469,7 +455,8 @@ class GeoValidaManager:
         changes_border = validator_instance.run_border_validation(
             flow_df=self.analyzer.full_flow_df,
             gdf=self.map_generator.gdf_complete,
-            max_iterations=100
+            max_iterations=100,
+            map_gen=self.map_generator
         )
         
         self.logger.info(f"✅ Border Validation complete: {changes_border} changes")
