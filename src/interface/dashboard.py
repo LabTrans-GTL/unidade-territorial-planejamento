@@ -1,4 +1,5 @@
 # src/interface/dashboard.py
+import os
 import streamlit as st
 import pandas as pd
 import geopandas as gpd
@@ -8,6 +9,10 @@ import logging
 import gc
 from pathlib import Path
 from datetime import datetime
+try:
+    import psutil as _psutil
+except ImportError:
+    _psutil = None
 from src.utils import DataLoader
 from src.interface.consolidation_loader import ConsolidationLoader
 from src.interface.snapshot_loader import SnapshotLoader
@@ -102,7 +107,8 @@ from src.interface.palette import get_palette
 PASTEL_PALETTE = get_palette()
 
 # ===== DATA LOADING HELPER =====
-@st.cache_data(show_spinner="Carregando mapa...", hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id}, ttl=3600)
+# @st.cache_resource: armazena 1 cópia do GDF — não acumula entradas como @st.cache_data
+@st.cache_resource(show_spinner="Carregando mapa...", hash_funcs={pd.DataFrame: id})
 def get_geodataframe(optimized_geojson_path, df_municipios):
     """
     Carrega o GeoDataFrame pré-processado de municípios.
@@ -145,13 +151,21 @@ def get_geodataframe(optimized_geojson_path, df_municipios):
         gdf['nm_sede'] = gdf['utp_id'].map(sede_mapper).fillna('')
         gdf['regiao_metropolitana'] = gdf['regiao_metropolitana'].fillna('')
         
+        # ==== ECONOMIA DE MEMÓRIA: Simplificação de Geometrias ====
+        # Reduz o tamanho das geometrias em até 80% sem impacto visual perceptível
+        # em mapas de escala nacional/estadual. Essencial para caber no limite de 1GB.
+        import gc
+        gdf['geometry'] = gdf['geometry'].simplify(0.001, preserve_topology=True)
+        del df_mun_copy, df_sedes, sede_mapper  # liberar objetos temporários
+        gc.collect()
+        
         return gdf
     except Exception as e:
         st.error(f"Erro ao carregar mapa otimizado: {e}")
         return None
 
 
-@st.cache_data(show_spinner="Carregando RMs...", hash_funcs={gpd.GeoDataFrame: id}, ttl=3600)
+@st.cache_resource(show_spinner="Carregando RMs...")
 def get_derived_rm_geodataframe(optimized_rm_geojson_path):
     """
     Carrega o GeoDataFrame pré-processado de Regiões Metropolitanas.
@@ -173,7 +187,7 @@ def get_derived_rm_geodataframe(optimized_rm_geojson_path):
         return None
 
 
-@st.cache_data(show_spinner="Carregando Estados...", hash_funcs={gpd.GeoDataFrame: id}, ttl=3600)
+@st.cache_resource(show_spinner="Carregando Estados...")
 def get_derived_state_geodataframe(optimized_state_geojson_path):
     """
     Carrega o GeoDataFrame pré-processado de Estados.
@@ -189,7 +203,8 @@ def get_derived_state_geodataframe(optimized_state_geojson_path):
         return None
 
 
-@st.cache_resource(show_spinner="Construindo Grafo Territorial...", ttl=3600)
+# hash_funcs={pd.DataFrame: id}: evita pickle de colunas dict (modais, aeroporto)
+@st.cache_resource(show_spinner="Construindo Grafo Territorial...", hash_funcs={pd.DataFrame: id}, ttl=3600)
 def get_territorial_graph(df_municipios):
     """
     Cria e cacheia o grafo territorial completo.
@@ -231,7 +246,8 @@ def get_territorial_graph(df_municipios):
         return None
 
 
-@st.cache_data(show_spinner="Carregando coloração pré-calculada...", hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id}, ttl=3600)
+# max_entries=10: limita acúmulo de versões cacheadas do arquivo de coloração
+@st.cache_data(show_spinner="Carregando coloração pré-calculada...", hash_funcs={gpd.GeoDataFrame: id}, max_entries=10, ttl=3600)
 def load_or_compute_coloring(gdf, cache_filename="initial_coloring.json"):
     """
     Carrega a coloração pré-calculada do cache.
@@ -285,7 +301,7 @@ def load_or_compute_coloring(gdf, cache_filename="initial_coloring.json"):
     return {}
 
 
-@st.cache_data(show_spinner="Calculando contornos estaduais...", hash_funcs={gpd.GeoDataFrame: id}, ttl=3600)
+@st.cache_resource(show_spinner="Calculando contornos estaduais...")
 def get_state_boundaries(gdf):
     """
     Calcula os contornos dos estados dissolvendo os municípios.
@@ -720,6 +736,11 @@ def render_dashboard(manager):
         st.markdown("---")
         st.caption(f"Dados de: {metadata.get('timestamp', 'N/A')[:10]}")
         
+        # Monitor de RAM — útil para detectar memory leaks em produção
+        if _psutil is not None:
+            _mem_mb = _psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2
+            st.metric("RAM em uso", f"{_mem_mb:.0f} MB", help="Se este valor cresce indefinidamente a cada interação, há um memory leak.")
+        
 
     
     # Aplicar filtros
@@ -1035,10 +1056,12 @@ def render_dashboard(manager):
                          has_valid_coloring = True
                      
                      if has_valid_coloring:
-                         for _, row in gdf_consolidated.iterrows():
-                             # Access CD_MUN safely (standardized in loader)
-                             col_name = 'CD_MUN' if 'CD_MUN' in row else 'cd_mun'
-                             colors_consolidated[int(row[col_name])] = int(row['color_id'])
+                         # Operacao vetorial: substitui iterrows() O(N) por zip() instantaneo
+                         _col_cd = 'CD_MUN' if 'CD_MUN' in gdf_consolidated.columns else 'cd_mun'
+                         colors_consolidated = dict(zip(
+                             gdf_consolidated[_col_cd].astype(int),
+                             gdf_consolidated['color_id'].astype(int)
+                         ))
                 
                 # Fallback: Load from external cache if snapshot coloring is missing or seems invalid (monochromatic 0)
                 if not has_valid_coloring:
@@ -1208,9 +1231,12 @@ def render_dashboard(manager):
                  # Tentar carregar coloração final específica se existir, senão usa a consolidada padrão
                  colors_final = {}
                  if 'color_id' in gdf_final.columns:
-                     for _, row in gdf_final.iterrows():
-                         col_name = 'CD_MUN' if 'CD_MUN' in row else 'cd_mun'
-                         colors_final[int(row[col_name])] = int(row['color_id'])
+                     # Operacao vetorial: substitui iterrows() O(N) por zip() instantaneo
+                     _col_cd = 'CD_MUN' if 'CD_MUN' in gdf_final.columns else 'cd_mun'
+                     colors_final = dict(zip(
+                         gdf_final[_col_cd].astype(int),
+                         gdf_final['color_id'].astype(int)
+                     ))
                  else:
                      colors_final = load_or_compute_coloring(gdf_final, "post_sede_coloring.json")
 
@@ -1390,9 +1416,12 @@ def render_dashboard(manager):
                  
                  colors_borders = {}
                  if 'color_id' in gdf_borders.columns:
-                     for _, row in gdf_borders.iterrows():
-                         col_name = 'CD_MUN' if 'CD_MUN' in row else 'cd_mun'
-                         colors_borders[int(row[col_name])] = int(row['color_id'])
+                     # Operacao vetorial: substitui iterrows() O(N) por zip() instantaneo
+                     _col_cd = 'CD_MUN' if 'CD_MUN' in gdf_borders.columns else 'cd_mun'
+                     colors_borders = dict(zip(
+                         gdf_borders[_col_cd].astype(int),
+                         gdf_borders['color_id'].astype(int)
+                     ))
                  
                  # Controle de visualização de contornos
                  col_ctrl1, col_ctrl2 = st.columns(2)
@@ -1581,12 +1610,19 @@ def render_dashboard(manager):
                                  m = folium.Map(
                                      location=[-15, -55],
                                      zoom_start=4,
-                                     tiles="CartoDB positron"
+                                     tiles="CartoDB positron",
+                                     prefer_canvas=True
                                  )
+                                 
+                                 # Simplificar geometria e manter só colunas necessárias
+                                 # para reduzir o tamanho do payload WebSocket
+                                 _cols = [c for c in ['NM_MUN', 'utp_id', 'uf'] if c in gdf_highlight.columns]
+                                 gdf_highlight_slim = gdf_highlight[_cols + ['geometry']].copy()
+                                 gdf_highlight_slim['geometry'] = gdf_highlight_slim['geometry'].simplify(0.01, preserve_topology=True)
                                  
                                  # Adicionar municípios realocados em destaque
                                  folium.GeoJson(
-                                     gdf_highlight.to_json(),
+                                     gdf_highlight_slim.to_json(),
                                      style_function=lambda x: {
                                          'fillColor': '#FF6B6B',
                                          'color': '#C92A2A',

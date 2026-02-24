@@ -15,6 +15,7 @@ class DataLoader:
     
     _instance = None
     _data_cache = None
+    _df_cache = None  # Singleton do DataFrame — garante id() estável entre re-renders
     
     def __new__(cls):
         if cls._instance is None:
@@ -68,14 +69,18 @@ class DataLoader:
     
     @classmethod
     def get_municipios_dataframe(cls) -> pd.DataFrame:
-        """Retorna DataFrame de municipios"""
+        """Retorna DataFrame de municipios (singleton — mesmo objeto entre re-renders)."""
+        # CRITICAL FIX: Retornar sempre o MESMO DataFrame para que
+        # id(df_municipios) seja estavel entre re-renders do Streamlit.
+        # Isso garante que @st.cache_data com hash_funcs={pd.DataFrame: id}
+        # reutilize as entradas de cache em vez de acumular indefinidamente.
+        if cls._df_cache is not None and not cls._df_cache.empty:
+            return cls._df_cache
         data = cls.load_data()
-        
         if data is None:
             return pd.DataFrame()
-        
-        municipios = data.get('municipios', [])
-        return pd.DataFrame(municipios)
+        cls._df_cache = pd.DataFrame(data.get('municipios', []))
+        return cls._df_cache
     
     @classmethod
     def get_utps_dataframe(cls) -> pd.DataFrame:
@@ -212,3 +217,4 @@ class DataLoader:
     def clear_cache(cls):
         """Limpa o cache de dados"""
         cls._data_cache = None
+        cls._df_cache = None

@@ -6,12 +6,45 @@ import folium
 import logging
 import pandas as pd
 import geopandas as gpd
+from pathlib import Path
 from src.interface.flow_utils import get_top_destinations_for_municipality, format_flow_popup_html, load_idh_pib_data, get_idh_for_municipality
 
 logger = logging.getLogger(__name__)
 
 
-@st.cache_data(show_spinner=False, hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id}, ttl=3600)
+@st.cache_data(show_spinner=False, ttl=3600)
+def _load_impedance_cached():
+    """Carrega dados de impedância do CSV uma única vez e cacheia na memória."""
+    impedance_path = Path(__file__).parent.parent.parent / "data" / "01_raw" / "impedance" / "impedancias_filtradas_2h.csv"
+    if not impedance_path.exists():
+        logger.warning(f"Impedance file not found: {impedance_path}")
+        return None
+    try:
+        df = pd.read_csv(impedance_path, sep=';', encoding='latin-1')
+        df = df.dropna(axis=1, how='all')
+        df = df.rename(columns={
+            'COD_IBGE_ORIGEM_1': 'origem_6',
+            'COD_IBGE_DESTINO_1': 'destino_6',
+            'Tempo': 'tempo_horas'
+        })
+        df['tempo_horas'] = df['tempo_horas'].astype(str).str.replace(',', '.').astype(float)
+        df['origem_6'] = pd.to_numeric(df['origem_6'], errors='coerce').fillna(0).astype(int)
+        df['destino_6'] = pd.to_numeric(df['destino_6'], errors='coerce').fillna(0).astype(int)
+        # ==== ECONOMIA DE MEMÓRIA: Downcast de tipos ====
+        # int64 -> int32 (~50% menos RAM por coluna), float64 -> float32
+        # Os IDs de município (7 dígitos) cabem perfeitamente em int32 (max 2.1 bilhões)
+        df = df.astype({'origem_6': 'int32', 'destino_6': 'int32', 'tempo_horas': 'float32'})
+        # Manter apenas colunas essenciais para reduzir ainda mais o footprint
+        df = df[['origem_6', 'destino_6', 'tempo_horas']]
+        logger.info(f"[cache] Impedância carregada: {len(df)} pares | RAM: ~{df.memory_usage(deep=True).sum() / 1024**2:.1f} MB")
+        return df
+    except Exception as e:
+        logger.warning(f"Could not load impedance data: {e}")
+        return None
+
+
+# max_entries=4: 1 entrada por aba (8.0, 8.1, 8.2, 8.3) — evita acúmulo de HTMLs pesados
+@st.cache_data(show_spinner=False, hash_funcs={gpd.GeoDataFrame: id, pd.DataFrame: id}, ttl=3600, max_entries=4)
 def render_map_with_flow_popups(gdf_filtered, df_municipios, title="Mapa", 
                                   global_colors=None, gdf_rm=None, show_rm_borders=False, 
                                   show_state_borders=False, gdf_states=None,
@@ -41,7 +74,8 @@ def render_map_with_flow_popups(gdf_filtered, df_municipios, title="Mapa",
 
 
     
-    gdf_filtered = gdf_filtered.copy()
+    # Não fazemos .copy() aqui — a função já recebe um GDF filtrado pelo chamador.
+    # Copiar duplicaria o GeoDataFrame inteiro (~5.573 polígonos) na RAM sem necessidade.
     gdf_filtered = gdf_filtered.reset_index(drop=True)
     gdf_filtered['color'] = '#cccccc'
     
@@ -91,32 +125,9 @@ def render_map_with_flow_popups(gdf_filtered, df_municipios, title="Mapa",
         m.fit_bounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]], padding=(0.05, 0.05))
     
     
-    # Load impedance data if not provided
+    # Carregar dados de impedância via cache (evita releitura do CSV a cada render)
     if df_impedance is None:
-        try:
-            from pathlib import Path
-            impedance_path = Path(__file__).parent.parent.parent / "data" / "01_raw" / "impedance" / "impedancias_filtradas_2h.csv"
-            if impedance_path.exists():
-                df_impedance = pd.read_csv(impedance_path, sep=';', encoding='latin-1')
-                df_impedance = df_impedance.dropna(axis=1, how='all')
-                df_impedance = df_impedance.rename(columns={
-                    'COD_IBGE_ORIGEM_1': 'origem_6',
-                    'COD_IBGE_DESTINO_1': 'destino_6',
-                    'Tempo': 'tempo_horas'
-                })
-                # Convert tempo_horas to float
-                df_impedance['tempo_horas'] = (
-                    df_impedance['tempo_horas'].astype(str).str.replace(',', '.').astype(float)
-                )
-                # Ensure 6-digit keys are int
-                df_impedance['origem_6'] = pd.to_numeric(df_impedance['origem_6'], errors='coerce').fillna(0).astype(int)
-                df_impedance['destino_6'] = pd.to_numeric(df_impedance['destino_6'], errors='coerce').fillna(0).astype(int)
-                logger.info(f"Loaded {len(df_impedance)} impedance pairs for popup times")
-            else:
-                logger.warning(f"Impedance file not found: {impedance_path}")
-        except Exception as e:
-            logger.warning(f"Could not load impedance data for popups: {e}")
-            df_impedance = None
+        df_impedance = _load_impedance_cached()
     
     # Tentar carregar popups pré-calculados
     import json
@@ -290,7 +301,10 @@ def render_map_with_flow_popups(gdf_filtered, df_municipios, title="Mapa",
     if not gdf_members.empty:
         # Filtrar apenas colunas necessárias para o GeoJSON (reduz tamanho)
         cols_to_keep = ['geometry', 'popup_html', 'color', 'NM_MUN', 'utp_id']
-        members_json = gdf_members[cols_to_keep].to_json()
+        gdf_members_slim = gdf_members[[c for c in cols_to_keep if c in gdf_members.columns]].copy()
+        # Simplificar geometria para reduzir drasticamente o payload WebSocket
+        gdf_members_slim['geometry'] = gdf_members_slim['geometry'].simplify(0.01, preserve_topology=True)
+        members_json = gdf_members_slim.to_json()
         
         folium.GeoJson(
             members_json,
@@ -319,7 +333,9 @@ def render_map_with_flow_popups(gdf_filtered, df_municipios, title="Mapa",
     # Adicionar camada ÚNICA de Sedes (com estilo diferente)
     if not gdf_seats.empty:
         cols_to_keep = ['geometry', 'popup_html', 'color', 'NM_MUN', 'utp_id']
-        seats_json = gdf_seats[cols_to_keep].to_json()
+        gdf_seats_slim = gdf_seats[[c for c in cols_to_keep if c in gdf_seats.columns]].copy()
+        gdf_seats_slim['geometry'] = gdf_seats_slim['geometry'].simplify(0.01, preserve_topology=True)
+        seats_json = gdf_seats_slim.to_json()
         
         folium.GeoJson(
             seats_json,
