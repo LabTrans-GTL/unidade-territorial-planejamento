@@ -1562,8 +1562,6 @@ def render_dashboard(manager):
                     st.markdown("---")
                     st.markdown("**Detalhes:**")
                     st.dataframe(relocations_df, hide_index=True, width='stretch', height=400)
-                    del relocations_df
-                    gc.collect()
                     
                     # Visualização no mapa
                     if gdf is not None:
@@ -1608,6 +1606,9 @@ def render_dashboard(manager):
                                  
                                  map_html = m._repr_html_()
                                  st.components.v1.html(map_html, height=500, scrolling=False)
+                    
+                    del relocations_df
+                    gc.collect()
 
                 else:
                     if not relocations and not 'border_history' in locals():
