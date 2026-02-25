@@ -125,7 +125,7 @@ def render_dashboard(manager):
         "Versão 8.1 - UTPs unitárias",
         "Versão 8.2 - Dependência entre Sedes",
         "Versão 8.3 - Centralização das Sedes",
-        "Versão 8.4 - Análise de Influência"
+        "Estudo de Caso - Análise de Influência"
     ]
     
     selected_version = st.radio("Versão do Território", list_versions, horizontal=True, index=4)
