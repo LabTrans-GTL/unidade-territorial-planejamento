@@ -10,14 +10,30 @@ from src.interface.view_utils import load_or_compute_coloring, PASTEL_PALETTE
 
 def render_influence_analysis_tab(df_municipios, gdf, snapshot_loader):
     """
-    Renders the "Versão 8.4 - Análise de Influência" tab with Step 8 UTP context.
+    Renders the "Estudo de Caso - Análise de Influência" tab with Step 8 UTP context.
     Minimalist version: Chain members in gray, background in UTP colors.
     """
-    st.markdown("### <span class='step-badge step-final'>Versão 8.4</span> Análise de Hierarquia e Influência", unsafe_allow_html=True)
+    st.markdown("### <span class='step-badge step-final'>Estudo de Caso</span> Análise de Hierarquia e Influência", unsafe_allow_html=True)
     st.markdown("""
     Esta visualização analisa as **Cadeias de Influência** (fluxos OD até 2h) 
-    sobrepostas à configuração final das UTPs (**Passo 8**).
+    sobrepostas à configuração final das UTPs (**Passo 8**). 
+    Este estudo auxilia na identificação de municípios que, embora integrados a uma UTP, 
+    possuem vínculos de fluxo mais fortes com polos de outras regiões.
     """)
+    
+    with st.expander("Metodologia Aplicada"):
+        st.markdown("""
+        O processo de identificação das cadeias de influência segue quatro critérios estritos:
+        
+        1.  **Filtro de Impedância**: Considera apenas fluxos de origem-destino com tempo de viagem por terra **inferior a 2 horas**.
+        2.  **Fluxo Principal Estrito**: Para cada município, identifica-se o destino com o **maior volume de viagens** (Polo Principal) dentro do limite de tempo.
+        3.  **Consistência Regional (RM)**: O vínculo de influência só é validado se ambos os municípios pertencerem à mesma **Região Metropolitana (RM)** ou se ambos estiverem **fora de qualquer RM**. Caso o polo absoluto não respeite este critério, o município é classificado como sem influência definida (não se busca o segundo colocado).
+        4.  **Classificação Hierárquica**:
+            *   **Primária (Núcleo)**: Formada por pares de municípios com fluxos principais recíprocos (A → B e B → A).
+            *   **Secundária (Dependente)**: Municípios cujo fluxo principal é direcionada a um membro de um Núcleo.
+            *   **Terciária (Satélite)**: Municípios cujo fluxo principal é direcionada a um membro da Cadeia Secundária.
+        """)
+
     st.markdown("---")
 
     # 1. Carregar dados da análise

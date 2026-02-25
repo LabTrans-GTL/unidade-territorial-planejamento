@@ -103,39 +103,37 @@ class InfluenceAnalyzer:
             self.logger.error("Matriz de impedância não carregada. Não é possível aplicar restrição de 2h.")
             return
 
-        # 1b. Aplicar Regras de Região Metropolitana (RM)
-        # Obter RM para origem e destino
+        # 2. Identificar o destino principal ABSOLUTO (dentro dos 2h) para cada origem
+        # Ordenar por origem e viagens descendente ANTES de filtrar por RM
+        df_top = df_merged.sort_values(['mun_origem', 'viagens'], ascending=[True, False]).drop_duplicates('mun_origem').copy()
+        
+        # 3. Aplicar Regras de Região Metropolitana (RM) sobre o destino principal
         def get_rm(cd_mun):
             node = self.nodes_data.get(str(cd_mun), {})
             rm = node.get('regiao_metropolitana', '')
-            # Normalizar: string vazia se for NaN ou nulo
             if not rm or pd.isna(rm) or str(rm).lower() == 'nan' or rm == 'SEM_RM':
                 return ''
             return str(rm).strip()
 
-        df_merged['rm_origem'] = df_merged['mun_origem'].apply(get_rm)
-        df_merged['rm_destino'] = df_merged['mun_destino'].apply(get_rm)
+        df_top['rm_origem'] = df_top['mun_origem'].apply(get_rm)
+        df_top['rm_destino'] = df_top['mun_destino'].apply(get_rm)
         
-        # Filtro de Consistência RM: Ambos sem RM OU Mesma RM
-        df_merged['rm_valida'] = df_merged.apply(
+        # Filtro de Consistência RM
+        df_top['rm_valida'] = df_top.apply(
             lambda x: x['rm_origem'] == x['rm_destino'], 
             axis=1
         )
         
-        # Guardar fluxos bloqueados para diagnóstico (opcional)
-        self.blocked_by_rm = df_merged[~df_merged['rm_valida']].copy()
+        # Guardar fluxos bloqueados para diagnóstico
+        self.blocked_by_rm = df_top[~df_top['rm_valida']].copy()
         
-        # Manter apenas fluxos que respeitam RM
-        df_merged = df_merged[df_merged['rm_valida']]
+        # Manter apenas fluxos que respeitam RM no destino principal
+        df_final = df_top[df_top['rm_valida']]
 
-        # 2. Para cada origem, pegar o destino com mais viagens (dentro dos 2h e mesma RM)
-        # Ordenar por origem e viagens descendente
-        df_top = df_merged.sort_values(['mun_origem', 'viagens'], ascending=[True, False]).drop_duplicates('mun_origem')
-        
-        for _, row in df_top.iterrows():
+        for _, row in df_final.iterrows():
             self.main_destinations[int(row['mun_origem'])] = int(row['mun_destino'])
                 
-        # 3. Identificação de Sedes (Cadeia Primária - Núcleos)
+        # 4. Identificação de Sedes (Cadeia Primária - Núcleos)
         # Regra: A -> B e B -> A (onde A e B são os principais dentro de 2h)
         visited_pairs = set()
         nucleus_count = 0
@@ -153,7 +151,7 @@ class InfluenceAnalyzer:
                     self.mun_to_chain[b] = nucleus_id
                     nucleus_count += 1
 
-        # 4. Identificação de Dependentes (Cadeia Secundária)
+        # 5. Identificação de Dependentes (Cadeia Secundária)
         nucleus_members = {mun for muns in self.nuclei.values() for mun in muns}
         for mun, dest in self.main_destinations.items():
             if mun in self.hierarchies: continue
@@ -162,7 +160,7 @@ class InfluenceAnalyzer:
                 self.hierarchies[mun] = 'secundaria'
                 self.mun_to_chain[mun] = self.mun_to_chain.get(dest)
                     
-        # 5. Identificação de Satélites (Cadeia Terciária)
+        # 6. Identificação de Satélites (Cadeia Terciária)
         secondary_members = {mun for mun, h in self.hierarchies.items() if h == 'secundaria'}
         for mun, dest in self.main_destinations.items():
             if mun in self.hierarchies: continue
@@ -170,8 +168,6 @@ class InfluenceAnalyzer:
             if dest in secondary_members:
                 self.hierarchies[mun] = 'terciaria'
                 self.mun_to_chain[mun] = self.mun_to_chain.get(dest)
-                    
-        self.logger.info(f"Análise concluída. Primários: {len(nucleus_members)}, Secundários: {len(secondary_members)}, Terciários: {sum(1 for h in self.hierarchies.values() if h == 'terciaria')}")
                     
         self.logger.info(f"Análise concluída. Primários: {len(nucleus_members)}, Secundários: {len(secondary_members)}, Terciários: {sum(1 for h in self.hierarchies.values() if h == 'terciaria')}")
 
