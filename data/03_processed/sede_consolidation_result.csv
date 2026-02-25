@@ -49,7 +49,6 @@
 1501808,420,1505809.0,649,1.0,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 1505304,618,1505106.0,616,1.29,1,0,,,REJEITADO,NAO,,"Origem tem score 1, mas só score=0 pode consolidar"
 1702109,20,1722107.0,307,1.713865297,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 10 >= 6)"
-2100204,371,2111300.0,314,,,,,,REJEITADO,NAO,,UTPs não são adjacentes
 2103000,85,2211001.0,336,,,,Recorte Metropolitano da Zona Leste do Estado do Maranhão,Recorte Metropolitano da Grande Teresina,REJEITADO,NAO,,RM incompatível: 'Recorte Metropolitano da Zona Leste do Estado do Maranhão' != 'Recorte Metropolitano da Grande Teresina'
 2103208,419,2112704.0,745,1.137150147,0,0,,,REJEITADO,NAO,,"Ambos score=0, mas destino REGIC pior/igual (rank 11 >= 8)"
 2104800,518,2111805.0,724,,,,,Recorte Metropolitano do Sudoeste Maranhense,REJEITADO,NAO,,RM incompatível: '' != 'Recorte Metropolitano do Sudoeste Maranhense'

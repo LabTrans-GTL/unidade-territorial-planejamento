@@ -1,10 +1,10 @@
 {
   "version": "1.0",
-  "timestamp_created": "2026-02-24T14:29:01.126105",
+  "timestamp_created": "2026-02-25T13:08:17.605652",
   "consolidations": [
     {
       "id": 1,
-      "timestamp": "2026-02-24T14:29:01.216053",
+      "timestamp": "2026-02-25T13:08:17.688829",
       "source_utp": "399",
       "target_utp": "206",
       "reason": "Com RM - Fluxo Principal",
@@ -18,7 +18,7 @@
     },
     {
       "id": 2,
-      "timestamp": "2026-02-24T14:29:01.360812",
+      "timestamp": "2026-02-25T13:08:17.819128",
       "source_utp": "659",
       "target_utp": "206",
       "reason": "Com RM - Fluxo Principal",
@@ -32,7 +32,7 @@
     },
     {
       "id": 3,
-      "timestamp": "2026-02-24T14:29:01.532295",
+      "timestamp": "2026-02-25T13:08:17.977861",
       "source_utp": "376",
       "target_utp": "47",
       "reason": "Com RM - Fluxo Principal",
@@ -46,7 +46,7 @@
     },
     {
       "id": 4,
-      "timestamp": "2026-02-24T14:29:01.606837",
+      "timestamp": "2026-02-25T13:08:18.043867",
       "source_utp": "135",
       "target_utp": "47",
       "reason": "Com RM - Fluxo Principal",
@@ -60,7 +60,7 @@
     },
     {
       "id": 5,
-      "timestamp": "2026-02-24T14:29:01.684250",
+      "timestamp": "2026-02-25T13:08:18.108599",
       "source_utp": "568",
       "target_utp": "526",
       "reason": "Com RM - Fluxo Principal",
@@ -74,7 +74,7 @@
     },
     {
       "id": 6,
-      "timestamp": "2026-02-24T14:29:01.728368",
+      "timestamp": "2026-02-25T13:08:18.146439",
       "source_utp": "457",
       "target_utp": "253",
       "reason": "Com RM - Fluxo Principal",
@@ -88,7 +88,7 @@
     },
     {
       "id": 7,
-      "timestamp": "2026-02-24T14:29:01.764699",
+      "timestamp": "2026-02-25T13:08:18.179347",
       "source_utp": "494",
       "target_utp": "253",
       "reason": "Com RM - Fluxo Principal",
@@ -102,7 +102,7 @@
     },
     {
       "id": 8,
-      "timestamp": "2026-02-24T14:29:01.868791",
+      "timestamp": "2026-02-25T13:08:18.268489",
       "source_utp": "207",
       "target_utp": "157",
       "reason": "Com RM - Fluxo Principal",
@@ -116,7 +116,7 @@
     },
     {
       "id": 9,
-      "timestamp": "2026-02-24T14:29:02.007482",
+      "timestamp": "2026-02-25T13:08:18.373531",
       "source_utp": "120",
       "target_utp": "363",
       "reason": "Com RM - Fluxo Principal",
@@ -130,7 +130,7 @@
     },
     {
       "id": 10,
-      "timestamp": "2026-02-24T14:29:02.160698",
+      "timestamp": "2026-02-25T13:08:18.509970",
       "source_utp": "766",
       "target_utp": "75",
       "reason": "Com RM - Fluxo Principal",
@@ -144,7 +144,7 @@
     },
     {
       "id": 11,
-      "timestamp": "2026-02-24T14:29:02.170425",
+      "timestamp": "2026-02-25T13:08:18.518693",
       "source_utp": "142",
       "target_utp": "624",
       "reason": "Com RM - Fluxo Principal",
@@ -158,7 +158,7 @@
     },
     {
       "id": 12,
-      "timestamp": "2026-02-24T14:29:02.346366",
+      "timestamp": "2026-02-25T13:08:18.680604",
       "source_utp": "646",
       "target_utp": "98",
       "reason": "Com RM - Fluxo Principal",
@@ -172,7 +172,7 @@
     },
     {
       "id": 13,
-      "timestamp": "2026-02-24T14:29:02.551670",
+      "timestamp": "2026-02-25T13:08:18.869943",
       "source_utp": "461",
       "target_utp": "378",
       "reason": "Com RM - Fluxo Principal",
@@ -186,7 +186,7 @@
     },
     {
       "id": 14,
-      "timestamp": "2026-02-24T14:29:03.067497",
+      "timestamp": "2026-02-25T13:08:19.362672",
       "source_utp": "488",
       "target_utp": "53",
       "reason": "Com RM - Fluxo Principal",
@@ -200,7 +200,7 @@
     },
     {
       "id": 15,
-      "timestamp": "2026-02-24T14:29:03.186594",
+      "timestamp": "2026-02-25T13:08:19.471259",
       "source_utp": "606",
       "target_utp": "116",
       "reason": "Com RM - Fluxo Principal",
@@ -214,7 +214,7 @@
     },
     {
       "id": 16,
-      "timestamp": "2026-02-24T14:29:19.452091",
+      "timestamp": "2026-02-25T13:08:34.393151",
       "source_utp": "445",
       "target_utp": "237",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -226,7 +226,7 @@
     },
     {
       "id": 17,
-      "timestamp": "2026-02-24T14:29:19.453102",
+      "timestamp": "2026-02-25T13:08:34.394409",
       "source_utp": "224",
       "target_utp": "95",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -238,7 +238,7 @@
     },
     {
       "id": 18,
-      "timestamp": "2026-02-24T14:29:19.454234",
+      "timestamp": "2026-02-25T13:08:34.395453",
       "source_utp": "696",
       "target_utp": "619",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -250,7 +250,7 @@
     },
     {
       "id": 19,
-      "timestamp": "2026-02-24T14:29:19.455312",
+      "timestamp": "2026-02-25T13:08:34.396344",
       "source_utp": "447",
       "target_utp": "126",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -262,7 +262,7 @@
     },
     {
       "id": 20,
-      "timestamp": "2026-02-24T14:29:19.456252",
+      "timestamp": "2026-02-25T13:08:34.397147",
       "source_utp": "770",
       "target_utp": "767",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -274,7 +274,7 @@
     },
     {
       "id": 21,
-      "timestamp": "2026-02-24T14:29:19.457096",
+      "timestamp": "2026-02-25T13:08:34.397903",
       "source_utp": "574",
       "target_utp": "38",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -286,7 +286,7 @@
     },
     {
       "id": 22,
-      "timestamp": "2026-02-24T14:29:19.458173",
+      "timestamp": "2026-02-25T13:08:34.398775",
       "source_utp": "658",
       "target_utp": "275",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -298,7 +298,7 @@
     },
     {
       "id": 23,
-      "timestamp": "2026-02-24T14:29:19.459058",
+      "timestamp": "2026-02-25T13:08:34.399589",
       "source_utp": "149",
       "target_utp": "687",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -310,7 +310,7 @@
     },
     {
       "id": 24,
-      "timestamp": "2026-02-24T14:29:19.459967",
+      "timestamp": "2026-02-25T13:08:34.400362",
       "source_utp": "297",
       "target_utp": "271",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -322,7 +322,7 @@
     },
     {
       "id": 25,
-      "timestamp": "2026-02-24T14:29:19.460873",
+      "timestamp": "2026-02-25T13:08:34.401320",
       "source_utp": "146",
       "target_utp": "732",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -334,7 +334,7 @@
     },
     {
       "id": 26,
-      "timestamp": "2026-02-24T14:29:19.461760",
+      "timestamp": "2026-02-25T13:08:34.402318",
       "source_utp": "559",
       "target_utp": "651",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -346,7 +346,7 @@
     },
     {
       "id": 27,
-      "timestamp": "2026-02-24T14:29:19.462874",
+      "timestamp": "2026-02-25T13:08:34.403231",
       "source_utp": "575",
       "target_utp": "415",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -358,7 +358,7 @@
     },
     {
       "id": 28,
-      "timestamp": "2026-02-24T14:29:19.463940",
+      "timestamp": "2026-02-25T13:08:34.404105",
       "source_utp": "569",
       "target_utp": "623",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -370,7 +370,7 @@
     },
     {
       "id": 29,
-      "timestamp": "2026-02-24T14:29:19.465017",
+      "timestamp": "2026-02-25T13:08:34.404976",
       "source_utp": "154",
       "target_utp": "711",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -382,7 +382,7 @@
     },
     {
       "id": 30,
-      "timestamp": "2026-02-24T14:29:19.466322",
+      "timestamp": "2026-02-25T13:08:34.405801",
       "source_utp": "131",
       "target_utp": "152",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -394,7 +394,7 @@
     },
     {
       "id": 31,
-      "timestamp": "2026-02-24T14:29:19.467371",
+      "timestamp": "2026-02-25T13:08:34.406640",
       "source_utp": "151",
       "target_utp": "687",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -406,7 +406,7 @@
     },
     {
       "id": 32,
-      "timestamp": "2026-02-24T14:29:19.468412",
+      "timestamp": "2026-02-25T13:08:34.407502",
       "source_utp": "404",
       "target_utp": "764",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -418,7 +418,7 @@
     },
     {
       "id": 33,
-      "timestamp": "2026-02-24T14:29:19.469470",
+      "timestamp": "2026-02-25T13:08:34.408471",
       "source_utp": "485",
       "target_utp": "466",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -430,7 +430,7 @@
     },
     {
       "id": 34,
-      "timestamp": "2026-02-24T14:29:19.470569",
+      "timestamp": "2026-02-25T13:08:34.409449",
       "source_utp": "507",
       "target_utp": "282",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -442,7 +442,7 @@
     },
     {
       "id": 35,
-      "timestamp": "2026-02-24T14:29:19.471778",
+      "timestamp": "2026-02-25T13:08:34.410399",
       "source_utp": "411",
       "target_utp": "282",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -454,7 +454,7 @@
     },
     {
       "id": 36,
-      "timestamp": "2026-02-24T14:29:19.473133",
+      "timestamp": "2026-02-25T13:08:34.411469",
       "source_utp": "133",
       "target_utp": "148",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -466,7 +466,7 @@
     },
     {
       "id": 37,
-      "timestamp": "2026-02-24T14:29:19.474506",
+      "timestamp": "2026-02-25T13:08:34.412478",
       "source_utp": "656",
       "target_utp": "352",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -478,7 +478,7 @@
     },
     {
       "id": 38,
-      "timestamp": "2026-02-24T14:29:19.475717",
+      "timestamp": "2026-02-25T13:08:34.413447",
       "source_utp": "145",
       "target_utp": "16",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -490,7 +490,7 @@
     },
     {
       "id": 39,
-      "timestamp": "2026-02-24T14:29:19.476852",
+      "timestamp": "2026-02-25T13:08:34.414439",
       "source_utp": "608",
       "target_utp": "621",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -502,7 +502,7 @@
     },
     {
       "id": 40,
-      "timestamp": "2026-02-24T14:29:19.478002",
+      "timestamp": "2026-02-25T13:08:34.415401",
       "source_utp": "nan",
       "target_utp": "80",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -514,7 +514,7 @@
     },
     {
       "id": 41,
-      "timestamp": "2026-02-24T14:29:19.479142",
+      "timestamp": "2026-02-25T13:08:34.416337",
       "source_utp": "484",
       "target_utp": "379",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -526,7 +526,7 @@
     },
     {
       "id": 42,
-      "timestamp": "2026-02-24T14:29:19.480352",
+      "timestamp": "2026-02-25T13:08:34.417299",
       "source_utp": "465",
       "target_utp": "555",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -538,7 +538,7 @@
     },
     {
       "id": 43,
-      "timestamp": "2026-02-24T14:29:19.481584",
+      "timestamp": "2026-02-25T13:08:34.418457",
       "source_utp": "615",
       "target_utp": "585",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -550,7 +550,7 @@
     },
     {
       "id": 44,
-      "timestamp": "2026-02-24T14:29:19.482730",
+      "timestamp": "2026-02-25T13:08:34.419495",
       "source_utp": "134",
       "target_utp": "156",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -562,7 +562,7 @@
     },
     {
       "id": 45,
-      "timestamp": "2026-02-24T14:29:19.483969",
+      "timestamp": "2026-02-25T13:08:34.420604",
       "source_utp": "673",
       "target_utp": "541",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -574,7 +574,7 @@
     },
     {
       "id": 46,
-      "timestamp": "2026-02-24T14:29:19.485201",
+      "timestamp": "2026-02-25T13:08:34.422109",
       "source_utp": "381",
       "target_utp": "732",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -586,7 +586,7 @@
     },
     {
       "id": 47,
-      "timestamp": "2026-02-24T14:29:19.486376",
+      "timestamp": "2026-02-25T13:08:34.423178",
       "source_utp": "510",
       "target_utp": "38",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -598,7 +598,7 @@
     },
     {
       "id": 48,
-      "timestamp": "2026-02-24T14:29:19.487523",
+      "timestamp": "2026-02-25T13:08:34.424241",
       "source_utp": "758",
       "target_utp": "782",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -610,7 +610,7 @@
     },
     {
       "id": 49,
-      "timestamp": "2026-02-24T14:29:19.488669",
+      "timestamp": "2026-02-25T13:08:34.425287",
       "source_utp": "757",
       "target_utp": "647",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -622,7 +622,7 @@
     },
     {
       "id": 50,
-      "timestamp": "2026-02-24T14:29:19.490147",
+      "timestamp": "2026-02-25T13:08:34.426364",
       "source_utp": "152",
       "target_utp": "672",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -634,7 +634,19 @@
     },
     {
       "id": 51,
-      "timestamp": "2026-02-24T14:29:19.491584",
+      "timestamp": "2026-02-25T13:08:34.427399",
+      "source_utp": "371",
+      "target_utp": "295",
+      "reason": "Sem RM - Fluxo Total BFS",
+      "details": {
+        "mun_id": 2100204,
+        "nm_mun": "Alcântara",
+        "flow": 130581.0
+      }
+    },
+    {
+      "id": 52,
+      "timestamp": "2026-02-25T13:08:34.428402",
       "source_utp": "720",
       "target_utp": "664",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -645,8 +657,8 @@
       }
     },
     {
-      "id": 52,
-      "timestamp": "2026-02-24T14:29:19.492854",
+      "id": 53,
+      "timestamp": "2026-02-25T13:08:34.429433",
       "source_utp": "686",
       "target_utp": "38",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -657,8 +669,8 @@
       }
     },
     {
-      "id": 53,
-      "timestamp": "2026-02-24T14:29:19.494125",
+      "id": 54,
+      "timestamp": "2026-02-25T13:08:34.430835",
       "source_utp": "136",
       "target_utp": "380",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -669,8 +681,8 @@
       }
     },
     {
-      "id": 54,
-      "timestamp": "2026-02-24T14:29:19.495406",
+      "id": 55,
+      "timestamp": "2026-02-25T13:08:34.432109",
       "source_utp": "493",
       "target_utp": "662",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -681,8 +693,8 @@
       }
     },
     {
-      "id": 55,
-      "timestamp": "2026-02-24T14:29:19.496846",
+      "id": 56,
+      "timestamp": "2026-02-25T13:08:34.433299",
       "source_utp": "150",
       "target_utp": "687",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -693,8 +705,8 @@
       }
     },
     {
-      "id": 56,
-      "timestamp": "2026-02-24T14:29:19.498194",
+      "id": 57,
+      "timestamp": "2026-02-25T13:08:34.434412",
       "source_utp": "689",
       "target_utp": "390",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -705,8 +717,8 @@
       }
     },
     {
-      "id": 57,
-      "timestamp": "2026-02-24T14:29:19.499477",
+      "id": 58,
+      "timestamp": "2026-02-25T13:08:34.435632",
       "source_utp": "655",
       "target_utp": "375",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -717,8 +729,8 @@
       }
     },
     {
-      "id": 58,
-      "timestamp": "2026-02-24T14:29:19.500778",
+      "id": 59,
+      "timestamp": "2026-02-25T13:08:34.436822",
       "source_utp": "147",
       "target_utp": "534",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -729,8 +741,8 @@
       }
     },
     {
-      "id": 59,
-      "timestamp": "2026-02-24T14:29:19.502173",
+      "id": 60,
+      "timestamp": "2026-02-25T13:08:34.437968",
       "source_utp": "785",
       "target_utp": "784",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -741,8 +753,8 @@
       }
     },
     {
-      "id": 60,
-      "timestamp": "2026-02-24T14:29:19.503477",
+      "id": 61,
+      "timestamp": "2026-02-25T13:08:34.439110",
       "source_utp": "547",
       "target_utp": "374",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -753,8 +765,8 @@
       }
     },
     {
-      "id": 61,
-      "timestamp": "2026-02-24T14:29:19.504814",
+      "id": 62,
+      "timestamp": "2026-02-25T13:08:34.440247",
       "source_utp": "573",
       "target_utp": "695",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -765,8 +777,8 @@
       }
     },
     {
-      "id": 62,
-      "timestamp": "2026-02-24T14:29:19.506318",
+      "id": 63,
+      "timestamp": "2026-02-25T13:08:34.441797",
       "source_utp": "740",
       "target_utp": "456",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -777,8 +789,8 @@
       }
     },
     {
-      "id": 63,
-      "timestamp": "2026-02-24T14:29:19.507832",
+      "id": 64,
+      "timestamp": "2026-02-25T13:08:34.443165",
       "source_utp": "132",
       "target_utp": "137",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -789,8 +801,8 @@
       }
     },
     {
-      "id": 64,
-      "timestamp": "2026-02-24T14:29:19.509251",
+      "id": 65,
+      "timestamp": "2026-02-25T13:08:34.444386",
       "source_utp": "141",
       "target_utp": "711",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -801,8 +813,8 @@
       }
     },
     {
-      "id": 65,
-      "timestamp": "2026-02-24T14:29:19.510600",
+      "id": 66,
+      "timestamp": "2026-02-25T13:08:34.445584",
       "source_utp": "565",
       "target_utp": "616",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -813,8 +825,8 @@
       }
     },
     {
-      "id": 66,
-      "timestamp": "2026-02-24T14:29:19.511992",
+      "id": 67,
+      "timestamp": "2026-02-25T13:08:34.446936",
       "source_utp": "387",
       "target_utp": "374",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -825,8 +837,8 @@
       }
     },
     {
-      "id": 67,
-      "timestamp": "2026-02-24T14:29:19.513531",
+      "id": 68,
+      "timestamp": "2026-02-25T13:08:34.448163",
       "source_utp": "528",
       "target_utp": "567",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -837,8 +849,8 @@
       }
     },
     {
-      "id": 68,
-      "timestamp": "2026-02-24T14:29:19.514962",
+      "id": 69,
+      "timestamp": "2026-02-25T13:08:34.449370",
       "source_utp": "383",
       "target_utp": "420",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -849,8 +861,8 @@
       }
     },
     {
-      "id": 69,
-      "timestamp": "2026-02-24T14:29:19.516358",
+      "id": 70,
+      "timestamp": "2026-02-25T13:08:34.450644",
       "source_utp": "238",
       "target_utp": "406",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -861,8 +873,8 @@
       }
     },
     {
-      "id": 70,
-      "timestamp": "2026-02-24T14:29:19.517752",
+      "id": 71,
+      "timestamp": "2026-02-25T13:08:34.452361",
       "source_utp": "586",
       "target_utp": "406",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -873,8 +885,8 @@
       }
     },
     {
-      "id": 71,
-      "timestamp": "2026-02-24T14:29:19.519242",
+      "id": 72,
+      "timestamp": "2026-02-25T13:08:34.453748",
       "source_utp": "470",
       "target_utp": "734",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -885,8 +897,8 @@
       }
     },
     {
-      "id": 72,
-      "timestamp": "2026-02-24T14:29:19.520654",
+      "id": 73,
+      "timestamp": "2026-02-25T13:08:34.455042",
       "source_utp": "579",
       "target_utp": "734",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -897,8 +909,8 @@
       }
     },
     {
-      "id": 73,
-      "timestamp": "2026-02-24T14:29:19.522531",
+      "id": 74,
+      "timestamp": "2026-02-25T13:08:34.456370",
       "source_utp": "452",
       "target_utp": "500",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -909,8 +921,8 @@
       }
     },
     {
-      "id": 74,
-      "timestamp": "2026-02-24T14:29:19.524276",
+      "id": 75,
+      "timestamp": "2026-02-25T13:08:34.457696",
       "source_utp": "509",
       "target_utp": "566",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -921,8 +933,8 @@
       }
     },
     {
-      "id": 75,
-      "timestamp": "2026-02-24T14:29:19.525846",
+      "id": 76,
+      "timestamp": "2026-02-25T13:08:34.458982",
       "source_utp": "563",
       "target_utp": "734",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -933,8 +945,8 @@
       }
     },
     {
-      "id": 76,
-      "timestamp": "2026-02-24T14:29:19.527310",
+      "id": 77,
+      "timestamp": "2026-02-25T13:08:34.460271",
       "source_utp": "613",
       "target_utp": "394",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -945,8 +957,8 @@
       }
     },
     {
-      "id": 77,
-      "timestamp": "2026-02-24T14:29:19.528770",
+      "id": 78,
+      "timestamp": "2026-02-25T13:08:34.461929",
       "source_utp": "416",
       "target_utp": "610",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -957,8 +969,8 @@
       }
     },
     {
-      "id": 78,
-      "timestamp": "2026-02-24T14:29:19.530272",
+      "id": 79,
+      "timestamp": "2026-02-25T13:08:34.463403",
       "source_utp": "682",
       "target_utp": "700",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -969,8 +981,8 @@
       }
     },
     {
-      "id": 79,
-      "timestamp": "2026-02-24T14:29:19.531820",
+      "id": 80,
+      "timestamp": "2026-02-25T13:08:34.464746",
       "source_utp": "650",
       "target_utp": "375",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -981,8 +993,8 @@
       }
     },
     {
-      "id": 80,
-      "timestamp": "2026-02-24T14:29:19.533304",
+      "id": 81,
+      "timestamp": "2026-02-25T13:08:34.466044",
       "source_utp": "382",
       "target_utp": "692",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -993,8 +1005,8 @@
       }
     },
     {
-      "id": 81,
-      "timestamp": "2026-02-24T14:29:19.534752",
+      "id": 82,
+      "timestamp": "2026-02-25T13:08:34.467421",
       "source_utp": "566",
       "target_utp": "692",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -1005,8 +1017,8 @@
       }
     },
     {
-      "id": 82,
-      "timestamp": "2026-02-24T14:29:19.536214",
+      "id": 83,
+      "timestamp": "2026-02-25T13:08:34.468906",
       "source_utp": "715",
       "target_utp": "692",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -1017,8 +1029,8 @@
       }
     },
     {
-      "id": 83,
-      "timestamp": "2026-02-24T14:29:19.537734",
+      "id": 84,
+      "timestamp": "2026-02-25T13:08:34.470276",
       "source_utp": "632",
       "target_utp": "282",
       "reason": "Sem RM - REGIC Fallback",
@@ -1029,8 +1041,8 @@
       }
     },
     {
-      "id": 84,
-      "timestamp": "2026-02-24T14:29:19.539513",
+      "id": 85,
+      "timestamp": "2026-02-25T13:08:34.471952",
       "source_utp": "653",
       "target_utp": "492",
       "reason": "Sem RM - REGIC Fallback",
@@ -1041,8 +1053,8 @@
       }
     },
     {
-      "id": 85,
-      "timestamp": "2026-02-24T14:29:19.541185",
+      "id": 86,
+      "timestamp": "2026-02-25T13:08:34.473404",
       "source_utp": "742",
       "target_utp": "734",
       "reason": "Sem RM - REGIC Fallback",
@@ -1053,8 +1065,8 @@
       }
     },
     {
-      "id": 86,
-      "timestamp": "2026-02-24T14:29:19.542903",
+      "id": 87,
+      "timestamp": "2026-02-25T13:08:34.474820",
       "source_utp": "679",
       "target_utp": "NOVA6",
       "reason": "Sem RM - REGIC Fallback",
@@ -1065,8 +1077,8 @@
       }
     },
     {
-      "id": 87,
-      "timestamp": "2026-02-24T14:29:22.133580",
+      "id": 88,
+      "timestamp": "2026-02-25T13:08:36.899195",
       "source_utp": "152",
       "target_utp": "672",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -1077,8 +1089,8 @@
       }
     },
     {
-      "id": 88,
-      "timestamp": "2026-02-24T14:29:22.135692",
+      "id": 89,
+      "timestamp": "2026-02-25T13:08:36.900964",
       "source_utp": "786",
       "target_utp": "782",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -1089,8 +1101,8 @@
       }
     },
     {
-      "id": 89,
-      "timestamp": "2026-02-24T14:29:22.137655",
+      "id": 90,
+      "timestamp": "2026-02-25T13:08:36.902534",
       "source_utp": "677",
       "target_utp": "80",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -1101,8 +1113,8 @@
       }
     },
     {
-      "id": 90,
-      "timestamp": "2026-02-24T14:29:22.139367",
+      "id": 91,
+      "timestamp": "2026-02-25T13:08:36.904025",
       "source_utp": "553",
       "target_utp": "734",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -1113,8 +1125,8 @@
       }
     },
     {
-      "id": 91,
-      "timestamp": "2026-02-24T14:29:22.141215",
+      "id": 92,
+      "timestamp": "2026-02-25T13:08:36.905497",
       "source_utp": "566",
       "target_utp": "692",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -1125,8 +1137,8 @@
       }
     },
     {
-      "id": 92,
-      "timestamp": "2026-02-24T14:29:22.143148",
+      "id": 93,
+      "timestamp": "2026-02-25T13:08:36.907024",
       "source_utp": "577",
       "target_utp": "394",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -1137,8 +1149,8 @@
       }
     },
     {
-      "id": 93,
-      "timestamp": "2026-02-24T14:29:22.145033",
+      "id": 94,
+      "timestamp": "2026-02-25T13:08:36.908509",
       "source_utp": "403",
       "target_utp": "700",
       "reason": "Sem RM - Fluxo Total BFS",
@@ -1149,8 +1161,8 @@
       }
     },
     {
-      "id": 94,
-      "timestamp": "2026-02-24T14:29:22.147477",
+      "id": 95,
+      "timestamp": "2026-02-25T13:08:36.910086",
       "source_utp": "583",
       "target_utp": "492",
       "reason": "Sem RM - REGIC Fallback",
@@ -1161,8 +1173,8 @@
       }
     },
     {
-      "id": 95,
-      "timestamp": "2026-02-24T14:54:57.959702",
+      "id": 96,
+      "timestamp": "2026-02-25T13:33:42.675938",
       "source_utp": "15",
       "target_utp": "751",
       "reason": "Isolated Municipality Resolution",
@@ -1175,8 +1187,8 @@
       }
     },
     {
-      "id": 96,
-      "timestamp": "2026-02-24T14:54:57.971481",
+      "id": 97,
+      "timestamp": "2026-02-25T13:33:42.686572",
       "source_utp": "15",
       "target_utp": "336",
       "reason": "Isolated Municipality Resolution",
@@ -1189,8 +1201,8 @@
       }
     },
     {
-      "id": 97,
-      "timestamp": "2026-02-24T14:54:57.982302",
+      "id": 98,
+      "timestamp": "2026-02-25T13:33:42.696655",
       "source_utp": "15",
       "target_utp": "336",
       "reason": "Isolated Municipality Resolution",
@@ -1203,8 +1215,8 @@
       }
     },
     {
-      "id": 98,
-      "timestamp": "2026-02-24T14:54:57.993169",
+      "id": 99,
+      "timestamp": "2026-02-25T13:33:42.707168",
       "source_utp": "21",
       "target_utp": "352",
       "reason": "Isolated Municipality Resolution",
@@ -1217,8 +1229,8 @@
       }
     },
     {
-      "id": 99,
-      "timestamp": "2026-02-24T14:54:58.004905",
+      "id": 100,
+      "timestamp": "2026-02-25T13:33:42.717516",
       "source_utp": "32",
       "target_utp": "681",
       "reason": "Isolated Municipality Resolution",
@@ -1231,8 +1243,8 @@
       }
     },
     {
-      "id": 100,
-      "timestamp": "2026-02-24T14:54:58.018468",
+      "id": 101,
+      "timestamp": "2026-02-25T13:33:42.727651",
       "source_utp": "32",
       "target_utp": "681",
       "reason": "Isolated Municipality Resolution",
@@ -1245,10 +1257,10 @@
       }
     },
     {
-      "id": 101,
-      "timestamp": "2026-02-24T14:54:58.032144",
+      "id": 102,
+      "timestamp": "2026-02-25T13:33:42.738235",
       "source_utp": "49",
-      "target_utp": "58",
+      "target_utp": "68",
       "reason": "Isolated Municipality Resolution",
       "details": {
         "mun_id": 3204807,
@@ -1259,8 +1271,8 @@
       }
     },
     {
-      "id": 102,
-      "timestamp": "2026-02-24T14:54:58.046079",
+      "id": 103,
+      "timestamp": "2026-02-25T13:33:42.748776",
       "source_utp": "50",
       "target_utp": "40",
       "reason": "Isolated Municipality Resolution",
@@ -1273,8 +1285,8 @@
       }
     },
     {
-      "id": 103,
-      "timestamp": "2026-02-24T14:54:58.065118",
+      "id": 104,
+      "timestamp": "2026-02-25T13:33:42.763756",
       "source_utp": "50",
       "target_utp": "40",
       "reason": "Isolated Municipality Resolution",
@@ -1287,8 +1299,8 @@
       }
     },
     {
-      "id": 104,
-      "timestamp": "2026-02-24T14:54:58.078446",
+      "id": 105,
+      "timestamp": "2026-02-25T13:33:42.774106",
       "source_utp": "67",
       "target_utp": "344",
       "reason": "Isolated Municipality Resolution",
@@ -1301,8 +1313,8 @@
       }
     },
     {
-      "id": 105,
-      "timestamp": "2026-02-24T14:54:58.091680",
+      "id": 106,
+      "timestamp": "2026-02-25T13:33:42.784789",
       "source_utp": "72",
       "target_utp": "69",
       "reason": "Isolated Municipality Resolution",
@@ -1315,8 +1327,8 @@
       }
     },
     {
-      "id": 106,
-      "timestamp": "2026-02-24T14:54:58.107185",
+      "id": 107,
+      "timestamp": "2026-02-25T13:33:42.800876",
       "source_utp": "86",
       "target_utp": "601",
       "reason": "Isolated Municipality Resolution",
@@ -1329,8 +1341,8 @@
       }
     },
     {
-      "id": 107,
-      "timestamp": "2026-02-24T14:54:58.120975",
+      "id": 108,
+      "timestamp": "2026-02-25T13:33:42.812413",
       "source_utp": "626",
       "target_utp": "52",
       "reason": "Isolated Municipality Resolution",
@@ -1343,8 +1355,8 @@
       }
     },
     {
-      "id": 108,
-      "timestamp": "2026-02-24T14:54:58.280480",
+      "id": 109,
+      "timestamp": "2026-02-25T13:33:42.833119",
       "source_utp": "99",
       "target_utp": "65",
       "reason": "Isolated Municipality Resolution",
@@ -1357,8 +1369,8 @@
       }
     },
     {
-      "id": 109,
-      "timestamp": "2026-02-24T14:54:58.542662",
+      "id": 110,
+      "timestamp": "2026-02-25T13:33:42.859686",
       "source_utp": "99",
       "target_utp": "65",
       "reason": "Isolated Municipality Resolution",
@@ -1371,8 +1383,8 @@
       }
     },
     {
-      "id": 110,
-      "timestamp": "2026-02-24T14:54:58.693122",
+      "id": 111,
+      "timestamp": "2026-02-25T13:33:42.880206",
       "source_utp": "109",
       "target_utp": "617",
       "reason": "Isolated Municipality Resolution",
@@ -1385,8 +1397,8 @@
       }
     },
     {
-      "id": 111,
-      "timestamp": "2026-02-24T14:54:58.847378",
+      "id": 112,
+      "timestamp": "2026-02-25T13:33:42.894009",
       "source_utp": "194",
       "target_utp": "298",
       "reason": "Isolated Municipality Resolution",
@@ -1399,8 +1411,8 @@
       }
     },
     {
-      "id": 112,
-      "timestamp": "2026-02-24T14:54:58.926696",
+      "id": 113,
+      "timestamp": "2026-02-25T13:33:42.906421",
       "source_utp": "390",
       "target_utp": "619",
       "reason": "Isolated Municipality Resolution",
@@ -1413,8 +1425,8 @@
       }
     },
     {
-      "id": 113,
-      "timestamp": "2026-02-24T14:54:59.169595",
+      "id": 114,
+      "timestamp": "2026-02-25T13:33:42.939433",
       "source_utp": "118",
       "target_utp": "214",
       "reason": "Isolated Municipality Resolution",
@@ -1427,8 +1439,8 @@
       }
     },
     {
-      "id": 114,
-      "timestamp": "2026-02-24T14:54:59.179369",
+      "id": 115,
+      "timestamp": "2026-02-25T13:33:42.949357",
       "source_utp": "118",
       "target_utp": "157",
       "reason": "Isolated Municipality Resolution",
@@ -1441,8 +1453,8 @@
       }
     },
     {
-      "id": 115,
-      "timestamp": "2026-02-24T14:54:59.189653",
+      "id": 116,
+      "timestamp": "2026-02-25T13:33:42.959814",
       "source_utp": "118",
       "target_utp": "157",
       "reason": "Isolated Municipality Resolution",
@@ -1455,8 +1467,8 @@
       }
     },
     {
-      "id": 116,
-      "timestamp": "2026-02-24T14:54:59.200345",
+      "id": 117,
+      "timestamp": "2026-02-25T13:33:42.970404",
       "source_utp": "118",
       "target_utp": "157",
       "reason": "Isolated Municipality Resolution",
@@ -1469,8 +1481,8 @@
       }
     },
     {
-      "id": 117,
-      "timestamp": "2026-02-24T14:54:59.211177",
+      "id": 118,
+      "timestamp": "2026-02-25T13:33:42.980614",
       "source_utp": "118",
       "target_utp": "157",
       "reason": "Isolated Municipality Resolution",
@@ -1483,8 +1495,8 @@
       }
     },
     {
-      "id": 118,
-      "timestamp": "2026-02-24T14:54:59.221713",
+      "id": 119,
+      "timestamp": "2026-02-25T13:33:42.990886",
       "source_utp": "476",
       "target_utp": "20",
       "reason": "Isolated Municipality Resolution",
@@ -1497,8 +1509,8 @@
       }
     },
     {
-      "id": 119,
-      "timestamp": "2026-02-24T14:54:59.231622",
+      "id": 120,
+      "timestamp": "2026-02-25T13:33:43.001314",
       "source_utp": "476",
       "target_utp": "20",
       "reason": "Isolated Municipality Resolution",
@@ -1511,8 +1523,8 @@
       }
     },
     {
-      "id": 120,
-      "timestamp": "2026-02-24T14:54:59.242059",
+      "id": 121,
+      "timestamp": "2026-02-25T13:33:43.011094",
       "source_utp": "476",
       "target_utp": "20",
       "reason": "Isolated Municipality Resolution",
@@ -1525,8 +1537,8 @@
       }
     },
     {
-      "id": 121,
-      "timestamp": "2026-02-24T14:54:59.253345",
+      "id": 122,
+      "timestamp": "2026-02-25T13:33:43.020877",
       "source_utp": "476",
       "target_utp": "20",
       "reason": "Isolated Municipality Resolution",
@@ -1539,8 +1551,8 @@
       }
     },
     {
-      "id": 122,
-      "timestamp": "2026-02-24T14:54:59.267167",
+      "id": 123,
+      "timestamp": "2026-02-25T13:33:43.030515",
       "source_utp": "476",
       "target_utp": "20",
       "reason": "Isolated Municipality Resolution",
@@ -1553,8 +1565,8 @@
       }
     },
     {
-      "id": 123,
-      "timestamp": "2026-02-24T14:54:59.281095",
+      "id": 124,
+      "timestamp": "2026-02-25T13:33:43.040696",
       "source_utp": "476",
       "target_utp": "20",
       "reason": "Isolated Municipality Resolution",
@@ -1567,8 +1579,8 @@
       }
     },
     {
-      "id": 124,
-      "timestamp": "2026-02-24T14:54:59.294890",
+      "id": 125,
+      "timestamp": "2026-02-25T13:33:43.050724",
       "source_utp": "476",
       "target_utp": "20",
       "reason": "Isolated Municipality Resolution",
@@ -1581,8 +1593,8 @@
       }
     },
     {
-      "id": 125,
-      "timestamp": "2026-02-24T14:54:59.309071",
+      "id": 126,
+      "timestamp": "2026-02-25T13:33:43.060991",
       "source_utp": "249",
       "target_utp": "20",
       "reason": "Isolated Municipality Resolution",
@@ -1595,8 +1607,8 @@
       }
     },
     {
-      "id": 126,
-      "timestamp": "2026-02-24T14:54:59.323618",
+      "id": 127,
+      "timestamp": "2026-02-25T13:33:43.071396",
       "source_utp": "584",
       "target_utp": "231",
       "reason": "Isolated Municipality Resolution",
@@ -1609,8 +1621,8 @@
       }
     },
     {
-      "id": 127,
-      "timestamp": "2026-02-24T14:54:59.337747",
+      "id": 128,
+      "timestamp": "2026-02-25T13:33:43.081452",
       "source_utp": "307",
       "target_utp": "20",
       "reason": "Isolated Municipality Resolution",
@@ -1623,8 +1635,8 @@
       }
     },
     {
-      "id": 128,
-      "timestamp": "2026-02-24T14:54:59.351925",
+      "id": 129,
+      "timestamp": "2026-02-25T13:33:43.091463",
       "source_utp": "496",
       "target_utp": "295",
       "reason": "Isolated Municipality Resolution",
@@ -1637,8 +1649,8 @@
       }
     },
     {
-      "id": 129,
-      "timestamp": "2026-02-24T14:54:59.366313",
+      "id": 130,
+      "timestamp": "2026-02-25T13:33:43.101768",
       "source_utp": "681",
       "target_utp": "32",
       "reason": "Isolated Municipality Resolution",
@@ -1651,8 +1663,8 @@
       }
     },
     {
-      "id": 130,
-      "timestamp": "2026-02-24T14:54:59.380700",
+      "id": 131,
+      "timestamp": "2026-02-25T13:33:43.111753",
       "source_utp": "412",
       "target_utp": "38",
       "reason": "Isolated Municipality Resolution",
@@ -1665,8 +1677,8 @@
       }
     },
     {
-      "id": 131,
-      "timestamp": "2026-02-24T14:54:59.394618",
+      "id": 132,
+      "timestamp": "2026-02-25T13:33:43.121453",
       "source_utp": "412",
       "target_utp": "38",
       "reason": "Isolated Municipality Resolution",
@@ -1679,8 +1691,8 @@
       }
     },
     {
-      "id": 132,
-      "timestamp": "2026-02-24T14:54:59.408932",
+      "id": 133,
+      "timestamp": "2026-02-25T13:33:43.131762",
       "source_utp": "176",
       "target_utp": "218",
       "reason": "Isolated Municipality Resolution",
@@ -1693,8 +1705,8 @@
       }
     },
     {
-      "id": 133,
-      "timestamp": "2026-02-24T14:54:59.420846",
+      "id": 134,
+      "timestamp": "2026-02-25T13:33:43.142115",
       "source_utp": "176",
       "target_utp": "552",
       "reason": "Isolated Municipality Resolution",
@@ -1707,8 +1719,8 @@
       }
     },
     {
-      "id": 134,
-      "timestamp": "2026-02-24T14:54:59.432154",
+      "id": 135,
+      "timestamp": "2026-02-25T13:33:43.152227",
       "source_utp": "633",
       "target_utp": "255",
       "reason": "Isolated Municipality Resolution",
@@ -1721,8 +1733,8 @@
       }
     },
     {
-      "id": 135,
-      "timestamp": "2026-02-24T14:54:59.443682",
+      "id": 136,
+      "timestamp": "2026-02-25T13:33:43.162348",
       "source_utp": "633",
       "target_utp": "255",
       "reason": "Isolated Municipality Resolution",
@@ -1735,8 +1747,8 @@
       }
     },
     {
-      "id": 136,
-      "timestamp": "2026-02-24T14:54:59.455576",
+      "id": 137,
+      "timestamp": "2026-02-25T13:33:43.173151",
       "source_utp": "703",
       "target_utp": "253",
       "reason": "Isolated Municipality Resolution",
@@ -1749,8 +1761,8 @@
       }
     },
     {
-      "id": 137,
-      "timestamp": "2026-02-24T14:54:59.467049",
+      "id": 138,
+      "timestamp": "2026-02-25T13:33:43.182914",
       "source_utp": "703",
       "target_utp": "255",
       "reason": "Isolated Municipality Resolution",
@@ -1763,8 +1775,8 @@
       }
     },
     {
-      "id": 138,
-      "timestamp": "2026-02-24T14:54:59.478271",
+      "id": 139,
+      "timestamp": "2026-02-25T13:33:43.192770",
       "source_utp": "703",
       "target_utp": "617",
       "reason": "Isolated Municipality Resolution",
@@ -1777,8 +1789,8 @@
       }
     },
     {
-      "id": 139,
-      "timestamp": "2026-02-24T14:54:59.489583",
+      "id": 140,
+      "timestamp": "2026-02-25T13:33:43.237945",
       "source_utp": "192",
       "target_utp": "503",
       "reason": "Isolated Municipality Resolution",
@@ -1791,8 +1803,8 @@
       }
     },
     {
-      "id": 140,
-      "timestamp": "2026-02-24T14:54:59.500915",
+      "id": 141,
+      "timestamp": "2026-02-25T13:33:43.252179",
       "source_utp": "192",
       "target_utp": "503",
       "reason": "Isolated Municipality Resolution",
@@ -1805,8 +1817,8 @@
       }
     },
     {
-      "id": 141,
-      "timestamp": "2026-02-24T14:54:59.513418",
+      "id": 142,
+      "timestamp": "2026-02-25T13:33:43.263111",
       "source_utp": "751",
       "target_utp": "336",
       "reason": "Isolated Municipality Resolution",
@@ -1819,8 +1831,8 @@
       }
     },
     {
-      "id": 142,
-      "timestamp": "2026-02-24T14:54:59.525171",
+      "id": 143,
+      "timestamp": "2026-02-25T13:33:43.273700",
       "source_utp": "751",
       "target_utp": "336",
       "reason": "Isolated Municipality Resolution",
@@ -1833,8 +1845,8 @@
       }
     },
     {
-      "id": 143,
-      "timestamp": "2026-02-24T14:54:59.554978",
+      "id": 144,
+      "timestamp": "2026-02-25T13:33:43.299350",
       "source_utp": "693",
       "target_utp": "643",
       "reason": "Isolated Municipality Resolution",
@@ -1847,8 +1859,8 @@
       }
     },
     {
-      "id": 144,
-      "timestamp": "2026-02-24T14:54:59.566709",
+      "id": 145,
+      "timestamp": "2026-02-25T13:33:43.310258",
       "source_utp": "214",
       "target_utp": "58",
       "reason": "Isolated Municipality Resolution",
@@ -1861,8 +1873,8 @@
       }
     },
     {
-      "id": 145,
-      "timestamp": "2026-02-24T14:54:59.577876",
+      "id": 146,
+      "timestamp": "2026-02-25T13:33:43.321015",
       "source_utp": "NOVA25",
       "target_utp": "685",
       "reason": "Isolated Municipality Resolution",
@@ -1875,8 +1887,8 @@
       }
     },
     {
-      "id": 146,
-      "timestamp": "2026-02-24T14:54:59.589509",
+      "id": 147,
+      "timestamp": "2026-02-25T13:33:43.331717",
       "source_utp": "NOVA25",
       "target_utp": "685",
       "reason": "Isolated Municipality Resolution",
@@ -1889,8 +1901,8 @@
       }
     },
     {
-      "id": 147,
-      "timestamp": "2026-02-24T14:54:59.600440",
+      "id": 148,
+      "timestamp": "2026-02-25T13:33:43.342377",
       "source_utp": "NOVA25",
       "target_utp": "685",
       "reason": "Isolated Municipality Resolution",
@@ -1903,8 +1915,8 @@
       }
     },
     {
-      "id": 148,
-      "timestamp": "2026-02-24T14:54:59.611998",
+      "id": 149,
+      "timestamp": "2026-02-25T13:33:43.353383",
       "source_utp": "NOVA25",
       "target_utp": "685",
       "reason": "Isolated Municipality Resolution",
@@ -1917,8 +1929,8 @@
       }
     },
     {
-      "id": 149,
-      "timestamp": "2026-02-24T14:54:59.623245",
+      "id": 150,
+      "timestamp": "2026-02-25T13:33:43.364257",
       "source_utp": "NOVA25",
       "target_utp": "685",
       "reason": "Isolated Municipality Resolution",
@@ -1931,8 +1943,8 @@
       }
     },
     {
-      "id": 150,
-      "timestamp": "2026-02-24T14:54:59.636731",
+      "id": 151,
+      "timestamp": "2026-02-25T13:33:43.374283",
       "source_utp": "NOVA25",
       "target_utp": "111",
       "reason": "Isolated Municipality Resolution",
@@ -1945,8 +1957,8 @@
       }
     },
     {
-      "id": 151,
-      "timestamp": "2026-02-24T14:54:59.647872",
+      "id": 152,
+      "timestamp": "2026-02-25T13:33:43.383851",
       "source_utp": "NOVA25",
       "target_utp": "685",
       "reason": "Isolated Municipality Resolution",
@@ -1959,8 +1971,8 @@
       }
     },
     {
-      "id": 152,
-      "timestamp": "2026-02-24T14:54:59.659139",
+      "id": 153,
+      "timestamp": "2026-02-25T13:33:43.393493",
       "source_utp": "NOVA25",
       "target_utp": "111",
       "reason": "Isolated Municipality Resolution",
@@ -1973,8 +1985,8 @@
       }
     },
     {
-      "id": 153,
-      "timestamp": "2026-02-24T14:54:59.676663",
+      "id": 154,
+      "timestamp": "2026-02-25T13:33:43.408934",
       "source_utp": "NOVA24",
       "target_utp": "220",
       "reason": "Isolated Municipality Resolution",
@@ -1987,8 +1999,8 @@
       }
     },
     {
-      "id": 154,
-      "timestamp": "2026-02-24T14:54:59.688818",
+      "id": 155,
+      "timestamp": "2026-02-25T13:33:43.419413",
       "source_utp": "302",
       "target_utp": "222",
       "reason": "Isolated Municipality Resolution",
@@ -2001,8 +2013,8 @@
       }
     },
     {
-      "id": 155,
-      "timestamp": "2026-02-24T14:54:59.699963",
+      "id": 156,
+      "timestamp": "2026-02-25T13:33:43.429305",
       "source_utp": "302",
       "target_utp": "99",
       "reason": "Isolated Municipality Resolution",
@@ -2015,8 +2027,8 @@
       }
     },
     {
-      "id": 156,
-      "timestamp": "2026-02-24T14:54:59.711760",
+      "id": 157,
+      "timestamp": "2026-02-25T13:33:43.439293",
       "source_utp": "310",
       "target_utp": "205",
       "reason": "Isolated Municipality Resolution",
@@ -2029,8 +2041,8 @@
       }
     },
     {
-      "id": 157,
-      "timestamp": "2026-02-24T14:54:59.729589",
+      "id": 158,
+      "timestamp": "2026-02-25T13:33:43.451119",
       "source_utp": "230",
       "target_utp": "40",
       "reason": "Isolated Municipality Resolution",
@@ -2043,8 +2055,8 @@
       }
     },
     {
-      "id": 158,
-      "timestamp": "2026-02-24T14:55:00.381017",
+      "id": 159,
+      "timestamp": "2026-02-25T13:33:43.560231",
       "source_utp": "233",
       "target_utp": "211",
       "reason": "Isolated Municipality Resolution",
@@ -2057,8 +2069,8 @@
       }
     },
     {
-      "id": 159,
-      "timestamp": "2026-02-24T14:55:00.392275",
+      "id": 160,
+      "timestamp": "2026-02-25T13:33:43.572503",
       "source_utp": "233",
       "target_utp": "235",
       "reason": "Isolated Municipality Resolution",
@@ -2071,10 +2083,10 @@
       }
     },
     {
-      "id": 160,
-      "timestamp": "2026-02-24T14:55:00.404214",
+      "id": 161,
+      "timestamp": "2026-02-25T13:33:43.590469",
       "source_utp": "236",
-      "target_utp": "323",
+      "target_utp": "102",
       "reason": "Isolated Municipality Resolution",
       "details": {
         "mun_id": 3139706,
@@ -2085,8 +2097,8 @@
       }
     },
     {
-      "id": 161,
-      "timestamp": "2026-02-24T14:55:00.415641",
+      "id": 162,
+      "timestamp": "2026-02-25T13:33:43.601285",
       "source_utp": "595",
       "target_utp": "321",
       "reason": "Isolated Municipality Resolution",
@@ -2099,8 +2111,8 @@
       }
     },
     {
-      "id": 162,
-      "timestamp": "2026-02-24T14:55:00.428734",
+      "id": 163,
+      "timestamp": "2026-02-25T13:33:43.611664",
       "source_utp": "240",
       "target_utp": "505",
       "reason": "Isolated Municipality Resolution",
@@ -2113,8 +2125,8 @@
       }
     },
     {
-      "id": 163,
-      "timestamp": "2026-02-24T14:55:00.444078",
+      "id": 164,
+      "timestamp": "2026-02-25T13:33:43.626420",
       "source_utp": "240",
       "target_utp": "505",
       "reason": "Isolated Municipality Resolution",
@@ -2127,8 +2139,8 @@
       }
     },
     {
-      "id": 164,
-      "timestamp": "2026-02-24T14:55:00.456381",
+      "id": 165,
+      "timestamp": "2026-02-25T13:33:43.637954",
       "source_utp": "368",
       "target_utp": "253",
       "reason": "Isolated Municipality Resolution",
@@ -2141,10 +2153,10 @@
       }
     },
     {
-      "id": 165,
-      "timestamp": "2026-02-24T14:55:00.469760",
+      "id": 166,
+      "timestamp": "2026-02-25T13:33:43.650676",
       "source_utp": "266",
-      "target_utp": "92",
+      "target_utp": "315",
       "reason": "Isolated Municipality Resolution",
       "details": {
         "mun_id": 3200904,
@@ -2155,8 +2167,8 @@
       }
     },
     {
-      "id": 166,
-      "timestamp": "2026-02-24T14:55:00.482020",
+      "id": 167,
+      "timestamp": "2026-02-25T13:33:43.662465",
       "source_utp": "266",
       "target_utp": "335",
       "reason": "Isolated Municipality Resolution",
@@ -2169,10 +2181,10 @@
       }
     },
     {
-      "id": 167,
-      "timestamp": "2026-02-24T14:55:00.494364",
+      "id": 168,
+      "timestamp": "2026-02-25T13:33:43.676128",
       "source_utp": "266",
-      "target_utp": "335",
+      "target_utp": "118",
       "reason": "Isolated Municipality Resolution",
       "details": {
         "mun_id": 3139607,
@@ -2183,8 +2195,8 @@
       }
     },
     {
-      "id": 168,
-      "timestamp": "2026-02-24T14:55:00.516506",
+      "id": 169,
+      "timestamp": "2026-02-25T13:33:43.698144",
       "source_utp": "268",
       "target_utp": "126",
       "reason": "Isolated Municipality Resolution",
@@ -2197,8 +2209,8 @@
       }
     },
     {
-      "id": 169,
-      "timestamp": "2026-02-24T14:55:00.539518",
+      "id": 170,
+      "timestamp": "2026-02-25T13:33:43.720853",
       "source_utp": "286",
       "target_utp": "NOVA1",
       "reason": "Isolated Municipality Resolution",
@@ -2211,8 +2223,8 @@
       }
     },
     {
-      "id": 170,
-      "timestamp": "2026-02-24T14:55:00.557940",
+      "id": 171,
+      "timestamp": "2026-02-25T13:33:43.740971",
       "source_utp": "350",
       "target_utp": "126",
       "reason": "Isolated Municipality Resolution",
@@ -2225,8 +2237,8 @@
       }
     },
     {
-      "id": 171,
-      "timestamp": "2026-02-24T14:55:00.573364",
+      "id": 172,
+      "timestamp": "2026-02-25T13:33:43.753841",
       "source_utp": "292",
       "target_utp": "82",
       "reason": "Isolated Municipality Resolution",
@@ -2239,8 +2251,8 @@
       }
     },
     {
-      "id": 172,
-      "timestamp": "2026-02-24T14:55:00.586475",
+      "id": 173,
+      "timestamp": "2026-02-25T13:33:43.766007",
       "source_utp": "197",
       "target_utp": "218",
       "reason": "Isolated Municipality Resolution",
@@ -2253,8 +2265,8 @@
       }
     },
     {
-      "id": 173,
-      "timestamp": "2026-02-24T14:55:00.602596",
+      "id": 174,
+      "timestamp": "2026-02-25T13:33:43.780276",
       "source_utp": "299",
       "target_utp": "711",
       "reason": "Isolated Municipality Resolution",
@@ -2267,8 +2279,8 @@
       }
     },
     {
-      "id": 174,
-      "timestamp": "2026-02-24T14:55:00.632291",
+      "id": 175,
+      "timestamp": "2026-02-25T13:33:43.810001",
       "source_utp": "315",
       "target_utp": "118",
       "reason": "Isolated Municipality Resolution",
@@ -2281,8 +2293,8 @@
       }
     },
     {
-      "id": 175,
-      "timestamp": "2026-02-24T14:55:00.646892",
+      "id": 176,
+      "timestamp": "2026-02-25T13:33:43.821311",
       "source_utp": "424",
       "target_utp": "38",
       "reason": "Isolated Municipality Resolution",
@@ -2295,8 +2307,8 @@
       }
     },
     {
-      "id": 176,
-      "timestamp": "2026-02-24T14:55:00.659032",
+      "id": 177,
+      "timestamp": "2026-02-25T13:33:43.832681",
       "source_utp": "424",
       "target_utp": "38",
       "reason": "Isolated Municipality Resolution",
@@ -2309,8 +2321,8 @@
       }
     },
     {
-      "id": 177,
-      "timestamp": "2026-02-24T14:55:00.672155",
+      "id": 178,
+      "timestamp": "2026-02-25T13:33:43.844047",
       "source_utp": "739",
       "target_utp": "7",
       "reason": "Isolated Municipality Resolution",
@@ -2323,8 +2335,8 @@
       }
     },
     {
-      "id": 178,
-      "timestamp": "2026-02-24T14:55:00.684347",
+      "id": 179,
+      "timestamp": "2026-02-25T13:33:43.854336",
       "source_utp": "623",
       "target_utp": "539",
       "reason": "Isolated Municipality Resolution",
@@ -2337,8 +2349,8 @@
       }
     },
     {
-      "id": 179,
-      "timestamp": "2026-02-24T14:55:00.696619",
+      "id": 180,
+      "timestamp": "2026-02-25T13:33:43.864691",
       "source_utp": "623",
       "target_utp": "539",
       "reason": "Isolated Municipality Resolution",
@@ -2351,8 +2363,8 @@
       }
     },
     {
-      "id": 180,
-      "timestamp": "2026-02-24T14:55:00.709676",
+      "id": 181,
+      "timestamp": "2026-02-25T13:33:43.874918",
       "source_utp": "623",
       "target_utp": "538",
       "reason": "Isolated Municipality Resolution",
@@ -2365,10 +2377,10 @@
       }
     },
     {
-      "id": 181,
-      "timestamp": "2026-02-24T14:55:00.722891",
+      "id": 182,
+      "timestamp": "2026-02-25T13:33:43.885335",
       "source_utp": "401",
-      "target_utp": "29",
+      "target_utp": "227",
       "reason": "Isolated Municipality Resolution",
       "details": {
         "mun_id": 3168200,
@@ -2379,10 +2391,10 @@
       }
     },
     {
-      "id": 182,
-      "timestamp": "2026-02-24T14:55:00.735235",
+      "id": 183,
+      "timestamp": "2026-02-25T13:33:43.896248",
       "source_utp": "401",
-      "target_utp": "29",
+      "target_utp": "227",
       "reason": "Isolated Municipality Resolution",
       "details": {
         "mun_id": 3141306,
@@ -2393,8 +2405,8 @@
       }
     },
     {
-      "id": 183,
-      "timestamp": "2026-02-24T14:55:00.747914",
+      "id": 184,
+      "timestamp": "2026-02-25T13:33:43.906813",
       "source_utp": "417",
       "target_utp": "218",
       "reason": "Isolated Municipality Resolution",
@@ -2407,8 +2419,8 @@
       }
     },
     {
-      "id": 184,
-      "timestamp": "2026-02-24T14:55:00.760371",
+      "id": 185,
+      "timestamp": "2026-02-25T13:33:43.917299",
       "source_utp": "417",
       "target_utp": "218",
       "reason": "Isolated Municipality Resolution",
@@ -2421,8 +2433,8 @@
       }
     },
     {
-      "id": 185,
-      "timestamp": "2026-02-24T14:55:00.772505",
+      "id": 186,
+      "timestamp": "2026-02-25T13:33:43.928191",
       "source_utp": "358",
       "target_utp": "102",
       "reason": "Isolated Municipality Resolution",
@@ -2435,8 +2447,8 @@
       }
     },
     {
-      "id": 186,
-      "timestamp": "2026-02-24T14:55:00.787305",
+      "id": 187,
+      "timestamp": "2026-02-25T13:33:43.939380",
       "source_utp": "358",
       "target_utp": "195",
       "reason": "Isolated Municipality Resolution",
@@ -2449,8 +2461,8 @@
       }
     },
     {
-      "id": 187,
-      "timestamp": "2026-02-24T14:55:00.799922",
+      "id": 188,
+      "timestamp": "2026-02-25T13:33:43.950410",
       "source_utp": "358",
       "target_utp": "102",
       "reason": "Isolated Municipality Resolution",
@@ -2463,10 +2475,10 @@
       }
     },
     {
-      "id": 188,
-      "timestamp": "2026-02-24T14:55:00.812007",
+      "id": 189,
+      "timestamp": "2026-02-25T13:33:43.961569",
       "source_utp": "521",
-      "target_utp": "157",
+      "target_utp": "118",
       "reason": "Isolated Municipality Resolution",
       "details": {
         "mun_id": 3157500,
@@ -2477,8 +2489,8 @@
       }
     },
     {
-      "id": 189,
-      "timestamp": "2026-02-24T14:55:00.852134",
+      "id": 190,
+      "timestamp": "2026-02-25T13:33:43.972932",
       "source_utp": "591",
       "target_utp": "520",
       "reason": "Isolated Municipality Resolution",
@@ -2491,8 +2503,8 @@
       }
     },
     {
-      "id": 190,
-      "timestamp": "2026-02-24T14:55:00.867331",
+      "id": 191,
+      "timestamp": "2026-02-25T13:33:43.983875",
       "source_utp": "669",
       "target_utp": "520",
       "reason": "Isolated Municipality Resolution",
@@ -2505,8 +2517,8 @@
       }
     },
     {
-      "id": 191,
-      "timestamp": "2026-02-24T14:55:00.879758",
+      "id": 192,
+      "timestamp": "2026-02-25T13:33:43.994712",
       "source_utp": "422",
       "target_utp": "62",
       "reason": "Isolated Municipality Resolution",
@@ -2519,8 +2531,8 @@
       }
     },
     {
-      "id": 192,
-      "timestamp": "2026-02-24T14:55:00.892141",
+      "id": 193,
+      "timestamp": "2026-02-25T13:33:44.005253",
       "source_utp": "429",
       "target_utp": "293",
       "reason": "Isolated Municipality Resolution",
@@ -2533,8 +2545,8 @@
       }
     },
     {
-      "id": 193,
-      "timestamp": "2026-02-24T14:55:00.906290",
+      "id": 194,
+      "timestamp": "2026-02-25T13:33:44.016010",
       "source_utp": "442",
       "target_utp": "759",
       "reason": "Isolated Municipality Resolution",
@@ -2547,8 +2559,8 @@
       }
     },
     {
-      "id": 194,
-      "timestamp": "2026-02-24T14:55:00.918793",
+      "id": 195,
+      "timestamp": "2026-02-25T13:33:44.026641",
       "source_utp": "512",
       "target_utp": "121",
       "reason": "Isolated Municipality Resolution",
@@ -2561,8 +2573,8 @@
       }
     },
     {
-      "id": 195,
-      "timestamp": "2026-02-24T14:55:00.930900",
+      "id": 196,
+      "timestamp": "2026-02-25T13:33:44.037089",
       "source_utp": "522",
       "target_utp": "240",
       "reason": "Isolated Municipality Resolution",
@@ -2575,8 +2587,8 @@
       }
     },
     {
-      "id": 196,
-      "timestamp": "2026-02-24T14:55:00.942724",
+      "id": 197,
+      "timestamp": "2026-02-25T13:33:44.047466",
       "source_utp": "522",
       "target_utp": "193",
       "reason": "Isolated Municipality Resolution",
@@ -2589,8 +2601,8 @@
       }
     },
     {
-      "id": 197,
-      "timestamp": "2026-02-24T14:55:00.954332",
+      "id": 198,
+      "timestamp": "2026-02-25T13:33:44.057615",
       "source_utp": "522",
       "target_utp": "193",
       "reason": "Isolated Municipality Resolution",
@@ -2603,8 +2615,8 @@
       }
     },
     {
-      "id": 198,
-      "timestamp": "2026-02-24T14:55:00.965956",
+      "id": 199,
+      "timestamp": "2026-02-25T13:33:44.067878",
       "source_utp": "522",
       "target_utp": "193",
       "reason": "Isolated Municipality Resolution",
@@ -2617,8 +2629,8 @@
       }
     },
     {
-      "id": 199,
-      "timestamp": "2026-02-24T14:55:00.977973",
+      "id": 200,
+      "timestamp": "2026-02-25T13:33:44.078527",
       "source_utp": "522",
       "target_utp": "193",
       "reason": "Isolated Municipality Resolution",
@@ -2631,8 +2643,8 @@
       }
     },
     {
-      "id": 200,
-      "timestamp": "2026-02-24T14:55:00.990517",
+      "id": 201,
+      "timestamp": "2026-02-25T13:33:44.089200",
       "source_utp": "522",
       "target_utp": "240",
       "reason": "Isolated Municipality Resolution",
@@ -2645,8 +2657,8 @@
       }
     },
     {
-      "id": 201,
-      "timestamp": "2026-02-24T14:55:01.003129",
+      "id": 202,
+      "timestamp": "2026-02-25T13:33:44.099955",
       "source_utp": "524",
       "target_utp": "262",
       "reason": "Isolated Municipality Resolution",
@@ -2659,8 +2671,8 @@
       }
     },
     {
-      "id": 202,
-      "timestamp": "2026-02-24T14:55:01.015622",
+      "id": 203,
+      "timestamp": "2026-02-25T13:33:44.111060",
       "source_utp": "534",
       "target_utp": "353",
       "reason": "Isolated Municipality Resolution",
@@ -2673,8 +2685,8 @@
       }
     },
     {
-      "id": 203,
-      "timestamp": "2026-02-24T14:55:01.027865",
+      "id": 204,
+      "timestamp": "2026-02-25T13:33:44.122068",
       "source_utp": "534",
       "target_utp": "148",
       "reason": "Isolated Municipality Resolution",
@@ -2687,10 +2699,10 @@
       }
     },
     {
-      "id": 204,
-      "timestamp": "2026-02-24T14:55:01.039966",
+      "id": 205,
+      "timestamp": "2026-02-25T13:33:44.132876",
       "source_utp": "534",
-      "target_utp": "148",
+      "target_utp": "604",
       "reason": "Isolated Municipality Resolution",
       "details": {
         "mun_id": 5007950,
@@ -2701,10 +2713,10 @@
       }
     },
     {
-      "id": 205,
-      "timestamp": "2026-02-24T14:55:01.073529",
+      "id": 206,
+      "timestamp": "2026-02-25T13:33:44.166294",
       "source_utp": "534",
-      "target_utp": "148",
+      "target_utp": "604",
       "reason": "Isolated Municipality Resolution",
       "details": {
         "mun_id": 5007703,
@@ -2715,8 +2727,8 @@
       }
     },
     {
-      "id": 206,
-      "timestamp": "2026-02-24T14:55:01.087722",
+      "id": 207,
+      "timestamp": "2026-02-25T13:33:44.177353",
       "source_utp": "537",
       "target_utp": "37",
       "reason": "Isolated Municipality Resolution",
@@ -2729,8 +2741,8 @@
       }
     },
     {
-      "id": 207,
-      "timestamp": "2026-02-24T14:55:01.101426",
+      "id": 208,
+      "timestamp": "2026-02-25T13:33:44.188849",
       "source_utp": "537",
       "target_utp": "37",
       "reason": "Isolated Municipality Resolution",
@@ -2743,8 +2755,8 @@
       }
     },
     {
-      "id": 208,
-      "timestamp": "2026-02-24T14:55:01.115319",
+      "id": 209,
+      "timestamp": "2026-02-25T13:33:44.200057",
       "source_utp": "537",
       "target_utp": "37",
       "reason": "Isolated Municipality Resolution",
@@ -2757,8 +2769,8 @@
       }
     },
     {
-      "id": 209,
-      "timestamp": "2026-02-24T14:55:01.128803",
+      "id": 210,
+      "timestamp": "2026-02-25T13:33:44.211021",
       "source_utp": "537",
       "target_utp": "37",
       "reason": "Isolated Municipality Resolution",
@@ -2771,8 +2783,8 @@
       }
     },
     {
-      "id": 210,
-      "timestamp": "2026-02-24T14:55:01.142384",
+      "id": 211,
+      "timestamp": "2026-02-25T13:33:44.221665",
       "source_utp": "537",
       "target_utp": "37",
       "reason": "Isolated Municipality Resolution",
@@ -2785,8 +2797,8 @@
       }
     },
     {
-      "id": 211,
-      "timestamp": "2026-02-24T14:55:01.156002",
+      "id": 212,
+      "timestamp": "2026-02-25T13:33:44.232374",
       "source_utp": "571",
       "target_utp": "235",
       "reason": "Isolated Municipality Resolution",
@@ -2799,8 +2811,8 @@
       }
     },
     {
-      "id": 212,
-      "timestamp": "2026-02-24T14:55:01.169716",
+      "id": 213,
+      "timestamp": "2026-02-25T13:33:44.243065",
       "source_utp": "562",
       "target_utp": "497",
       "reason": "Isolated Municipality Resolution",
@@ -2813,10 +2825,10 @@
       }
     },
     {
-      "id": 213,
-      "timestamp": "2026-02-24T14:55:01.181990",
+      "id": 214,
+      "timestamp": "2026-02-25T13:33:44.253852",
       "source_utp": "601",
-      "target_utp": "37",
+      "target_utp": "526",
       "reason": "Isolated Municipality Resolution",
       "details": {
         "mun_id": 5103106,
@@ -2827,8 +2839,8 @@
       }
     },
     {
-      "id": 214,
-      "timestamp": "2026-02-24T14:55:01.194023",
+      "id": 215,
+      "timestamp": "2026-02-25T13:33:44.264453",
       "source_utp": "601",
       "target_utp": "86",
       "reason": "Isolated Municipality Resolution",
@@ -2841,8 +2853,8 @@
       }
     },
     {
-      "id": 215,
-      "timestamp": "2026-02-24T14:55:01.206345",
+      "id": 216,
+      "timestamp": "2026-02-25T13:33:44.275283",
       "source_utp": "604",
       "target_utp": "103",
       "reason": "Isolated Municipality Resolution",
@@ -2855,8 +2867,8 @@
       }
     },
     {
-      "id": 216,
-      "timestamp": "2026-02-24T14:55:01.226973",
+      "id": 217,
+      "timestamp": "2026-02-25T13:33:44.294071",
       "source_utp": "604",
       "target_utp": "103",
       "reason": "Isolated Municipality Resolution",
@@ -2869,8 +2881,8 @@
       }
     },
     {
-      "id": 217,
-      "timestamp": "2026-02-24T14:55:01.239332",
+      "id": 218,
+      "timestamp": "2026-02-25T13:33:44.305099",
       "source_utp": "607",
       "target_utp": "622",
       "reason": "Isolated Municipality Resolution",
@@ -2883,8 +2895,8 @@
       }
     },
     {
-      "id": 218,
-      "timestamp": "2026-02-24T14:55:01.252044",
+      "id": 219,
+      "timestamp": "2026-02-25T13:33:44.316310",
       "source_utp": "611",
       "target_utp": "240",
       "reason": "Isolated Municipality Resolution",
@@ -2897,8 +2909,8 @@
       }
     },
     {
-      "id": 219,
-      "timestamp": "2026-02-24T14:55:01.264194",
+      "id": 220,
+      "timestamp": "2026-02-25T13:33:44.327461",
       "source_utp": "640",
       "target_utp": "117",
       "reason": "Isolated Municipality Resolution",
@@ -2911,8 +2923,8 @@
       }
     },
     {
-      "id": 220,
-      "timestamp": "2026-02-24T14:55:01.276743",
+      "id": 221,
+      "timestamp": "2026-02-25T13:33:44.339491",
       "source_utp": "640",
       "target_utp": "422",
       "reason": "Isolated Municipality Resolution",
@@ -2925,8 +2937,8 @@
       }
     },
     {
-      "id": 221,
-      "timestamp": "2026-02-24T14:55:01.292279",
+      "id": 222,
+      "timestamp": "2026-02-25T13:33:44.354042",
       "source_utp": "711",
       "target_utp": "299",
       "reason": "Isolated Municipality Resolution",
@@ -2939,8 +2951,8 @@
       }
     },
     {
-      "id": 222,
-      "timestamp": "2026-02-24T14:55:01.305898",
+      "id": 223,
+      "timestamp": "2026-02-25T13:33:44.365695",
       "source_utp": "710",
       "target_utp": "117",
       "reason": "Isolated Municipality Resolution",
@@ -2953,8 +2965,8 @@
       }
     },
     {
-      "id": 223,
-      "timestamp": "2026-02-24T14:55:01.318991",
+      "id": 224,
+      "timestamp": "2026-02-25T13:33:44.377426",
       "source_utp": "710",
       "target_utp": "117",
       "reason": "Isolated Municipality Resolution",
@@ -2967,8 +2979,8 @@
       }
     },
     {
-      "id": 224,
-      "timestamp": "2026-02-24T14:55:01.341167",
+      "id": 225,
+      "timestamp": "2026-02-25T13:33:44.397645",
       "source_utp": "710",
       "target_utp": "117",
       "reason": "Isolated Municipality Resolution",
@@ -2981,8 +2993,8 @@
       }
     },
     {
-      "id": 225,
-      "timestamp": "2026-02-24T14:55:01.363714",
+      "id": 226,
+      "timestamp": "2026-02-25T13:33:44.418866",
       "source_utp": "784",
       "target_utp": "695",
       "reason": "Isolated Municipality Resolution",
@@ -2995,8 +3007,8 @@
       }
     },
     {
-      "id": 226,
-      "timestamp": "2026-02-24T14:55:01.383352",
+      "id": 227,
+      "timestamp": "2026-02-25T13:33:44.436042",
       "source_utp": "746",
       "target_utp": "86",
       "reason": "Isolated Municipality Resolution",
@@ -3009,8 +3021,8 @@
       }
     },
     {
-      "id": 227,
-      "timestamp": "2026-02-24T14:55:01.398890",
+      "id": 228,
+      "timestamp": "2026-02-25T13:33:44.448952",
       "source_utp": "746",
       "target_utp": "86",
       "reason": "Isolated Municipality Resolution",
@@ -3023,8 +3035,8 @@
       }
     },
     {
-      "id": 228,
-      "timestamp": "2026-02-24T14:55:01.412934",
+      "id": 229,
+      "timestamp": "2026-02-25T13:33:44.461367",
       "source_utp": "746",
       "target_utp": "86",
       "reason": "Isolated Municipality Resolution",

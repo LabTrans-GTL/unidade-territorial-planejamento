@@ -63,8 +63,6 @@ def render_map_with_flow_popups(gdf_filtered, df_municipios, title="Mapa",
         show_state_borders: Se deve mostrar contornos estaduais
         gdf_states: GeoDataFrame opcional com contornos de Estados pré-calculados
         PASTEL_PALETTE: Lista de cores para coloração
-        df_impedance: Optional DataFrame com dados de tempo de viagem (origem_6, destino_6, tempo_horas)
-        scroll_wheel_zoom: Se deve habilitar zoom com scroll do mouse (default True)
         step_key: Pipeline step key for loading the correct popup file ('step1', 'step5', 'step6', 'step8')
     """
     if gdf_filtered is None or gdf_filtered.empty:
@@ -91,8 +89,15 @@ def render_map_with_flow_popups(gdf_filtered, df_municipios, title="Mapa",
                 if cd_mun_val is None: continue
                 
                 cd_mun = int(cd_mun_val)
-                color_idx = global_colors.get(cd_mun, 0) % len(PASTEL_PALETTE)
-                gdf_filtered.at[idx, 'color'] = PASTEL_PALETTE[color_idx]
+                color_val = global_colors.get(cd_mun, 0)
+                
+                if isinstance(color_val, str) and color_val.startswith('#'):
+                    # HEX color direta
+                    gdf_filtered.at[idx, 'color'] = color_val
+                else:
+                    # Índice na paleta
+                    color_idx = int(color_val) % len(PASTEL_PALETTE)
+                    gdf_filtered.at[idx, 'color'] = PASTEL_PALETTE[color_idx]
             
             coloring_applied = True
         except Exception as e:

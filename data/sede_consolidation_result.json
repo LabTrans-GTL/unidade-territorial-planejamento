@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "status": "executed",
-  "timestamp_created": "2026-02-24T14:33:10.210417",
-  "timestamp_last_updated": "2026-02-24T14:33:10.210422",
+  "timestamp_created": "2026-02-25T13:11:53.247931",
+  "timestamp_last_updated": "2026-02-25T13:11:53.247937",
   "total_consolidations": 45,
   "utps_mapping": {
     "478": "662",
@@ -53,8 +53,8 @@
   },
   "consolidations": [
     {
-      "id": 95,
-      "timestamp": "2026-02-24T14:33:08.883477",
+      "id": 96,
+      "timestamp": "2026-02-25T13:11:51.921690",
       "source_utp": "478",
       "target_utp": "662",
       "reason": "Sede consolidation (full UTP): Score 0->0, Travel 1.29h",
@@ -74,8 +74,8 @@
       }
     },
     {
-      "id": 96,
-      "timestamp": "2026-02-24T14:33:08.915895",
+      "id": 97,
+      "timestamp": "2026-02-25T13:11:51.955140",
       "source_utp": "616",
       "target_utp": "618",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 1.32h",
@@ -95,8 +95,8 @@
       }
     },
     {
-      "id": 97,
-      "timestamp": "2026-02-24T14:33:08.935707",
+      "id": 98,
+      "timestamp": "2026-02-25T13:11:51.975370",
       "source_utp": "2",
       "target_utp": "128",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.04h",
@@ -116,8 +116,8 @@
       }
     },
     {
-      "id": 98,
-      "timestamp": "2026-02-24T14:33:08.953326",
+      "id": 99,
+      "timestamp": "2026-02-25T13:11:51.993422",
       "source_utp": "273",
       "target_utp": "314",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.18h",
@@ -137,8 +137,8 @@
       }
     },
     {
-      "id": 99,
-      "timestamp": "2026-02-24T14:33:08.974455",
+      "id": 100,
+      "timestamp": "2026-02-25T13:11:52.014163",
       "source_utp": "444",
       "target_utp": "255",
       "reason": "Sede consolidation (full UTP): Score 0->0, Travel 1.55h",
@@ -158,8 +158,8 @@
       }
     },
     {
-      "id": 100,
-      "timestamp": "2026-02-24T14:33:09.008262",
+      "id": 101,
+      "timestamp": "2026-02-25T13:11:52.047060",
       "source_utp": "435",
       "target_utp": "557",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 1.95h",
@@ -179,8 +179,8 @@
       }
     },
     {
-      "id": 101,
-      "timestamp": "2026-02-24T14:33:09.018852",
+      "id": 102,
+      "timestamp": "2026-02-25T13:11:52.058032",
       "source_utp": "279",
       "target_utp": "111",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.09h",
@@ -200,8 +200,8 @@
       }
     },
     {
-      "id": 102,
-      "timestamp": "2026-02-24T14:33:09.180123",
+      "id": 103,
+      "timestamp": "2026-02-25T13:11:52.217361",
       "source_utp": "755",
       "target_utp": "631",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 1.06h",
@@ -221,8 +221,8 @@
       }
     },
     {
-      "id": 103,
-      "timestamp": "2026-02-24T14:33:09.190981",
+      "id": 104,
+      "timestamp": "2026-02-25T13:11:52.228369",
       "source_utp": "366",
       "target_utp": "675",
       "reason": "Sede consolidation (full UTP): Score 0->0, Travel 1.06h",
@@ -242,8 +242,8 @@
       }
     },
     {
-      "id": 104,
-      "timestamp": "2026-02-24T14:33:09.206277",
+      "id": 105,
+      "timestamp": "2026-02-25T13:11:52.243292",
       "source_utp": "683",
       "target_utp": "253",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.47h",
@@ -263,8 +263,8 @@
       }
     },
     {
-      "id": 105,
-      "timestamp": "2026-02-24T14:33:09.274809",
+      "id": 106,
+      "timestamp": "2026-02-25T13:11:52.311580",
       "source_utp": "NOVA3",
       "target_utp": "209",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 0.43h",
@@ -284,8 +284,8 @@
       }
     },
     {
-      "id": 106,
-      "timestamp": "2026-02-24T14:33:09.328878",
+      "id": 107,
+      "timestamp": "2026-02-25T13:11:52.364682",
       "source_utp": "431",
       "target_utp": "520",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 1.76h",
@@ -305,8 +305,8 @@
       }
     },
     {
-      "id": 107,
-      "timestamp": "2026-02-24T14:33:09.348761",
+      "id": 108,
+      "timestamp": "2026-02-25T13:11:52.385516",
       "source_utp": "432",
       "target_utp": "520",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 0.64h",
@@ -326,8 +326,8 @@
       }
     },
     {
-      "id": 108,
-      "timestamp": "2026-02-24T14:33:09.364378",
+      "id": 109,
+      "timestamp": "2026-02-25T13:11:52.402772",
       "source_utp": "501",
       "target_utp": "362",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.49h",
@@ -347,8 +347,8 @@
       }
     },
     {
-      "id": 109,
-      "timestamp": "2026-02-24T14:33:09.439494",
+      "id": 110,
+      "timestamp": "2026-02-25T13:11:52.473881",
       "source_utp": "159",
       "target_utp": "126",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 0.59h",
@@ -368,8 +368,8 @@
       }
     },
     {
-      "id": 110,
-      "timestamp": "2026-02-24T14:33:09.453707",
+      "id": 111,
+      "timestamp": "2026-02-25T13:11:52.486359",
       "source_utp": "699",
       "target_utp": "538",
       "reason": "Sede consolidation (full UTP): Score 0->0, Travel 0.20h",
@@ -389,8 +389,8 @@
       }
     },
     {
-      "id": 111,
-      "timestamp": "2026-02-24T14:33:09.504491",
+      "id": 112,
+      "timestamp": "2026-02-25T13:11:52.534263",
       "source_utp": "413",
       "target_utp": "558",
       "reason": "Sede consolidation (full UTP): Score 0->0, Travel 1.44h",
@@ -410,8 +410,8 @@
       }
     },
     {
-      "id": 112,
-      "timestamp": "2026-02-24T14:33:09.558544",
+      "id": 113,
+      "timestamp": "2026-02-25T13:11:52.584883",
       "source_utp": "558",
       "target_utp": "625",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.40h",
@@ -431,8 +431,8 @@
       }
     },
     {
-      "id": 113,
-      "timestamp": "2026-02-24T14:33:09.589088",
+      "id": 114,
+      "timestamp": "2026-02-25T13:11:52.612438",
       "source_utp": "322",
       "target_utp": "189",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 0.95h",
@@ -452,8 +452,8 @@
       }
     },
     {
-      "id": 114,
-      "timestamp": "2026-02-24T14:33:09.613043",
+      "id": 115,
+      "timestamp": "2026-02-25T13:11:52.632965",
       "source_utp": "76",
       "target_utp": "335",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.50h",
@@ -473,8 +473,8 @@
       }
     },
     {
-      "id": 115,
-      "timestamp": "2026-02-24T14:33:09.628823",
+      "id": 116,
+      "timestamp": "2026-02-25T13:11:52.646641",
       "source_utp": "16",
       "target_utp": "251",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.44h",
@@ -494,8 +494,8 @@
       }
     },
     {
-      "id": 116,
-      "timestamp": "2026-02-24T14:33:09.655938",
+      "id": 117,
+      "timestamp": "2026-02-25T13:11:52.673354",
       "source_utp": "97",
       "target_utp": "197",
       "reason": "Sede consolidation (full UTP): Score 0->0, Travel 1.75h",
@@ -515,8 +515,8 @@
       }
     },
     {
-      "id": 117,
-      "timestamp": "2026-02-24T14:33:09.674589",
+      "id": 118,
+      "timestamp": "2026-02-25T13:11:52.690336",
       "source_utp": "356",
       "target_utp": "364",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 1.05h",
@@ -536,8 +536,8 @@
       }
     },
     {
-      "id": 118,
-      "timestamp": "2026-02-24T14:33:09.688128",
+      "id": 119,
+      "timestamp": "2026-02-25T13:11:52.702474",
       "source_utp": "31",
       "target_utp": "NOVA15",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 0.66h",
@@ -557,8 +557,8 @@
       }
     },
     {
-      "id": 119,
-      "timestamp": "2026-02-24T14:33:09.709331",
+      "id": 120,
+      "timestamp": "2026-02-25T13:11:52.721759",
       "source_utp": "707",
       "target_utp": "281",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 0.74h",
@@ -578,8 +578,8 @@
       }
     },
     {
-      "id": 120,
-      "timestamp": "2026-02-24T14:33:09.731611",
+      "id": 121,
+      "timestamp": "2026-02-25T13:11:52.741551",
       "source_utp": "258",
       "target_utp": "274",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 0.47h",
@@ -599,8 +599,8 @@
       }
     },
     {
-      "id": 121,
-      "timestamp": "2026-02-24T14:33:09.748653",
+      "id": 122,
+      "timestamp": "2026-02-25T13:11:52.756865",
       "source_utp": "712",
       "target_utp": "50",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 0.39h",
@@ -620,8 +620,8 @@
       }
     },
     {
-      "id": 122,
-      "timestamp": "2026-02-24T14:33:09.801355",
+      "id": 123,
+      "timestamp": "2026-02-25T13:11:52.808865",
       "source_utp": "402",
       "target_utp": "481",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 0.55h",
@@ -641,8 +641,8 @@
       }
     },
     {
-      "id": 123,
-      "timestamp": "2026-02-24T14:33:09.828282",
+      "id": 124,
+      "timestamp": "2026-02-25T13:11:52.866890",
       "source_utp": "229",
       "target_utp": "191",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 0.80h",
@@ -662,8 +662,8 @@
       }
     },
     {
-      "id": 124,
-      "timestamp": "2026-02-24T14:33:09.849323",
+      "id": 125,
+      "timestamp": "2026-02-25T13:11:52.888277",
       "source_utp": "304",
       "target_utp": "88",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 0.86h",
@@ -683,8 +683,8 @@
       }
     },
     {
-      "id": 125,
-      "timestamp": "2026-02-24T14:33:09.884686",
+      "id": 126,
+      "timestamp": "2026-02-25T13:11:52.920272",
       "source_utp": "454",
       "target_utp": "240",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 0.75h",
@@ -704,8 +704,8 @@
       }
     },
     {
-      "id": 126,
-      "timestamp": "2026-02-24T14:33:09.895722",
+      "id": 127,
+      "timestamp": "2026-02-25T13:11:52.931796",
       "source_utp": "144",
       "target_utp": "156",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.60h",
@@ -725,8 +725,8 @@
       }
     },
     {
-      "id": 127,
-      "timestamp": "2026-02-24T14:33:09.909083",
+      "id": 128,
+      "timestamp": "2026-02-25T13:11:52.945003",
       "source_utp": "596",
       "target_utp": "267",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 0.82h",
@@ -746,8 +746,8 @@
       }
     },
     {
-      "id": 128,
-      "timestamp": "2026-02-24T14:33:09.978307",
+      "id": 129,
+      "timestamp": "2026-02-25T13:11:53.011006",
       "source_utp": "687",
       "target_utp": "299",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 0.80h",
@@ -767,8 +767,8 @@
       }
     },
     {
-      "id": 129,
-      "timestamp": "2026-02-24T14:33:09.992923",
+      "id": 130,
+      "timestamp": "2026-02-25T13:11:53.025494",
       "source_utp": "717",
       "target_utp": "497",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 0.87h",
@@ -788,8 +788,8 @@
       }
     },
     {
-      "id": 130,
-      "timestamp": "2026-02-24T14:33:10.010376",
+      "id": 131,
+      "timestamp": "2026-02-25T13:11:53.042528",
       "source_utp": "380",
       "target_utp": "148",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.66h",
@@ -809,8 +809,8 @@
       }
     },
     {
-      "id": 131,
-      "timestamp": "2026-02-24T14:33:10.023659",
+      "id": 132,
+      "timestamp": "2026-02-25T13:11:53.055330",
       "source_utp": "386",
       "target_utp": "294",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 0.51h",
@@ -830,8 +830,8 @@
       }
     },
     {
-      "id": 132,
-      "timestamp": "2026-02-24T14:33:10.053568",
+      "id": 133,
+      "timestamp": "2026-02-25T13:11:53.083097",
       "source_utp": "580",
       "target_utp": "148",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.97h",
@@ -851,8 +851,8 @@
       }
     },
     {
-      "id": 133,
-      "timestamp": "2026-02-24T14:33:10.092323",
+      "id": 134,
+      "timestamp": "2026-02-25T13:11:53.119350",
       "source_utp": "612",
       "target_utp": "784",
       "reason": "Sede consolidation (full UTP): Score 0->1, Travel 1.26h",
@@ -872,8 +872,8 @@
       }
     },
     {
-      "id": 134,
-      "timestamp": "2026-02-24T14:33:10.124990",
+      "id": 135,
+      "timestamp": "2026-02-25T13:11:53.151760",
       "source_utp": "464",
       "target_utp": "98",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.69h",
@@ -893,8 +893,8 @@
       }
     },
     {
-      "id": 135,
-      "timestamp": "2026-02-24T14:33:10.136138",
+      "id": 136,
+      "timestamp": "2026-02-25T13:11:53.163568",
       "source_utp": "536",
       "target_utp": "642",
       "reason": "Sede consolidation (full UTP): Score 0->0, Travel 0.83h",
@@ -914,8 +914,8 @@
       }
     },
     {
-      "id": 136,
-      "timestamp": "2026-02-24T14:33:10.158808",
+      "id": 137,
+      "timestamp": "2026-02-25T13:11:53.185257",
       "source_utp": "680",
       "target_utp": "287",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 0.56h",
@@ -935,8 +935,8 @@
       }
     },
     {
-      "id": 137,
-      "timestamp": "2026-02-24T14:33:10.179635",
+      "id": 138,
+      "timestamp": "2026-02-25T13:11:53.204526",
       "source_utp": "409",
       "target_utp": "675",
       "reason": "Sede consolidation (full UTP): Score 0->0, Travel 1.25h (TRANSITIVE: Chain 2603009 -> 2612208: Final destination 2612208 has better REGIC (rank 8 < 11))",
@@ -956,8 +956,8 @@
       }
     },
     {
-      "id": 138,
-      "timestamp": "2026-02-24T14:33:10.190605",
+      "id": 139,
+      "timestamp": "2026-02-25T13:11:53.214170",
       "source_utp": "372",
       "target_utp": "672",
       "reason": "Sede consolidation (full UTP): Score 0->0, Travel 1.55h",
@@ -977,8 +977,8 @@
       }
     },
     {
-      "id": 139,
-      "timestamp": "2026-02-24T14:33:10.206387",
+      "id": 140,
+      "timestamp": "2026-02-25T13:11:53.228667",
       "source_utp": "427",
       "target_utp": "497",
       "reason": "Sede consolidation (full UTP): Score 0->2, Travel 1.48h (TRANSITIVE: Chain 4319604 -> 4316907: Final destination 4316907 has score 2)",

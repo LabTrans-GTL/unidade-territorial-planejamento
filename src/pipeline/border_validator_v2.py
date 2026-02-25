@@ -663,9 +663,13 @@ class BorderValidatorV2:
         consolidator = UTPConsolidator(self.graph, self.validator)
         
         # Etapa 5: Consolidação Funcional (sem limpar o log!)
+        if map_gen:
+            map_gen.sync_with_graph(self.graph)
         changes_func = consolidator.run_functional_merging(flow_df, gdf, map_gen, clear_log=False)
         
         # Etapa 7: Limpeza Territorial
+        if map_gen:
+            map_gen.sync_with_graph(self.graph)
         changes_territorial = consolidator.run_territorial_regic(gdf, map_gen)
         
         changes_unitarias = changes_func + changes_territorial

@@ -38,7 +38,7 @@ class UTPConsolidator:
             return 0
         
         # Contagem inicial de UTPs unitárias para estatísticas
-        utps_unitarias_inicial = len(self._get_unitary_non_rm_utps())
+        utps_unitarias_inicial = len(self._get_unitary_utps())
         utp_nodes = [n for n, d in self.graph.hierarchy.nodes(data=True) if d.get('type') == 'utp']
         utps_unitarias_com_rm = len([n for n in utp_nodes 
                                       if len(list(self.graph.hierarchy.successors(n))) == 1 
@@ -165,8 +165,8 @@ class UTPConsolidator:
         iteration = 1
         
         while True:
-            # Identifica UTPs unitárias Sem RM no estado ATUAL do grafo
-            unitarias_sem_rm = self._get_unitary_non_rm_utps()
+            # Identifica UTPs unitárias no estado ATUAL do grafo
+            unitarias_sem_rm = self._get_unitary_utps()
             
             self.logger.info(f"--- Iteração {iteration} | Unitárias Sem RM: {len(unitarias_sem_rm)} ---")
             
@@ -340,8 +340,8 @@ class UTPConsolidator:
         iteration = 1
         
         while True:
-            # Identifica UTPs unitárias Sem RM restantes
-            unitarias_sem_rm = self._get_unitary_non_rm_utps()
+            # Identifica UTPs unitárias restantes
+            unitarias_sem_rm = self._get_unitary_utps()
             
             self.logger.info(f"--- Iteração {iteration} | Unitárias restantes: {len(unitarias_sem_rm)} ---")
             
@@ -368,7 +368,10 @@ class UTPConsolidator:
                 
                 # Busca vizinhos geográficos
                 candidates = self.validator.get_neighboring_utps(mun_id, gdf)
-                candidates = [v for v in candidates if v != utp_id and self.validator.is_non_rm_utp(v)]
+                
+                # Regra de RM: Deve permanecer na mesma RM (ou ambos sem RM)
+                rm_mun = self.validator.get_rm_of_utp(utp_id)
+                candidates = [v for v in candidates if v != utp_id and self.validator.get_rm_of_utp(v) == rm_mun]
                 
                 scored_candidates = []
                 
@@ -483,8 +486,8 @@ class UTPConsolidator:
         
         return total_changes
 
-    def _get_unitary_non_rm_utps(self) -> list:
-        """Retorna lista de UTPs unitárias (1 município) que são Sem RM."""
+    def _get_unitary_utps(self) -> list:
+        """Retorna lista de UTPs unitárias (1 município)."""
         unitarias = []
         
         utp_nodes = [n for n, d in self.graph.hierarchy.nodes(data=True) if d.get('type') == 'utp']
@@ -496,8 +499,6 @@ class UTPConsolidator:
             if len(filhos) == 1:
                 utp_id = utp_node.replace("UTP_", "")
                 
-                # Verifica se é Sem RM
-                if self.validator.is_non_rm_utp(utp_id):
-                    unitarias.append(utp_id)
+                unitarias.append(utp_id)
         
         return unitarias
