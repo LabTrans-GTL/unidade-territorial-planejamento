@@ -307,24 +307,7 @@ class IsolatedMunicipalityResolver:
         - If Mun has RM and Dest UTP has different RM -> REJECT
         - Otherwise -> ACCEPT
         """
-        # Get municipality RM from graph nodes
-        mun_rm = None
-        if self.graph.hierarchy.has_node(mun_id):
-            mun_rm = self.graph.hierarchy.nodes[mun_id].get('regiao_metropolitana')
-        
-        # Get destination UTP RM
-        utp_rm = self.validator.get_rm_of_utp(dest_utp)
-        
-        # Both without RM -> OK
-        if not mun_rm and not utp_rm:
-            return True
-        
-        # Same RM -> OK
-        if mun_rm == utp_rm:
-            return True
-        
-        # Different RM -> REJECT
-        return False
+        return self.validator.validate_rm_compatibility(mun_id, dest_utp)
     
     def _find_adjacent_utps_fallback(self, mun_id: int, respect_rm: bool = True) -> List[Dict]:
         """
@@ -432,10 +415,15 @@ class IsolatedMunicipalityResolver:
                     self.logger.info(f"  🔄 {nm_mun} ({mun_id}): No flow candidates, trying adjacent UTPs (RM-compatible)...")
                     candidates = self._find_adjacent_utps_fallback(mun_id, respect_rm=True)
                 
-                # FALLBACK 2: If still no candidates, try adjacent UTPs ignoring RM
+                # FALLBACK 2: If still no candidates, try adjacent UTPs
+                # NOTE: We NO LONGER bypass RM rules here. If no RM-compatible adjacent exists,
+                # the municipality remains isolated for manual review or next step.
                 if not candidates:
-                    self.logger.info(f"  🔄 {nm_mun} ({mun_id}): No RM-compatible adjacents, trying ANY adjacent UTP...")
-                    candidates = self._find_adjacent_utps_fallback(mun_id, respect_rm=False)
+                    self.logger.info(f"  🔄 {nm_mun} ({mun_id}): No RM-compatible adjacents found.")
+                    # We can log this as a WARNING because it leaves the municipality isolated
+                    self.logger.warning(f"  ⚠️ {nm_mun} ({mun_id}) could NOT be reconnected while respecting RM boundaries.")
+                    total_unresolved += 1
+                    continue
                 
                 if not candidates:
                     self.logger.warning(f"  ❌ {nm_mun} ({mun_id}): TRULY isolated - no adjacent UTPs found!")

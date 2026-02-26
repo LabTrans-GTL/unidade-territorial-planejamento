@@ -164,9 +164,48 @@ class TerritorialValidator:
         except Exception:
             return False
 
+    def normalize_rm_name(self, val: Optional[str]) -> str:
+        """
+        Normaliza o nome/ID da RM para comparação consistente.
+        Remove o prefixo 'RM_' se presente e trata nulos/vazios como 'RM_SEM_RM'.
+        """
+        if val is None:
+            return "RM_SEM_RM"
+        
+        val_str = str(val).strip()
+        
+        # Tratar strings que representam "sem RM"
+        if val_str.lower() in ['none', 'nan', '', 'rm_sem_rm', 'sem_rm']:
+            return "RM_SEM_RM"
+        
+        # Remover prefixo 'RM_' se existir para comparar apenas o nome base
+        if val_str.startswith("RM_"):
+            return val_str[3:]
+            
+        return val_str
+
+    def validate_rm_compatibility(self, mun_id: int, target_utp: str) -> bool:
+        """
+        Valida se um município é compatível com uma UTP destino em termos de RM.
+        Regra: Devem pertencer à mesma RM ou ambos não ter RM.
+        """
+        # 1. Obter RM do município (do atributo do nó)
+        mun_rm = None
+        if self.graph.hierarchy.has_node(mun_id):
+            mun_rm = self.graph.hierarchy.nodes[mun_id].get('regiao_metropolitana')
+            
+        # 2. Obter RM da UTP (do nó pai na hierarquia)
+        utp_rm = self.get_rm_of_utp(target_utp)
+        
+        # 3. Normalizar e comparar
+        norm_mun = self.normalize_rm_name(mun_rm)
+        norm_utp = self.normalize_rm_name(utp_rm)
+        
+        return norm_mun == norm_utp
+
     def is_non_rm_utp(self, utp_id: str) -> bool:
         rm_node = self.get_rm_of_utp(utp_id)
-        return rm_node == "RM_SEM_RM"
+        return self.normalize_rm_name(rm_node) == "RM_SEM_RM"
 
     def get_neighboring_utps(self, mun_id: int, gdf: gpd.GeoDataFrame) -> List[str]:
         """Retorna IDs de UTPs vizinhas, corrigindo falhas de detecção por escala."""

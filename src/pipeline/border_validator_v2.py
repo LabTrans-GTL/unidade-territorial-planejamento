@@ -129,32 +129,7 @@ class BorderValidatorV2:
     
     def _validate_rm_compatibility(self, mun_id: int, target_utp: str) -> bool:
         """Validates RM rules for municipality relocation."""
-        mun_rm = self._get_mun_rm(mun_id)
-        utp_rm = self.validator.get_rm_of_utp(target_utp)
-        
-        # Normalize values to handle None vs RM_SEM_RM mismatch
-        # Treat None, nan, empty string, and "RM_SEM_RM" as equivalent
-        def normalize_rm(val):
-            if val is None:
-                return "RM_SEM_RM"
-            val_str = str(val)
-            if val_str.lower() in ['none', 'nan', '', 'rm_sem_rm']:
-                return "RM_SEM_RM"
-            return val_str
-            
-        norm_mun_rm = normalize_rm(mun_rm)
-        norm_utp_rm = normalize_rm(utp_rm)
-        
-        # Both without RM (normalized to RM_SEM_RM) -> OK
-        if norm_mun_rm == "RM_SEM_RM" and norm_utp_rm == "RM_SEM_RM":
-            return True
-        
-        # Same RM -> OK
-        if norm_mun_rm == norm_utp_rm:
-            return True
-        
-        # Different RM -> REJECT
-        return False
+        return self.validator.validate_rm_compatibility(mun_id, target_utp)
     
     def _has_flow_to_sede(self, mun_id: int, sede_id: int, flow_df: pd.DataFrame, max_time: float = 2.0) -> bool:
         """Checks if municipality has flow ≤max_time to the sede."""
