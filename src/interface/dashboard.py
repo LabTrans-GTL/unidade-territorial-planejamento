@@ -1,6 +1,17 @@
-# src/interface/dashboard.py
-import os
 import streamlit as st
+
+# Configuração da Página - Otimizado para evitar perda de layout no F5
+try:
+    st.set_page_config(
+        page_title="Unidade Territorial de Planejamento",
+        layout="wide",
+        initial_sidebar_state="expanded"
+    )
+except st.errors.StreamlitAPIException:
+    # Caso já tenha sido configurado pelo app.py
+    pass
+
+import os
 import pandas as pd
 import logging
 from pathlib import Path
@@ -31,13 +42,6 @@ try:
     import psutil as _psutil
 except ImportError:
     _psutil = None
-
-# Configuração da Página
-st.set_page_config(
-    page_title="Unidade Territorial de Planejamento",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
 
 # Aplicar CSS
 st.markdown(DASHBOARD_CSS, unsafe_allow_html=True)

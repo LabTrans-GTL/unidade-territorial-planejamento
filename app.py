@@ -1,4 +1,12 @@
-# app.py (Raiz)
+import streamlit as st
+
+# Configuração da Página - DEVE ser o primeiro comando Streamlit
+st.set_page_config(
+    page_title="Unidade Territorial de Planejamento",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 import sys
 import time
 from pathlib import Path
@@ -9,7 +17,6 @@ project_root = Path(__file__).parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
-import streamlit as st
 from src.core.manager import GeoValidaManager
 from src.interface.dashboard import render_dashboard
 from src.utils import DataLoader

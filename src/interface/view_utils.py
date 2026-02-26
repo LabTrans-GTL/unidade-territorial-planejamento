@@ -15,6 +15,11 @@ PASTEL_PALETTE = get_palette()
 # CSS customizado para o dashboard
 DASHBOARD_CSS = """
 <style>
+    [data-testid="stAppViewBlockContainer"] {
+        max-width: 100% !important;
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+    }
     :root {
         --primary-color: #1351B4;
     }
