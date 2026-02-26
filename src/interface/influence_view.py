@@ -51,6 +51,10 @@ def render_influence_analysis_tab(df_municipios, gdf, snapshot_loader):
     # 2. Seletor de Cadeia (Resumo)
     st.markdown("#### 🔗 Selecione uma Cadeia de Influência para Visualizar")
     
+    # Reordenar colunas para mostrar Sedes em destaque
+    cols_order = ['id_cadeia', 'nucleo', 'qtd_municipios', 'tem_sede', 'qtd_sedes', 'utp_dominante', 'coesao_utp_perc', 'diagnostico_geral']
+    df_resumo = df_resumo[cols_order]
+
     event = st.dataframe(
         df_resumo,
         use_container_width=True,
@@ -144,7 +148,7 @@ def render_influence_analysis_tab(df_municipios, gdf, snapshot_loader):
     with col_details:
         st.markdown("**Hierarquia na Cadeia**")
         st.dataframe(
-            df_members[['nm_mun', 'hierarquia', 'utp_origem', 'sugestao_analise']],
+            df_members[['nm_mun', 'hierarquia', 'sede_utp', 'utp_origem', 'sugestao_analise']],
             hide_index=True,
             use_container_width=True,
             height=450

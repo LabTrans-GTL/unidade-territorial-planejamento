@@ -231,6 +231,7 @@ class InfluenceAnalyzer:
             rows.append({
                 'cd_mun': mun_id,
                 'nm_mun': node.get('name', 'N/A'),
+                'sede_utp': node.get('sede_utp', False),
                 'rm_origem': rm_origem,
                 'utp_origem': utp_origem,
                 'hierarquia': level,
@@ -273,6 +274,8 @@ class InfluenceAnalyzer:
                 'id_cadeia': chain_id,
                 'nucleo': nucleus_names,
                 'qtd_municipios': len(group),
+                'qtd_sedes': int(group['sede_utp'].sum()),
+                'tem_sede': "Sim" if group['sede_utp'].any() else "Não",
                 'utp_dominante': utp_dominante,
                 'coesao_utp_perc': round(coesao, 1),
                 'utps_envolvidas': ", ".join(utps_involved),
