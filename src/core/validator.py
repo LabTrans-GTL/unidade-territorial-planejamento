@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
-from typing import List
+from typing import List, Optional, Dict
 
 import networkx as nx
 import geopandas as gpd
