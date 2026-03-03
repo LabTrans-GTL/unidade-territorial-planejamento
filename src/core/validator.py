@@ -35,7 +35,7 @@ class TerritorialValidator:
         """Determina o valor do buffer ideal com base no CRS (Graus vs Metros)."""
         if gdf.crs and gdf.crs.is_projected:
             return 500.0  # 500 metros para coordenadas projetadas (ex: EPSG:5880)
-        return 0.05  # ~5km para coordenadas geográficas (ex: SIRGAS 2000 / WGS84)
+        return 0.005  # ~500m para coordenadas geográficas (ex: SIRGAS 2000 / WGS84)
 
     def get_regic_score(self, cd_mun: int) -> int:
         """Retorna o peso hierárquico usando as descrições carregadas no grafo."""

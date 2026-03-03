@@ -13,6 +13,7 @@ from src.interface.view_utils import (
 )
 from src.interface.map_flow_render import render_map_with_flow_popups
 from src.interface.flow_utils import get_top_municipalities_in_utp
+from src.utils.notes_manager import UTPNotesManager
 
 def render_v8_3_centralization(df_municipios, df_filtered, selected_ufs, selected_utps, utps_list, gdf, gdf_rm, gdf_states_optimized, snapshot_loader, consolidation_loader, PASTEL_PALETTE):
     st.markdown("### <span class='step-badge step-final'>Versão 8.3</span> Centralização das Sedes", unsafe_allow_html=True)
@@ -125,3 +126,55 @@ def render_v8_3_centralization(df_municipios, df_filtered, selected_ufs, selecte
             st.error(f"Erro ao carregar dados: {e}")
     else:
         st.warning("⚠️ Dados de validação de fronteiras não encontrados")
+
+    # --- SEÇÃO DE NOTAS DE CONFIGURAÇÃO ---
+    st.markdown("---")
+    st.markdown("### Notas sobre a Configuração das UTPs")
+    st.info("Utilize este espaço para registrar observações, problemas encontrados ou justificativas de ajustes nas UTPs.")
+    
+    notes_manager = UTPNotesManager()
+    
+    # Formulário para nova nota
+    with st.expander("Adicionar Nova Nota", expanded=False):
+        with st.form("new_note_form", clear_on_submit=True):
+            col_n1, col_n2 = st.columns(2)
+            with col_n1:
+                note_title = st.text_input("Título da Nota", placeholder="Ex: Ajuste de Fronteira")
+                note_city = st.text_input("Cidade Envolvida", placeholder="Ex: Porto Alegre")
+            with col_n2:
+                note_utp = st.text_input("UTP Envolvida", placeholder="Ex: 430")
+            
+            note_text = st.text_area("Descrição / Motivo", placeholder="Descreva aqui o problema ou a observação...")
+            
+            submit_note = st.form_submit_button("Salvar Nota")
+            
+            if submit_note:
+                if note_title and note_text:
+                    notes_manager.add_note(note_title, note_text, note_city, note_utp)
+                    st.success("✅ Nota salva com sucesso!")
+                    st.rerun()
+                else:
+                    st.error("⚠️ Título e Descrição são obrigatórios.")
+
+    # Listagem de notas
+    notes = notes_manager.get_all_notes()
+    if not notes:
+        st.write("Nenhuma nota registrada ainda.")
+    else:
+        for note in reversed(notes): # Mostrar as mais recentes primeiro
+            with st.container():
+                st.markdown(f"#### {note['title']}")
+                col_i1, col_i2, col_i3 = st.columns([2, 1, 1])
+                with col_i1:
+                    st.write(f"**Motivo:** {note['text']}")
+                with col_i2:
+                    st.write(f"**Cidade:** {note['city'] or 'N/A'}")
+                    st.write(f"**UTP:** {note['utp_id'] or 'N/A'}")
+                with col_i3:
+                    ts = datetime.fromisoformat(note['timestamp']).strftime('%d/%m/%Y %H:%M')
+                    st.caption(f"📅 {ts}")
+                    if st.button("Excluir", key=f"del_{note['id']}", type="secondary"):
+                        notes_manager.delete_note(note["id"])
+                        st.success("Nota excluída!")
+                        st.rerun()
+                st.markdown("---")

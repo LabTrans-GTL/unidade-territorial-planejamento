@@ -425,11 +425,14 @@ class GeoValidaManager:
         if self.sede_analyzer.df_impedance is None:
             self.sede_analyzer.load_impedance_data()
             
-        # Create validator V2 instance
+        # Create validator V2 instance — inject the manager's consolidator so that
+        # the unitary UTP consolidation at the end of border validation reuses the
+        # same graph state and full pipeline components (sede_analyzer, etc.)
         validator_instance = BorderValidatorV2(
             graph=self.graph,
             validator=self.validator,
-            impedance_df=self.sede_analyzer.df_impedance
+            impedance_df=self.sede_analyzer.df_impedance,
+            consolidator=self.consolidator
         )
         
         # Sincronizar grafo, utp_seeds e DataFrame antes da validação de fronteiras
@@ -483,9 +486,26 @@ class GeoValidaManager:
         
         self.logger.info(f"✅ Isolated Resolution complete: {changes_isolated} changes")
         
-        # ===== FINAL OUTPUTS (after both sub-steps) =====
-        total_changes = changes_border + changes_isolated
-        self.logger.info(f"\n✅ Step 8 COMPLETE: {total_changes} total changes ({changes_border} border + {changes_isolated} isolated)")
+        # ===== STEP 8.x: Unitary UTP Consolidation (Fallback Final) =====
+        # Runs AFTER 8.1 and 8.5 to catch any new unitary UTPs created during those steps.
+        self.logger.info("\n--- Step 8.x: Consolidação de UTPs Unitárias (Fallback Final) ---")
+        self.map_generator.sync_with_graph(self.graph)
+        changes_func = self.consolidator.run_functional_merging(
+            self.analyzer.full_flow_df, self.map_generator.gdf_complete, self.map_generator, clear_log=False
+        )
+        self.map_generator.sync_with_graph(self.graph)
+        changes_territorial = self.consolidator.run_territorial_regic(
+            self.map_generator.gdf_complete, self.map_generator
+        )
+        changes_unitarias = changes_func + changes_territorial
+        self.logger.info(f"✅ Unitary consolidation complete: {changes_unitarias} changes ({changes_func} func + {changes_territorial} territorial)")
+
+        # ===== FINAL OUTPUTS (after all sub-steps: 8.1, 8.5, 8.x) =====
+        total_changes = changes_border + changes_isolated + changes_unitarias
+        self.logger.info(
+            f"\n✅ Step 8 COMPLETE: {total_changes} total changes "
+            f"({changes_border} border + {changes_isolated} isolated + {changes_unitarias} unitary)"
+        )
         
         # Save final map after BOTH border validation AND isolated resolution
         (self.map_generator

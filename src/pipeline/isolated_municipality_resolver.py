@@ -460,10 +460,13 @@ class IsolatedMunicipalityResolver:
                         "score": best['score'],
                         "regic_rank": best['regic_rank'],
                         "flows_to_utp": len(best['flows_to_utp'])
-                    }
+                    },
+                    auto_save=False
                 )
                 
                 total_reconnected += 1
+        
+        self.consolidation_manager.save_log()
         
         self.logger.info(f"\n✅ Isolated Resolution complete:")
         self.logger.info(f"   Reconnected: {total_reconnected}")

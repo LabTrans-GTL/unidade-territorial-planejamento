@@ -915,7 +915,8 @@ class SedeConsolidator:
                     "rm_destino": cand.get('rm_destino', ''),
                     "transitive": is_transitive,
                     "transitive_reason": cand.get('transitive_reason', '') if is_transitive else ''
-                }
+                },
+                auto_save=False
             )
             self.changes_current_run.append(cons_entry)
             
@@ -1024,6 +1025,8 @@ class SedeConsolidator:
             total_changes += 1
             self.logger.info(f"  ✅ Sede consolidation complete: {len(muns_to_move)} municipalities moved")
 
+        
+        self.consolidation_manager.save_log()
         
         # Save results
         self._save_results_and_csv()

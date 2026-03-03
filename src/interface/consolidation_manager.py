@@ -33,6 +33,14 @@ class ConsolidationManager:
                 return json.load(f)
         except Exception as e:
             print(f"Erro ao carregar log: {e}")
+            # Se falhar ao carregar, faz backup do corrompido e cria um novo
+            try:
+                backup_path = self.log_path.with_name(f"{self.log_path.stem}_corrupted_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
+                self.log_path.rename(backup_path)
+                print(f"Log corrompido movido para: {backup_path}")
+            except Exception as backup_err:
+                print(f"Erro ao mover log corrompido: {backup_err}")
+                
             return {
                 "version": "1.0",
                 "timestamp_created": datetime.now().isoformat(),
@@ -48,7 +56,7 @@ class ConsolidationManager:
         except Exception as e:
             print(f"Erro ao salvar log: {e}")
     
-    def add_consolidation(self, source_utp: str, target_utp: str, reason: str, details: Dict = None):
+    def add_consolidation(self, source_utp: str, target_utp: str, reason: str, details: Dict = None, auto_save: bool = True):
         """
         Adiciona uma consolidação ao log.
         
@@ -57,6 +65,7 @@ class ConsolidationManager:
             target_utp: ID da UTP de destino (que receberá os municípios)
             reason: Motivo da consolidação (ex: "Dependência funcional", "Adjacência", "REGIC")
             details: Dicionário com detalhes adicionais
+            auto_save: Se True, salva no disco imediatamente (padrão Legacy)
         """
         consolidation = {
             "id": len(self.log_data["consolidations"]) + 1,
@@ -68,13 +77,15 @@ class ConsolidationManager:
         }
         
         self.log_data["consolidations"].append(consolidation)
-        self.save_log()
+        
+        if auto_save:
+            self.save_log()
         
         return consolidation
     
     def add_consolidations_batch(self, consolidations: List[Dict]):
         """
-        Adiciona múltiplas consolidações em lote.
+        Adiciona múltiplas consolidações em lote de forma otimizada.
         
         Args:
             consolidations: Lista de dicionários com chaves:
@@ -88,8 +99,10 @@ class ConsolidationManager:
                 source_utp=cons['source_utp'],
                 target_utp=cons['target_utp'],
                 reason=cons['reason'],
-                details=cons.get('details')
+                details=cons.get('details'),
+                auto_save=False
             )
+        self.save_log()
     
     def get_consolidations(self) -> List[Dict]:
         """Retorna a lista de consolidações realizadas."""
